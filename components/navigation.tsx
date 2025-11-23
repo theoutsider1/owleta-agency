@@ -51,7 +51,7 @@ export function Navigation() {
             className="flex justify-center items-center text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity"
           >
             <Image
-              src="/owlixir-logo.png"
+              src="/Owlixir-logo.png"
               alt="Owlixir Logo"
               width={50}
               height={60}
