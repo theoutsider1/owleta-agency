@@ -1,5 +1,6 @@
 import { Github, Linkedin, Instagram, Mail } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -10,10 +11,10 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-2">
-            <a href="/" className="text-2xl font-bold cursor-pointer">
-                <Image src="/owlixir-logo.png" alt="Owlixir Logo" width={100} height={100} className="-mx-2"/>
+            <Link href="/" className="text-2xl font-bold cursor-pointer">
+                <Image src="/Owlixir-logo.png" alt="Owlixir Logo" width={100} height={100} className="-mx-2"/>
                 <span className="text-primary">Owlixir</span>
-            </a>
+            </Link>
             <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
               Transforming ideas into exceptional digital experiences. We're passionate about creating websites that
               make an impact.
