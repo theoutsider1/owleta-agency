@@ -108,15 +108,6 @@ export function HeroSection() {
               Start Your Project
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection("work")}
-              className="w-full sm:w-auto"
-            >
-              <Code2 className="mr-2 w-4 h-4" />
-              View Our Work
-            </Button>
           </div>
 
           {/* Stats */}
