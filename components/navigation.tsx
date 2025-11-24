@@ -29,7 +29,7 @@ export function Navigation() {
     { href: "#services", label: "Services" },
     { href: "#work", label: "Work" },
     { href: "#process", label: "Process" },
-    { href: "#testimonials", label: "Testimonials" },
+    { href: "#why-choose-us", label: "Why Owlixir" },
     { href: "#contact", label: "Get Started" },
   ]
 
@@ -84,6 +84,7 @@ export function Navigation() {
             <div key={link.href} className="flex justify-center px-4 pt-2 w-full">
               <Link
                 href={link.href}
+                onClick={() => scrollToSection("contact")}
                 role="menuitem"
                 className=" text-center bg-primary px-6 py-2 rounded-md text-md font-medium text-background hover:text-foreground transition-colors"
               >
