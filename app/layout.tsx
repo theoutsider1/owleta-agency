@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: "Owlixir – Web Development & Digital Solutions Agency",
   description: "Owlixir is a professional digital agency creating modern websites, web apps, and branding solutions to help businesses grow online.",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/owlixir-logo",
+    apple: "/owlixir-logo",
   },
   openGraph: {
     title: "Owlixir – Web Development & Digital Solutions Agency",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Owlixir",
     images: [
       {
-        url: "/og-image.png",
+        url: "/owlixir-logo",
         width: 1200,
         height: 630,
         alt: "Owlixir – Web Development & Digital Solutions Agency",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Owlixir – Web Development & Digital Solutions Agency",
     description: "Owlixir is a professional digital agency creating modern websites, web apps, and branding solutions to help businesses grow online.",
-    images: ["/og-image.png"],
+    images: ["/owlixir-logo"],
   },
 };
 
