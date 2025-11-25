@@ -15,7 +15,34 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Owlixir – Web Development & Digital Solutions Agency",
   description: "Owlixir is a professional digital agency creating modern websites, web apps, and branding solutions to help businesses grow online.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "Owlixir – Web Development & Digital Solutions Agency",
+    description: "Owlixir is a professional digital agency creating modern websites, web apps, and branding solutions to help businesses grow online.",
+    url: "https://www.owlixir.com",
+    siteName: "Owlixir",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Owlixir – Web Development & Digital Solutions Agency",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Owlixir – Web Development & Digital Solutions Agency",
+    description: "Owlixir is a professional digital agency creating modern websites, web apps, and branding solutions to help businesses grow online.",
+    images: ["/og-image.png"],
+  },
 };
+
 
 export default function RootLayout({
   children,
