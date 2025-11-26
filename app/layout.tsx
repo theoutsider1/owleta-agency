@@ -14,35 +14,47 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Owlixir – Web Development & Digital Solutions Agency",
-  description: "Owlixir is a professional digital agency creating modern websites, web apps, and branding solutions to help businesses grow online.",
+  description:
+    "Owlixir is a professional digital agency creating modern websites, web apps, and branding solutions to help businesses grow online.",
+  metadataBase: new URL("https://www.owlixir.com"), 
+
   icons: {
-    icon: "/owlixir-logo",
-    apple: "/owlixir-logo",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon-96x96.png", sizes: "96x96" },
+      { url: "/favicon.svg", type: "image/svg+xml" }
+    ],
+    apple: "/apple-touch-icon.png"
   },
+
+  manifest: "/site.webmanifest",
+
   openGraph: {
     title: "Owlixir – Web Development & Digital Solutions Agency",
-    description: "Owlixir is a professional digital agency creating modern websites, web apps, and branding solutions to help businesses grow online.",
+    description:
+      "Owlixir is a professional digital agency creating modern websites, web apps, and branding solutions to help businesses grow online.",
     url: "https://www.owlixir.com",
     siteName: "Owlixir",
     images: [
       {
-        url: "/owlixir-logo",
-        width: 1200,
-        height: 630,
-        alt: "Owlixir – Web Development & Digital Solutions Agency",
-      },
+        url: "/web-app-manifest-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Owlixir – Web Development & Digital Solutions Agency"
+      }
     ],
     locale: "en_US",
-    type: "website",
+    type: "website"
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Owlixir – Web Development & Digital Solutions Agency",
-    description: "Owlixir is a professional digital agency creating modern websites, web apps, and branding solutions to help businesses grow online.",
-    images: ["/owlixir-logo"],
-  },
+    description:
+      "Owlixir is a professional digital agency creating modern websites, web apps, and branding solutions to help businesses grow online.",
+    images: ["/web-app-manifest-512x512.png"]
+  }
 };
-
 
 export default function RootLayout({
   children,
