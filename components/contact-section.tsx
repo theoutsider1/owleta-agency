@@ -8,6 +8,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
+import emailjs from '@emailjs/browser';
+
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -17,12 +19,31 @@ export function ContactSection() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission
     console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", company: "", message: "" })
+
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID !;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID !;
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY !;
+
+    try {
+
+      const res = await emailjs.send(serviceID , templateID ,formData, userID)
+
+      if (res.status === 200) {
+        console.log("Form submitted successfully!");
+        // Reset form
+        setFormData({ name: "", email: "", company: "", message: "" });
+
+      }else {
+      console.error("Form submission failed.");
+      }
+    } catch (error) {
+      console.error (error);
+    }
+   
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -105,7 +126,7 @@ export function ContactSection() {
                       required
                     />
                   </div>
-                  <Button type="submit" size="lg" className="w-full group">
+                  <Button type="submit" size="lg" className="w-full group cursor-pointer">
                     Send Message
                     <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
