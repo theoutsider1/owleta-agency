@@ -38,12 +38,12 @@ export function Navigation() {
       className={`${
         isNavOpen
           ? "fixed inset-0 z-40 bg-background/50 backdrop-blur-lg flex flex-col items-center gap-6 p-8"
-          : "fixed top-2 m-2 md:top-4 left-1/2 z-50 w-full md:w-2/6 transform -translate-x-1/2 bg-background/30 backdrop-blur-lg border rounded-full"
+          : "fixed top-2 md:top-4 left-1/2 z-50 w-11/12 md:w-2/6 transform -translate-x-1/2 bg-background/30 backdrop-blur-lg border rounded-full"
       }`}
       aria-label="Main Navigation"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div className="flex items-center justify-between h-16 md:h-14">
+        <div className="flex items-center justify-between h-12 md:h-14">
           {/* Logo */}
           <Link
             href={"/"}
@@ -53,9 +53,9 @@ export function Navigation() {
             <Image
               src="/Owlixir-logo.png"
               alt="Owlixir Logo"
-              width={50}
-              height={60}
-              className="ml-2 shrink-0"
+              width={30}
+              height={40}
+              className="ml-2 shrink-0 w-7 h-9 sm:w-7 sm:h-9 md:w-8 md:h-10 lg:w-10 lg:h-12"
             />
           </Link>
 
@@ -66,7 +66,7 @@ export function Navigation() {
             aria-expanded={isNavOpen}
             className="flex p-2 text-foreground"
           >
-            {isNavOpen ? <X size={24} /> : <Menu size={24} />}
+            {isNavOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
