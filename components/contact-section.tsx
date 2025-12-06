@@ -2,16 +2,20 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Send, CheckCircle, X, AlertCircle } from "lucide-react"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 import emailjs from '@emailjs/browser';
 
 
 export function ContactSection() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,8 +25,11 @@ export function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setIsLoading(true);
+    setSuccessMessage("")
+    setErrorMessage("")
+
     // Handle form submission
-    console.log("Form submitted:", formData)
 
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID !;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID !;
@@ -33,15 +40,18 @@ export function ContactSection() {
       const res = await emailjs.send(serviceID , templateID ,formData, userID)
 
       if (res.status === 200) {
-        console.log("Form submitted successfully!");
+        setSuccessMessage("Message sent successfully! We'll get back to you soon.")
         // Reset form
         setFormData({ name: "", email: "", company: "", message: "" });
 
       }else {
-      console.error("Form submission failed.");
+        setErrorMessage("Form submission failed. Please try again.")
       }
     } catch (error) {
-      console.error (error);
+      setErrorMessage("Failed to send message. Please try again later.")
+    } finally {
+      setIsLoading(false);
+
     }
    
   }
@@ -52,7 +62,14 @@ export function ContactSection() {
       [e.target.name]: e.target.value,
     }))
   }
-
+  const autoClear = (value: string, setter: Function) => {
+    if (!value) return
+    const timer = setTimeout(() => setter(""), 5000)
+    return () => clearTimeout(timer)
+  }
+  
+  useEffect(() => autoClear(successMessage, setSuccessMessage), [successMessage])
+  useEffect(() => autoClear(errorMessage, setErrorMessage), [errorMessage])
   return (
     <section id="contact" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -126,10 +143,68 @@ export function ContactSection() {
                       required
                     />
                   </div>
-                  <Button type="submit" size="lg" className="w-full group cursor-pointer">
+                  <Button disabled={isLoading} type="submit" size="lg" className="w-full group cursor-pointer">
+                  {isLoading ? (
+                  <>
+                    <svg
+                      className="animate-spin h-4 w-4 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"
+                      ></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
                     Send Message
-                    <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                    <Send className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )} </Button>
+                {successMessage && (
+                  <div className="mb-6 flex items-start gap-3 p-4 ">
+                    <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-green-400">{successMessage}</p>
+                    </div>
+                    <button
+                      onClick={() => setSuccessMessage("")}
+                      className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300"
+                      aria-label="Close message"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                )}
+                {errorMessage && (
+                  <div className="mb-6 flex items-start gap-3 p-4 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded-lg">
+                    <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-red-800 dark:text-red-200">{errorMessage}</p>
+                    </div>
+                    <button
+                      onClick={() => setErrorMessage("")}
+                      className="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300"
+                      aria-label="Close message"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                )}
                 </form>
               </CardContent>
             </Card>
