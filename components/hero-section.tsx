@@ -95,9 +95,8 @@ export function HeroSection() {
           </h1>
 
           <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty leading-relaxed animate-fade-in-up animation-delay-200">
-            We create stunning, high-performance websites and web applications that drive results. From concept to
-            launch, we transform your vision into reality with cutting-edge technology and thoughtful design.
-          </p>
+             Your digital elixir for modern web solutions.
+           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-400">
             <Button
