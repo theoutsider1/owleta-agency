@@ -96,28 +96,28 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-40" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-        <div className="max-w-4xl mx-auto text-center">         
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-balance animate-fade-in-up">
-          <span
-            className="
-              pointer-events-none
-              bg-gradient-to-b 
-              from-black to-gray-300/80 
-              dark:from-white dark:to-slate-900/10
-              bg-clip-text text-transparent
-              leading-none
-            "
-          >
-            Build Your Digital Future with{" "}
-          </span>
-            <span className="text-primary aurora-text">Owlixir</span>
-          </h1>
+        <div className="flex flex-col items-center justify-center max-w-4xl mx-auto text-center">         
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-balance animate-fade-in-up">
+            <span
+              className="
+                pointer-events-none
+                bg-gradient-to-b 
+                from-black to-gray-300/80 
+                dark:from-white dark:to-slate-900/10
+                bg-clip-text text-transparent
+                leading-none
+              "
+            >
+              Build Your Digital Future with{" "}
+            </span>
+              <span className="text-primary aurora-text">Owlixir</span>
+            </h1>
 
-          <p className="text-xl sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty leading-relaxed animate-fade-in-up animation-delay-200">
-            Web solutions for businesses that want results.
-          </p>
+            <p className="text-xl sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty leading-relaxed animate-fade-in-up animation-delay-200">
+              Web solutions for businesses that want results.
+            </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-400">
+          <div className="w-1/2 md:w-full flex items-center justify-center gap-4 animate-fade-in-up animation-delay-400">
             <Button
               size="lg"
               onClick={() => scrollToSection("contact")}
