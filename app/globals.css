@@ -154,3 +154,23 @@
 ::-webkit-scrollbar-thumb:hover {
   background: oklch(0.75 0.19 45);
 }
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.aurora-text {
+  background: linear-gradient(
+    90deg,
+    #e85e00 0%,
+    #f5a623 25%,
+    #e85e00 50%,
+    #f5a623 75%,
+    #e85e00 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: aurora-shimmer 8s ease-in-out infinite;
+}

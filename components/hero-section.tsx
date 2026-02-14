@@ -81,22 +81,32 @@ export function HeroSection() {
   }
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex-col justify-between overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-
       {/* Subtle noise texture overlay */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-40" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center">         
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-balance animate-fade-in-up">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-balance animate-fade-in-up">
+          <span
+            className="
+              pointer-events-none
+              bg-gradient-to-b 
+              from-black to-gray-300/80 
+              dark:from-white dark:to-slate-900/10
+              bg-clip-text text-transparent
+              leading-none
+            "
+          >
             Build Your Digital Future with{" "}
-            <span className="text-primary">Owlixir</span>
+          </span>
+            <span className="text-primary aurora-text">Owlixir</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty leading-relaxed animate-fade-in-up animation-delay-200">
-             Your digital elixir for modern web solutions.
-           </p>
+          <p className="text-xl sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty leading-relaxed animate-fade-in-up animation-delay-200">
+            Web solutions for businesses that want results.
+          </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-400">
             <Button
@@ -109,20 +119,28 @@ export function HeroSection() {
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-border max-w-2xl mx-auto animate-fade-in-up animation-delay-600">
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">100%</div>
-              <div className="text-sm text-muted-foreground">Commitment</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">24/7</div>
-              <div className="text-sm text-muted-foreground">Support</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">Fast</div>
-              <div className="text-sm text-muted-foreground">Delivery</div>
-            </div>
+        </div>
+      </div>
+         {/* Stats */}
+      <div className="relative max-w-2xl mx-auto animate-fade-in-up animation-delay-600">
+        {/* Centered gradient line */}
+        <div className="flex justify-center mb-6">
+          <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white to-transparent"></div>
+        </div>
+
+        {/* Stats grid */}
+        <div className="grid grid-cols-3 gap-8 text-center">
+          <div>
+            <div className="text-3xl md:text-4xl font-bold text-accent mb-2">100%</div>
+            <div className="text-sm text-muted-foreground">Commitment</div>
+          </div>
+          <div>
+            <div className="text-3xl md:text-4xl font-bold text-accent mb-2">24/7</div>
+            <div className="text-sm text-muted-foreground">Support</div>
+          </div>
+          <div>
+            <div className="text-3xl md:text-4xl font-bold text-accent mb-2">Fast</div>
+            <div className="text-sm text-muted-foreground">Delivery</div>
           </div>
         </div>
       </div>
