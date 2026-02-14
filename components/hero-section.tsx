@@ -10,68 +10,77 @@ export function HeroSection() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-
+  
     const ctx = canvas.getContext("2d")
     if (!ctx) return
-
-    // Set canvas size
+  
     const resizeCanvas = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
     }
+  
     resizeCanvas()
     window.addEventListener("resize", resizeCanvas)
-
+  
     const orbs = [
       { x: 0.2, y: 0.3, radius: 300, speedX: 0.0003, speedY: 0.0002, color: "rgba(255, 107, 0, 0.15)" },
       { x: 0.8, y: 0.6, radius: 250, speedX: -0.0002, speedY: 0.0003, color: "rgba(255, 107, 0, 0.1)" },
       { x: 0.5, y: 0.5, radius: 200, speedX: 0.0002, speedY: -0.0002, color: "rgba(255, 107, 0, 0.08)" },
     ]
-
-    let animationFrameId: number
-    let time = 0
-
+  
+    let animationFrameId: number | null = null
+  
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      time += 1
-
+  
+      // Draw orbs
       orbs.forEach((orb) => {
-        // Update position
         orb.x += orb.speedX
         orb.y += orb.speedY
-
-        // Bounce off edges
+  
         if (orb.x < 0 || orb.x > 1) orb.speedX *= -1
         if (orb.y < 0 || orb.y > 1) orb.speedY *= -1
-
-        // Draw orb with gradient
+  
         const gradient = ctx.createRadialGradient(
           orb.x * canvas.width,
           orb.y * canvas.height,
           0,
           orb.x * canvas.width,
           orb.y * canvas.height,
-          orb.radius,
+          orb.radius
         )
+  
         gradient.addColorStop(0, orb.color)
-        gradient.addColorStop(1, "rgba(255, 107, 0, 0)")
-
+        gradient.addColorStop(1, "rgba(255,107,0,0)")
+  
         ctx.fillStyle = gradient
         ctx.beginPath()
         ctx.arc(orb.x * canvas.width, orb.y * canvas.height, orb.radius, 0, Math.PI * 2)
         ctx.fill()
       })
-
+  
+      const fadeHeight = 350
+      const mask = ctx.createLinearGradient(0, canvas.height - fadeHeight, 0, canvas.height)
+      mask.addColorStop(0, "rgba(0,0,0,1)")
+      mask.addColorStop(1, "rgba(0,0,0,0)")
+  
+      ctx.globalCompositeOperation = "destination-in"
+      ctx.fillStyle = mask
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      ctx.globalCompositeOperation = "source-over"
+  
       animationFrameId = requestAnimationFrame(animate)
     }
-
+  
     animate()
-
+  
     return () => {
       window.removeEventListener("resize", resizeCanvas)
-      cancelAnimationFrame(animationFrameId)
+      if (animationFrameId) cancelAnimationFrame(animationFrameId)
     }
   }, [])
+  
+
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
@@ -81,8 +90,8 @@ export function HeroSection() {
   }
 
   return (
-    <section id="hero" className="relative min-h-screen flex-col justify-between overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+    <section id="hero" className="relative min-h-screen flex flex-col justify-around overflow-hidden">
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full h-[calc(100vh)]" />
       {/* Subtle noise texture overlay */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')] opacity-40" />
 
@@ -129,21 +138,23 @@ export function HeroSection() {
         </div>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-3 gap-8 text-center">
+        <div className="grid grid-cols-3 z-40 gap-8 text-center">
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-accent mb-2">100%</div>
+            <div className="text-xl md:text-2xl font-normal text-accent mb-2">100%</div>
             <div className="text-sm text-muted-foreground">Commitment</div>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-accent mb-2">24/7</div>
+            <div className="text-xl md:text-2xl font-semibold text-accent mb-2">24/7</div>
             <div className="text-sm text-muted-foreground">Support</div>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-accent mb-2">Fast</div>
+            <div className="text-xl md:text-2xl font-semibold text-accent mb-2">Fast</div>
             <div className="text-sm text-muted-foreground">Delivery</div>
           </div>
         </div>
       </div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
+
     </section>
   )
 }
