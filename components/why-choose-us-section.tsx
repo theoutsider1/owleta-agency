@@ -18,7 +18,7 @@ const reasons = [
     icon: Lightbulb,
     title: "Fresh Perspective",
     description:
-      "As a new agency, we bring innovative ideas and modern approaches. We're not stuck in old patterns—we leverage the latest technologies and design trends.",
+      "We bring fresh ideas and modern approaches to every project. By combining the latest technologies with thoughtful design, we build digital experiences that are fast, effective, and made to last.",
   },
   {
     icon: Target,
