@@ -1,115 +1,110 @@
-import { Github, Linkedin, Instagram, Mail } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+import Link from "next/link";
 
-export function Footer() {
-  const currentYear = new Date().getFullYear()
-  
+const serviceLinks = [
+  { label: "Web Design", href: "/web-design" },
+  { label: "Website Redesign", href: "/website-redesign" },
+  { label: "Website Maintenance", href: "/website-maintenance" },
+  { label: "Website Audit", href: "/website-audit" },
+  { label: "SEO", href: "/seo" },
+  { label: "Local SEO", href: "/local-seo" },
+];
 
+const locationLinks = [
+  { label: "Web Design Bournemouth", href: "/web-design-bournemouth" },
+  { label: "SEO Bournemouth", href: "/seo-bournemouth" },
+];
+
+const owlixirLinks = [
+  { label: "Selected Work", href: "/work" },
+  { label: "About", href: "/about" },
+  { label: "Insights", href: "/insights" },
+  { label: "Contact", href: "/contact" },
+];
+
+const legalLinks = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Cookies", href: "/cookies" },
+  { label: "Terms", href: "/terms" },
+];
+
+export default function Footer() {
   return (
-    <footer className="bg-muted/20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          <div className="md:col-span-2">
-            <Link href="/" className="text-2xl font-bold cursor-pointer">
-                <Image src="/Owlixir-logo.png" alt="Owlixir Logo" width={100} height={100} className="-mx-2"/>
-                <span className="text-primary">Owlixir</span>
+    <footer className="border-t border-border bg-background">
+      <div className="site-container">
+        {/* Main footer */}
+        <div className="grid gap-14 py-16 md:py-20 lg:grid-cols-[1.15fr_1.85fr] lg:gap-20">
+          {/* Brand */}
+          <div>
+            <Link
+              href="/"
+              className="inline-flex items-center text-[20px] font-semibold tracking-[-0.03em] text-text-primary"
+            >
+              Owlixir
+              <span className="ml-1 text-primary">.</span>
             </Link>
-            <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
-              Transforming ideas into exceptional digital experiences. We're passionate about creating websites that
-              make an impact.
+
+            <p className="mt-5 max-w-[360px] text-[16px] leading-7 text-text-secondary">
+              Websites built to help businesses get found, earn trust and
+              generate enquiries.
             </p>
-            <div className="flex gap-4">
-              <a
-                href="https://www.linkedin.com/in/hatim-tagmi/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-muted hover:bg-accent hover:text-accent-foreground flex items-center justify-center transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/owlixir.agency/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-muted hover:bg-accent hover:text-accent-foreground flex items-center justify-center transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:hatimtagmi@gmail.com"
-                className="w-10 h-10 rounded-lg bg-muted hover:bg-accent hover:text-accent-foreground flex items-center justify-center transition-colors"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </div>
+
+            <p className="mt-7 max-w-[360px] text-[14px] leading-6 text-text-muted">
+              Independent web studio working with businesses in the UK and
+              beyond.
+            </p>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a href="#services" className="hover:text-foreground transition-colors">
-                  Web Development
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-foreground transition-colors">
-                  UI/UX Design
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-foreground transition-colors">
-                  Mobile Development
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-foreground transition-colors">
-                  SEO Optimization
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Navigation */}
+          <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-4">
+            <FooterColumn title="Services" links={serviceLinks} />
 
-          <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a href="#work" className="hover:text-foreground transition-colors">
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a href="#why-choose-us" className="hover:text-foreground transition-colors">
-                  Why Owlixir
-                </a>
-              </li>
-              <li>
-                <a href="#process" className="hover:text-foreground transition-colors">
-                  Our Process
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-foreground transition-colors">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
+            <FooterColumn title="Locations" links={locationLinks} />
+
+            <FooterColumn title="Owlixir" links={owlixirLinks} />
+
+            <FooterColumn title="Legal" links={legalLinks} />
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">© {currentYear} Owlixir. All rights reserved.</p>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
-              Terms of Service
-            </a>
-          </div>
+        {/* Bottom */}
+        <div className="flex flex-col gap-4 border-t border-border py-6 text-[13px] text-text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2026 Owlixir. All rights reserved.</p>
+
+          <p>Based in Morocco. Working with businesses internationally.</p>
         </div>
       </div>
     </footer>
-  )
+  );
+}
+
+function FooterColumn({
+  title,
+  links,
+}: {
+  title: string;
+  links: {
+    label: string;
+    href: string;
+  }[];
+}) {
+  return (
+    <div>
+      <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-text-muted">
+        {title}
+      </p>
+
+      <ul className="mt-5 space-y-3.5">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className="text-[14px] leading-6 text-text-secondary transition-colors hover:text-text-primary"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
