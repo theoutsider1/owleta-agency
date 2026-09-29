@@ -33,7 +33,8 @@
   /* Layout */
   --container: 1440px;
   --page-padding: 1.5rem;
-  --section-space: 8rem;
+  --section-space: 7rem;
+  --section-space-tight: 6rem;
 
   /* Radius */
   --radius-sm: 0.5rem;
@@ -116,15 +117,17 @@
 
 @layer components {
   .site-container {
-    width: min(
-      calc(100% - (var(--page-padding) * 2)),
-      var(--container)
-    );
+    width: min(calc(100% - (var(--page-padding) * 2)),
+        var(--container));
     margin-inline: auto;
   }
 
   .section-space {
     padding-block: var(--section-space);
+  }
+
+  .section-space-tight {
+    padding-block: var(--section-space-tight);
   }
 }
 
@@ -252,6 +255,7 @@
 
 @media (max-width: 767px) {
   :root {
-    --section-space: 6rem;
+    --section-space: 5rem;
+    --section-space-tight: 4rem;
   }
 }
