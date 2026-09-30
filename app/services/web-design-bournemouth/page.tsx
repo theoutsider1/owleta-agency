@@ -6,6 +6,7 @@ import BournemouthLocalBusiness from "@/components/web-design-bournemouth/Bourne
 import BournemouthLocalWork from "@/components/web-design-bournemouth/BournemouthLocalWork";
 import BournemouthServices from "@/components/web-design-bournemouth/BournemouthServices";
 import BournemouthWebsiteTypes from "@/components/web-design-bournemouth/BournemouthWebsiteTypes";
+import BournemouthFAQ from "@/components/web-design-bournemouth/BournemouthFAQ";
 
 export const metadata: Metadata = {
   title: "Web Design Bournemouth | Websites for Local Businesses | Owlixir",
@@ -23,6 +24,7 @@ export default function WebDesignBournemouthPage() {
         <BournemouthLocalWork />
         <BournemouthServices />
         <BournemouthWebsiteTypes />
+        <BournemouthFAQ />
       </main>
       <Footer />
     </>
