@@ -1,42 +1,39 @@
+import Link from "next/link";
+
 const faqs = [
     {
-        question: "What is included in your SEO services?",
+        question: "What is Local SEO?",
         answer:
-            "The exact work depends on the website and its priorities. SEO can include search and intent research, on-page improvements, technical SEO, website structure, internal linking and measurement of organic search performance.",
+            "Local SEO focuses on improving how a business is represented for searches connected to particular towns, cities or service areas. It combines search intent, relevant website pages, local business signals and technical foundations.",
     },
     {
-        question: "How long does SEO take to work?",
+        question: "What is included in your Local SEO services?",
         answer:
-            "SEO is usually a longer-term process rather than an immediate result. How quickly meaningful changes appear depends on factors such as the website's current position, competition, technical condition, existing content and the searches being targeted.",
+            "The work depends on the business and its current website. It can include local search research, service and location page improvements, website structure, internal linking, local business signals and technical SEO affecting important local pages.",
     },
     {
-        question: "Can you guarantee Google rankings?",
+        question: "Do I need a page for every area I serve?",
         answer:
-            "Search rankings are controlled by search engines and can change over time, so specific positions cannot be guaranteed. The focus is on improving the website's relevance, structure and technical foundations while measuring how organic visibility develops.",
+            "Not necessarily. Location pages should exist because they are genuinely useful and relevant, not simply to repeat the same content with different place names. The right structure depends on your services, coverage and how customers search.",
     },
     {
-        question: "What is the difference between on-page SEO and technical SEO?",
+        question: "How long does Local SEO take?",
         answer:
-            "On-page SEO focuses on individual pages, including their content, headings, search intent and relevance. Technical SEO focuses on the underlying website factors that can affect crawling, indexing, performance and how search engines access and understand those pages.",
+            "Local SEO is not an immediate ranking switch. How quickly visibility changes depends on factors such as your current website, competition, existing local presence, technical condition and the amount of work required.",
     },
     {
-        question: "Do I need Local SEO instead?",
+        question: "Can you guarantee local rankings?",
         answer:
-            "If your business depends heavily on customers searching within particular towns, cities or service areas, Local SEO may need to play a larger role. Broader SEO and Local SEO can also work together rather than being treated as completely separate strategies.",
+            "Search positions are controlled by search engines and can change over time. We focus instead on strengthening relevant pages, local signals and technical foundations, then measuring how search visibility develops.",
     },
     {
-        question: "Do you need access to my website?",
+        question: "What if I need broader SEO rather than Local SEO?",
         answer:
-            "That depends on the work being carried out. Some research and investigation can begin externally, while implementation normally requires appropriate website access. Search Console or analytics access can also help when existing performance data is relevant.",
-    },
-    {
-        question: "What if I am not sure whether SEO is the problem?",
-        answer:
-            "You do not need to decide before the website has been investigated. A Website Audit can look more broadly at SEO, technical health, customer journeys and conversion opportunities to help identify what deserves attention first.",
+            "If your customers are not primarily searching within specific locations, broader SEO may be a better fit. Owlixir also provides SEO services focused on wider organic search visibility.",
     },
 ];
 
-export default function SEOFAQ() {
+export default function LocalSEOFAQ() {
     return (
         <section className="section-space border-t border-border">
             <div className="site-container">
@@ -47,19 +44,35 @@ export default function SEOFAQ() {
                             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
-                                SEO FAQ
+                                Local SEO FAQ
                             </p>
                         </div>
 
                         <h2 className="max-w-[520px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Before you invest in{" "}
-                            <span className="text-primary">SEO.</span>
+                            <span className="text-primary">Local SEO.</span>
                         </h2>
 
                         <p className="mt-6 max-w-[500px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            A few useful things to understand about scope, expectations and
-                            how SEO work is approached.
+                            Useful answers about local search, location pages and what to
+                            expect before deciding where to focus.
                         </p>
+
+                        <div className="mt-8 border-t border-border pt-5">
+                            <p className="text-[13px] leading-5 text-text-muted">
+                                Looking for visibility beyond specific locations?
+                            </p>
+
+                            <Link
+                                href="/services/seo"
+                                className="group mt-3 inline-flex items-center text-[14px] font-medium text-text-primary"
+                            >
+                                Explore SEO Services
+                                <span className="ml-2 transition-transform group-hover:translate-x-1">
+                                    →
+                                </span>
+                            </Link>
+                        </div>
                     </div>
 
                     {/* FAQs */}

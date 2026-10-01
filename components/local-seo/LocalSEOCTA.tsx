@@ -1,8 +1,6 @@
-// components/seo/SEOCTA.tsx
-
 import Link from "next/link";
 
-export default function SEOCTA() {
+export default function LocalSEOCTA() {
     return (
         <section className="section-space border-t border-border">
             <div className="site-container">
@@ -13,19 +11,19 @@ export default function SEOCTA() {
                             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
-                                Improve your search visibility
+                                Strengthen your local visibility
                             </p>
                         </div>
 
                         <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
-                            Make it easier for the right people{" "}
-                            <span className="text-primary">to find you.</span>
+                            Help more local customers{" "}
+                            <span className="text-primary">find your business.</span>
                         </h2>
 
                         <p className="mt-6 max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            Tell us about your website, your business and where you want to
-                            improve your search visibility. We can start by understanding
-                            what you are trying to achieve and where SEO may help.
+                            Tell us what you offer, where you serve customers and what you
+                            want to improve. We can look at your current local search
+                            visibility and identify a sensible place to start.
                         </p>
                     </div>
 
@@ -33,14 +31,14 @@ export default function SEOCTA() {
                     <div className="lg:flex lg:justify-end">
                         <div className="w-full max-w-[420px] border-t border-border pt-6">
                             <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-text-muted">
-                                Ready to discuss SEO?
+                                Ready to discuss Local SEO?
                             </p>
 
                             <Link
                                 href="/contact"
                                 className="mt-5 inline-flex items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                             >
-                                Discuss your SEO
+                                Discuss Local SEO
                                 <span className="ml-3">→</span>
                             </Link>
 
