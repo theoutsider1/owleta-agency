@@ -11,7 +11,7 @@ const improvements = [
         label: "Arabic experience",
         title: "An interface shaped around the audience",
         description:
-            "The website was designed with Arabic content and right-to-left reading in mind, allowing the experience to feel natural for the learners it was intended to serve.",
+            "The website was designed with Arabic content and right-to-left layout in mind, allowing the experience to feel natural for the learners it was intended to serve.",
     },
     {
         number: "03",
@@ -31,13 +31,16 @@ const improvements = [
 
 export default function GermanLanguageSolution() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Introduction */}
                 <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 What we changed
@@ -46,16 +49,18 @@ export default function GermanLanguageSolution() {
 
                         <h2 className="max-w-[620px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Shape the experience around{" "}
-                            <span className="text-primary">the people using it.</span>
+                            <span className="text-primary">
+                                the people using it.
+                            </span>
                         </h2>
                     </div>
 
                     <div>
                         <p className="max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            The website was approached around the needs of its audience,
-                            combining clearer content organisation with an interface suited
-                            to Arabic-speaking learners and the way they move through the
-                            site.
+                            The website was designed around the needs of its audience,
+                            combining clearer content organisation with an interface
+                            suited to Arabic-speaking learners and the way they move
+                            through the site.
                         </p>
                     </div>
                 </div>
@@ -67,7 +72,7 @@ export default function GermanLanguageSolution() {
                             key={item.number}
                             className="grid gap-4 border-b border-border py-7 md:grid-cols-[70px_0.75fr_1.25fr] md:items-start md:gap-8 lg:py-8"
                         >
-                            <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-text-muted">
+                            <span className="pt-1 text-[10px] font-medium uppercase tracking-[0.14em] text-text-muted">
                                 {item.number}
                             </span>
 

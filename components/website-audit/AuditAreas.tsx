@@ -1,4 +1,3 @@
-
 const areas = [
     {
         number: "01",
@@ -14,7 +13,7 @@ const areas = [
     },
     {
         number: "02",
-        title: "SEO & search visibility",
+        title: "SEO and search visibility",
         description:
             "We examine the foundations that help search engines discover, understand and prioritise the right pages.",
         checks: [
@@ -40,7 +39,7 @@ const areas = [
         number: "04",
         title: "Website experience",
         description:
-            "We review the experience around the content, layout and usability that shapes how visitors interact with the site.",
+            "We review the content, layout and usability that shape how visitors understand and interact with the website.",
         checks: [
             "Content clarity",
             "Navigation",
@@ -52,13 +51,16 @@ const areas = [
 
 export default function AuditAreas() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Intro */}
                 <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 What we investigate
@@ -73,15 +75,15 @@ export default function AuditAreas() {
 
                     <div className="flex items-end">
                         <p className="max-w-[620px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            A website problem rarely exists in isolation. We investigate the
-                            areas that influence how people find your website, experience it
-                            and move towards becoming an enquiry.
+                            Website issues rarely exist in isolation. We investigate the
+                            areas that influence how people find your website, experience
+                            it and move towards contacting your business.
                         </p>
                     </div>
                 </div>
 
                 {/* Audit areas */}
-                <div className="mt-14 border-t border-border">
+                <div className="mt-14 border-t border-border lg:mt-16">
                     {areas.map((area) => (
                         <div
                             key={area.number}
@@ -89,12 +91,12 @@ export default function AuditAreas() {
                         >
                             {/* Area */}
                             <div className="grid gap-4 sm:grid-cols-[52px_1fr]">
-                                <span className="pt-1 text-[11px] font-medium text-text-muted">
+                                <span className="pt-1 text-[10px] font-medium tracking-[0.15em] text-text-muted">
                                     {area.number}
                                 </span>
 
                                 <div>
-                                    <h3 className="text-[22px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
+                                    <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                                         {area.title}
                                     </h3>
 
@@ -111,9 +113,12 @@ export default function AuditAreas() {
                                         key={check}
                                         className="flex items-center gap-3 border-b border-border py-3.5"
                                     >
-                                        <span className="h-1 w-1 shrink-0 rounded-full bg-primary" />
+                                        <span
+                                            aria-hidden="true"
+                                            className="h-1 w-1 shrink-0 rounded-full bg-primary"
+                                        />
 
-                                        <span className="text-[14px] font-medium text-text-secondary">
+                                        <span className="text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                             {check}
                                         </span>
                                     </div>
@@ -124,12 +129,17 @@ export default function AuditAreas() {
                 </div>
 
                 {/* Scope note */}
-                <div className="mt-10 flex justify-end">
-                    <p className="max-w-[720px] text-[15px] leading-6 text-text-muted md:text-[16px]">
-                        The exact scope depends on your website and what needs investigating.
-                        Where deeper access would help, we confirm what is needed before the
-                        audit begins.
-                    </p>
+                <div className="mt-10 grid lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+                    <div aria-hidden="true" className="hidden lg:block" />
+
+                    <div className="max-w-[720px]">
+                        <p className="text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                            The exact scope depends on your website and what needs
+                            investigating. If deeper access would help us examine a
+                            particular area, we confirm what is needed before the audit
+                            begins.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

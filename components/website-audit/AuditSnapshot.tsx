@@ -25,6 +25,7 @@ export default function AuditSnapshot() {
                         <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/35">
                             Owlixir
                         </p>
+
                         <p className="mt-1 text-sm font-medium text-white">
                             Website Audit
                         </p>
@@ -67,6 +68,7 @@ export default function AuditSnapshot() {
                                     <p className="text-sm font-medium text-white">
                                         {finding.title}
                                     </p>
+
                                     <p className="mt-1 text-sm leading-6 text-white/45">
                                         {finding.detail}
                                     </p>
@@ -81,6 +83,7 @@ export default function AuditSnapshot() {
                                 <p className="text-[10px] uppercase tracking-[0.16em] text-white/35">
                                     Deliverable
                                 </p>
+
                                 <p className="mt-1 text-sm text-white/70">
                                     Findings · Evidence · Priorities · Actions
                                 </p>
@@ -94,17 +97,27 @@ export default function AuditSnapshot() {
                 </div>
             </div>
 
-            <div className="absolute -bottom-3 -right-3 -z-10 h-full w-full border border-white/[0.06]" />
+            <div
+                aria-hidden="true"
+                className="absolute -bottom-3 -right-3 -z-10 h-full w-full border border-white/[0.06]"
+            />
         </div>
     );
 }
 
-function Metric({ value, label }: { value: string; label: string }) {
+function Metric({
+    value,
+    label,
+}: {
+    value: string;
+    label: string;
+}) {
     return (
         <div className="border border-white/10 p-3">
             <p className="text-xl font-medium tracking-[-0.03em] text-white">
                 {value}
             </p>
+
             <p className="mt-1 text-[10px] uppercase tracking-[0.12em] text-white/35">
                 {label}
             </p>

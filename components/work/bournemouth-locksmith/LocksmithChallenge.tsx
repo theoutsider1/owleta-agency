@@ -23,13 +23,16 @@ const challenges = [
 
 export default function LocksmithChallenge() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Challenge introduction */}
                 <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 The challenge
@@ -37,19 +40,20 @@ export default function LocksmithChallenge() {
                         </div>
 
                         <h2 className="max-w-[620px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
-                            Turn a broad website into a{" "}
+                            Build a more focused{" "}
                             <span className="text-primary">
-                                more focused local journey.
+                                local customer journey.
                             </span>
                         </h2>
                     </div>
 
                     <div>
                         <p className="max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            The project was not simply about giving the business a new visual
-                            design. The website needed to communicate the locksmith&apos;s
-                            services more clearly, focus attention on the areas that mattered
-                            most and make it easier for potential customers to take action.
+                            The project was not simply about visual design. The
+                            website needed to communicate the locksmith&apos;s
+                            services clearly, focus attention on the areas that
+                            mattered most and make it easier for potential customers
+                            to take action.
                         </p>
                     </div>
                 </div>
@@ -70,7 +74,7 @@ export default function LocksmithChallenge() {
 
                         <Image
                             src="/work/bournemouth-locksmith.webp"
-                            alt="Bournemouth locksmith website"
+                            alt="Website created for an independent locksmith serving Bournemouth, Poole and Christchurch"
                             width={1600}
                             height={900}
                             sizes="(min-width: 1024px) 50vw, 100vw"
@@ -94,7 +98,7 @@ export default function LocksmithChallenge() {
                                         {challenge.title}
                                     </h3>
 
-                                    <p className="mt-2 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                                    <p className="mt-3 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                         {challenge.description}
                                     </p>
                                 </div>

@@ -38,8 +38,8 @@ export default function BournemouthSearchJourney() {
                     </p>
 
                     <div className="mt-4 border border-border px-4 py-4">
-                        <p className="text-[15px] leading-6 text-text-primary md:text-[16px]">
-                            service + Bournemouth
+                        <p className="text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                            service in Bournemouth
                         </p>
                     </div>
                 </div>
@@ -60,12 +60,15 @@ export default function BournemouthSearchJourney() {
                                     {signal.title}
                                 </p>
 
-                                <p className="mt-1 text-[13px] leading-5 text-text-muted">
+                                <p className="mt-1 text-[13px] leading-5 text-text-secondary">
                                     {signal.text}
                                 </p>
                             </div>
 
-                            <span className="h-2 w-2 rounded-full bg-primary" />
+                            <span
+                                aria-hidden="true"
+                                className="h-2 w-2 rounded-full bg-primary"
+                            />
                         </div>
                     ))}
                 </div>
@@ -76,9 +79,18 @@ export default function BournemouthSearchJourney() {
                         Goal
                     </p>
 
-                    <p className="mt-2 text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
-                        Stronger visibility in Bournemouth
-                    </p>
+                    <div className="mt-2 flex items-center justify-between gap-4">
+                        <p className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
+                            Stronger visibility in Bournemouth
+                        </p>
+
+                        <span
+                            aria-hidden="true"
+                            className="shrink-0 text-[18px] text-primary"
+                        >
+                            ↗
+                        </span>
+                    </div>
                 </div>
 
                 {/* Footer */}

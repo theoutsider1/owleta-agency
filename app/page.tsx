@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import Navigation from "@/components/navigation";
 import HeroSection from "@/components/home/HeroSection";
 import SelectedWork from "@/components/home/SelectedWork";
@@ -10,20 +12,33 @@ import ProcessSection from "@/components/home/ProcessSection";
 import FinalCTA from "@/components/home/FinalCTA";
 import Footer from "@/components/footer";
 
+export const metadata: Metadata = {
+  title: "Web Design, SEO & Website Support | Owlixir",
+  description:
+    "Owlixir is an independent web studio helping UK businesses build, improve and optimise websites for better visibility, trust and enquiries.",
+  alternates: {
+    canonical: "/",
+  },
+};
+
 export default function Home() {
   return (
-    <main>
+    <>
       <Navigation />
-      <HeroSection />
-      <SelectedWork />
-      <ProblemSection />
-      <SolutionsSection />
-      <FeaturedCaseStudy />
-      <WebsiteCheck />
-      <WhyOwlixir />
-      <ProcessSection />
-      <FinalCTA />
+
+      <main>
+        <HeroSection />
+        <ProblemSection />
+        <SolutionsSection />
+        <SelectedWork />
+        <FeaturedCaseStudy />
+        <WebsiteCheck />
+        <WhyOwlixir />
+        <ProcessSection />
+        <FinalCTA />
+      </main>
+
       <Footer />
-    </main>
+    </>
   );
 }

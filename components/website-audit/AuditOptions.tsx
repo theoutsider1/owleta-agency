@@ -3,7 +3,7 @@ import Link from "next/link";
 const checkIncludes = [
     "Human review of your website",
     "Focused first look",
-    "High-level issue or opportunity",
+    "High-level observations",
     "No obligation",
 ];
 
@@ -17,13 +17,16 @@ const auditIncludes = [
 
 export default function AuditOptions() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Intro */}
                 <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 Two ways to start
@@ -38,16 +41,16 @@ export default function AuditOptions() {
 
                     <div className="flex items-end">
                         <p className="max-w-[620px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            If you simply want to know whether something important may be
-                            getting in the way, start with a free website check. If you need
-                            a deeper investigation and documented recommendations, choose a
-                            website audit.
+                            If you want an initial view of whether something may deserve
+                            attention, start with a free website check. If you need a
+                            deeper investigation with documented findings and
+                            recommendations, choose a website audit.
                         </p>
                     </div>
                 </div>
 
                 {/* Options */}
-                <div className="mt-14 grid border-y border-border lg:grid-cols-2">
+                <div className="mt-14 grid border-y border-border lg:mt-16 lg:grid-cols-2">
                     {/* Free check */}
                     <div className="py-8 lg:border-r lg:border-border lg:py-10 lg:pr-12">
                         <div className="flex items-center justify-between gap-4">
@@ -65,8 +68,8 @@ export default function AuditOptions() {
                         </h3>
 
                         <p className="mt-5 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
-                            A focused human review designed to spot whether there is a
-                            meaningful issue or opportunity worth looking into further.
+                            A focused human review that gives you an initial view of
+                            whether anything obvious deserves further attention.
                         </p>
 
                         <div className="mt-8 border-t border-border">
@@ -75,26 +78,33 @@ export default function AuditOptions() {
                                     key={item}
                                     className="flex items-center gap-3 border-b border-border py-3.5"
                                 >
-                                    <span className="h-1 w-1 shrink-0 rounded-full bg-primary" />
+                                    <span
+                                        aria-hidden="true"
+                                        className="h-1 w-1 shrink-0 rounded-full bg-primary"
+                                    />
 
-                                    <span className="text-[14px] font-medium text-text-secondary">
+                                    <span className="text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                         {item}
                                     </span>
                                 </div>
                             ))}
                         </div>
 
-                        <p className="mt-6 text-[13px] leading-5 text-text-muted">
+                        <p className="mt-6 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                             This is a first look, not a comprehensive audit or detailed
                             technical report.
                         </p>
 
                         <Link
                             href="?service=check#request"
-                            className="group mt-7 inline-flex items-center text-[14px] font-medium text-text-primary transition-colors hover:text-primary"
+                            className="group mt-7 inline-flex cursor-pointer items-center text-[14px] font-medium text-text-primary transition-colors hover:text-primary"
                         >
                             Request a free website check
-                            <span className="ml-2 transition-transform group-hover:translate-x-1">
+
+                            <span
+                                aria-hidden="true"
+                                className="ml-2 transition-transform group-hover:translate-x-1"
+                            >
                                 →
                             </span>
                         </Link>
@@ -117,7 +127,7 @@ export default function AuditOptions() {
                         </h3>
 
                         <p className="mt-5 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
-                            A deeper professional investigation for businesses that need
+                            A deeper structured investigation for businesses that need
                             documented findings, evidence, priorities and recommended
                             actions.
                         </p>
@@ -128,25 +138,28 @@ export default function AuditOptions() {
                                     key={item}
                                     className="flex items-center gap-3 border-b border-border py-3.5"
                                 >
-                                    <span className="h-1 w-1 shrink-0 rounded-full bg-primary" />
+                                    <span
+                                        aria-hidden="true"
+                                        className="h-1 w-1 shrink-0 rounded-full bg-primary"
+                                    />
 
-                                    <span className="text-[14px] font-medium text-text-secondary">
+                                    <span className="text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                         {item}
                                     </span>
                                 </div>
                             ))}
                         </div>
 
-                        <p className="mt-6 text-[13px] leading-5 text-text-muted">
-                            Scope and price are confirmed before the audit begins.
+                        <p className="mt-6 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                            The scope and quote are confirmed before you commit to the
+                            audit.
                         </p>
 
                         <Link
                             href="?service=audit#request"
-                            className="mt-7 inline-flex items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
+                            className="mt-7 inline-flex cursor-pointer items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                         >
                             Request a website audit
-                            <span className="ml-3">→</span>
                         </Link>
                     </div>
                 </div>

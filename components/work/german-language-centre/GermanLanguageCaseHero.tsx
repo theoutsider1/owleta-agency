@@ -26,8 +26,11 @@ export default function GermanLanguageCaseHero() {
                 <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-20">
                     {/* Heading */}
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 Case study · Language education
@@ -36,16 +39,18 @@ export default function GermanLanguageCaseHero() {
 
                         <h1 className="max-w-[720px] text-[clamp(3rem,5.5vw,5.8rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-text-primary">
                             A clearer digital experience for{" "}
-                            <span className="text-primary">language learners.</span>
+                            <span className="text-primary">
+                                language learners.
+                            </span>
                         </h1>
                     </div>
 
                     {/* Context */}
                     <div>
                         <p className="max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            A website built for a German language centre to organise its
-                            information more clearly, support Arabic-speaking learners and
-                            make important content easier to explore.
+                            A website built for a German language centre to organise
+                            its information more clearly, support Arabic-speaking
+                            learners and make important content easier to explore.
                         </p>
                     </div>
                 </div>
@@ -56,15 +61,24 @@ export default function GermanLanguageCaseHero() {
                         <div
                             key={detail.label}
                             className={`py-5 sm:px-6 lg:px-7 ${index > 0
-                                    ? "border-t border-border sm:border-t-0 sm:border-l"
+                                    ? "border-t border-border sm:border-t-0"
                                     : ""
-                                } ${index === 0 ? "sm:pl-0 lg:pl-0" : ""}`}
+                                } ${index % 2 !== 0
+                                    ? "sm:border-l sm:border-border"
+                                    : ""
+                                } ${index > 1
+                                    ? "sm:border-t sm:border-border lg:border-t-0"
+                                    : ""
+                                } ${index > 0
+                                    ? "lg:border-l lg:border-border"
+                                    : ""
+                                }`}
                         >
                             <p className="text-[9px] font-medium uppercase tracking-[0.13em] text-text-muted">
                                 {detail.label}
                             </p>
 
-                            <p className="mt-2 text-[14px] font-medium text-text-primary">
+                            <p className="mt-2 text-[14px] font-medium text-text-secondary">
                                 {detail.value}
                             </p>
                         </div>
@@ -74,11 +88,15 @@ export default function GermanLanguageCaseHero() {
                 {/* Back */}
                 <Link
                     href="/work"
-                    className="group mt-7 flex w-fit items-center text-[13px] font-medium text-text-muted transition-colors hover:text-text-primary"
+                    className="group mt-7 flex w-fit cursor-pointer items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                 >
-                    <span className="mr-2 transition-transform group-hover:-translate-x-1">
+                    <span
+                        aria-hidden="true"
+                        className="mr-2 transition-transform group-hover:-translate-x-1"
+                    >
                         ←
                     </span>
+
                     All selected work
                 </Link>
             </div>

@@ -16,7 +16,7 @@ const foundations = [
     {
         number: "03",
         label: "Measurement",
-        title: "A clearer view of what happens after a visit",
+        title: "A clearer view of important customer actions",
         description:
             "Analytics and conversion tracking were added so important actions, including phone enquiries, could be measured as the website develops.",
     },
@@ -24,13 +24,16 @@ const foundations = [
 
 export default function LocksmithSearchMeasurement() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Introduction */}
                 <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 Search & measurement
@@ -47,11 +50,10 @@ export default function LocksmithSearchMeasurement() {
 
                     <div>
                         <p className="max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            The website was not treated as a finished design that simply
-                            needed publishing. Search visibility and measurement were
-                            considered alongside the structure so future decisions could be
-                            based on what people search for and how they interact with the
-                            site.
+                            Search and measurement were considered alongside the
+                            website structure, so visibility and important customer
+                            actions could be monitored after launch and used to
+                            inform future improvements.
                         </p>
                     </div>
                 </div>
@@ -64,7 +66,9 @@ export default function LocksmithSearchMeasurement() {
                             className={`py-8 lg:px-8 ${index > 0
                                     ? "border-t border-border lg:border-l lg:border-t-0"
                                     : ""
-                                } ${index === 0 ? "lg:pl-0" : ""} ${index === foundations.length - 1 ? "lg:pr-0" : ""
+                                } ${index === 0 ? "lg:pl-0" : ""} ${index === foundations.length - 1
+                                    ? "lg:pr-0"
+                                    : ""
                                 }`}
                         >
                             <div className="flex items-center justify-between gap-4">
@@ -91,11 +95,25 @@ export default function LocksmithSearchMeasurement() {
                 {/* Relationship */}
                 <div className="mt-8 flex flex-col gap-3 text-[11px] font-medium uppercase tracking-[0.14em] text-text-muted sm:flex-row sm:items-center sm:justify-center sm:gap-5">
                     <span>Relevant pages</span>
-                    <span className="hidden text-text-muted sm:inline">→</span>
+
+                    <span
+                        aria-hidden="true"
+                        className="hidden sm:inline"
+                    >
+                        →
+                    </span>
+
                     <span>Search visibility</span>
-                    <span className="hidden text-text-muted sm:inline">→</span>
+
+                    <span
+                        aria-hidden="true"
+                        className="hidden sm:inline"
+                    >
+                        →
+                    </span>
+
                     <span className="font-semibold text-primary">
-                        Measurable enquiries
+                        Measurable actions
                     </span>
                 </div>
             </div>

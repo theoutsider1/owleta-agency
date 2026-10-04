@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import Navigation from "@/components/navigation";
 import BournemouthHero from "@/components/web-design-bournemouth/BournemouthHero";
 import Footer from "@/components/footer";
@@ -12,12 +13,16 @@ export const metadata: Metadata = {
   title: "Web Design Bournemouth | Websites for Local Businesses | Owlixir",
   description:
     "Web design for Bournemouth businesses focused on clear customer journeys, local search visibility and turning more website visitors into enquiries.",
+  alternates: {
+    canonical: "/services/web-design-bournemouth",
+  },
 };
 
 export default function WebDesignBournemouthPage() {
   return (
     <>
       <Navigation />
+
       <main>
         <BournemouthHero />
         <BournemouthLocalBusiness />
@@ -26,6 +31,7 @@ export default function WebDesignBournemouthPage() {
         <BournemouthWebsiteTypes />
         <BournemouthFAQ />
       </main>
+
       <Footer />
     </>
   );

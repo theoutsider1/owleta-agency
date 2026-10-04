@@ -3,7 +3,7 @@ const reasons = [
         label: "Things change",
         title: "Your business does not stay the same.",
         description:
-            "Services, prices, team details, opening information and customer needs can change. The website needs to keep up with the business it represents.",
+            "Services, prices, contact details, opening hours and customer needs can change. The website needs to keep up with the business it represents.",
     },
     {
         label: "Things break",
@@ -21,7 +21,7 @@ const reasons = [
         label: "Things improve",
         title: "A live website can still get better.",
         description:
-            "Customer journeys, content, performance and search foundations can be improved as you learn more about how the website is being used.",
+            "Customer journeys, content, performance and search foundations can be improved as the business changes and new opportunities become clearer.",
     },
 ];
 
@@ -32,22 +32,25 @@ export default function MaintenanceReality() {
                 {/* Heading */}
                 <div className="max-w-[860px]">
                     <div className="mb-6 flex items-center gap-3">
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <span
+                            aria-hidden="true"
+                            className="h-1.5 w-1.5 rounded-full bg-primary"
+                        />
 
                         <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                             After the website goes live
                         </p>
                     </div>
 
-                    <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[1] tracking-[-0.045em] text-text-primary">
+                    <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                         Websites need attention{" "}
                         <span className="text-primary">after launch too.</span>
                     </h2>
 
-                    <p className="mt-6 max-w-[650px] text-[16px] leading-7 text-text-secondary md:text-[17px]">
-                        Website maintenance is not only about software updates. It is about
-                        keeping the website useful, current and ready to support the
-                        business as things change.
+                    <p className="mt-7 max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
+                        Website maintenance is not only about software updates. It is
+                        about keeping the website useful, current and ready to support
+                        the business as things change.
                     </p>
                 </div>
 
@@ -58,16 +61,16 @@ export default function MaintenanceReality() {
                             key={reason.label}
                             className="grid gap-4 border-t border-border pt-6 sm:grid-cols-[120px_1fr]"
                         >
-                            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
+                            <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-primary">
                                 {reason.label}
                             </p>
 
                             <div>
-                                <h3 className="text-[20px] font-medium leading-[1.2] tracking-[-0.025em] text-text-primary">
+                                <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                                     {reason.title}
                                 </h3>
 
-                                <p className="mt-3 max-w-[440px] text-[14px] leading-6 text-text-secondary">
+                                <p className="mt-3 max-w-[440px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                     {reason.description}
                                 </p>
                             </div>

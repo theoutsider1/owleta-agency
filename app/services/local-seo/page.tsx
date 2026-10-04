@@ -1,6 +1,5 @@
-// app/services/local-seo/page.tsx
-
 import type { Metadata } from "next";
+
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 
@@ -12,11 +11,15 @@ import LocalSEOFit from "@/components/local-seo/LocalSEOFit";
 import LocalSEOMidCTA from "@/components/local-seo/LocalSEOMidCTA";
 import LocalSEOFAQ from "@/components/local-seo/LocalSEOFAQ";
 import LocalSEOCTA from "@/components/local-seo/LocalSEOCTA";
+import LocalSEOProcess from "@/components/local-seo/LocalSEOProcess";
 
 export const metadata: Metadata = {
     title: "Local SEO Services for UK Businesses | Owlixir",
     description:
         "Local SEO services for UK businesses that want to improve visibility for relevant searches in the towns, cities and service areas they serve.",
+    alternates: {
+        canonical: "/services/local-seo",
+    },
 };
 
 export default function LocalSEOPage() {
@@ -31,7 +34,7 @@ export default function LocalSEOPage() {
                 <LocalSEOServices />
                 <LocalSEOMidCTA />
                 <LocalSEOFit />
-                <LocalSEOServices />
+                <LocalSEOProcess />
                 <LocalSEOFAQ />
                 <LocalSEOCTA />
             </main>

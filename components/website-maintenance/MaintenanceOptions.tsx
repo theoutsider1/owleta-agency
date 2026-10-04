@@ -7,31 +7,36 @@ export default function MaintenanceOptions() {
                 {/* Intro */}
                 <div className="max-w-[820px]">
                     <div className="mb-6 flex items-center gap-3">
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <span
+                            aria-hidden="true"
+                            className="h-1.5 w-1.5 rounded-full bg-primary"
+                        />
 
                         <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                             Support that fits what you need
                         </p>
                     </div>
 
-                    <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[1] tracking-[-0.045em] text-text-primary">
+                    <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                         Ongoing maintenance or help with{" "}
-                        <span className="text-primary">one specific problem.</span>
+                        <span className="text-primary">
+                            one specific problem.
+                        </span>
                     </h2>
 
-                    <p className="mt-6 max-w-[650px] text-[16px] leading-7 text-text-secondary md:text-[17px]">
-                        Not every website needs the same level of support. You might want
-                        someone looking after it over time, or simply need help fixing or
-                        changing something now.
+                    <p className="mt-7 max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
+                        Not every website needs the same level of support. You might
+                        want ongoing help looking after it, or simply need something
+                        fixed, updated or investigated now.
                     </p>
                 </div>
 
-                {/* Two paths */}
+                {/* Two support paths */}
                 <div className="mt-14 grid border-y border-border lg:grid-cols-2">
                     {/* Ongoing */}
                     <div className="py-9 lg:border-r lg:border-border lg:py-11 lg:pr-12">
                         <div className="flex items-center justify-between gap-5">
-                            <p className="text-[10px] font-semibold uppercase tracking-[0.17em] text-primary">
+                            <p className="text-[10px] font-medium uppercase tracking-[0.17em] text-primary">
                                 Ongoing website maintenance
                             </p>
 
@@ -40,14 +45,14 @@ export default function MaintenanceOptions() {
                             </span>
                         </div>
 
-                        <h3 className="mt-6 max-w-[480px] text-[clamp(1.8rem,2.7vw,2.6rem)] font-medium leading-[1.05] tracking-[-0.035em] text-text-primary">
+                        <h3 className="mt-6 max-w-[480px] text-[clamp(1.8rem,2.7vw,2.6rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-text-primary">
                             Someone to keep looking after the website.
                         </h3>
 
-                        <p className="mt-5 max-w-[520px] text-[14px] leading-6 text-text-secondary">
+                        <p className="mt-5 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                             For businesses that want continued help with website care,
-                            updates, fixes and improvements instead of dealing with each
-                            change or technical problem alone.
+                            updates, fixes and improvements rather than arranging support
+                            separately whenever something needs attention.
                         </p>
 
                         <div className="mt-8 space-y-3">
@@ -58,7 +63,11 @@ export default function MaintenanceOptions() {
                                 "Ongoing improvements",
                             ].map((item) => (
                                 <div key={item} className="flex items-center gap-3">
-                                    <span className="h-1 w-1 rounded-full bg-primary" />
+                                    <span
+                                        aria-hidden="true"
+                                        className="h-1 w-1 rounded-full bg-primary"
+                                    />
+
                                     <span className="text-[11px] font-medium uppercase tracking-[0.13em] text-text-muted">
                                         {item}
                                     </span>
@@ -68,9 +77,9 @@ export default function MaintenanceOptions() {
                     </div>
 
                     {/* One-off */}
-                    <div className="border-t border-border py-9 lg:border-l-0 lg:border-t-0 lg:py-11 lg:pl-12">
+                    <div className="border-t border-border py-9 lg:border-t-0 lg:py-11 lg:pl-12">
                         <div className="flex items-center justify-between gap-5">
-                            <p className="text-[10px] font-semibold uppercase tracking-[0.17em] text-primary">
+                            <p className="text-[10px] font-medium uppercase tracking-[0.17em] text-primary">
                                 One-off website support
                             </p>
 
@@ -79,11 +88,11 @@ export default function MaintenanceOptions() {
                             </span>
                         </div>
 
-                        <h3 className="mt-6 max-w-[480px] text-[clamp(1.8rem,2.7vw,2.6rem)] font-medium leading-[1.05] tracking-[-0.035em] text-text-primary">
+                        <h3 className="mt-6 max-w-[480px] text-[clamp(1.8rem,2.7vw,2.6rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-text-primary">
                             Get help with the problem in front of you.
                         </h3>
 
-                        <p className="mt-5 max-w-[520px] text-[14px] leading-6 text-text-secondary">
+                        <p className="mt-5 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                             Already know what needs attention? We can review a specific
                             website problem, update or piece of work without requiring an
                             ongoing maintenance arrangement.
@@ -97,7 +106,11 @@ export default function MaintenanceOptions() {
                                 "Technical troubleshooting",
                             ].map((item) => (
                                 <div key={item} className="flex items-center gap-3">
-                                    <span className="h-1 w-1 rounded-full bg-primary" />
+                                    <span
+                                        aria-hidden="true"
+                                        className="h-1 w-1 rounded-full bg-primary"
+                                    />
+
                                     <span className="text-[11px] font-medium uppercase tracking-[0.13em] text-text-muted">
                                         {item}
                                     </span>
@@ -107,38 +120,26 @@ export default function MaintenanceOptions() {
                     </div>
                 </div>
 
-                {/* Contextual CTA */}
+                {/* Contextual action */}
                 <div className="mt-10 flex flex-col justify-between gap-6 md:flex-row md:items-center">
-                    <div className="max-w-[540px]">
-                        <p className="text-[17px] font-medium leading-6 text-text-primary">
+                    <div className="max-w-[560px]">
+                        <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                             Have something on your website that needs attention?
-                        </p>
+                        </h3>
 
-                        <p className="mt-2 text-[14px] leading-6 text-text-secondary">
-                            Tell us what&apos;s happening and we can look at the right way to
-                            help.
+                        <p className="mt-2 text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                            Tell us what&apos;s happening and what kind of help you need.
+                            We&apos;ll look at the website and discuss the appropriate next
+                            step.
                         </p>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-5">
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
-                        >
-                            Get website support
-                            <span className="ml-3">→</span>
-                        </Link>
-
-                        <Link
-                            href="/contact"
-                            className="group inline-flex items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
-                        >
-                            Discuss ongoing maintenance
-                            <span className="ml-2 transition-transform group-hover:translate-x-1">
-                                →
-                            </span>
-                        </Link>
-                    </div>
+                    <Link
+                        href="/contact"
+                        className="inline-flex w-fit shrink-0 cursor-pointer items-center justify-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
+                    >
+                        Get website support
+                    </Link>
                 </div>
             </div>
         </section>

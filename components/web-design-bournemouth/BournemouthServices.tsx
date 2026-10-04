@@ -7,31 +7,36 @@ export default function BournemouthServices() {
                 {/* Intro */}
                 <div className="max-w-[820px]">
                     <div className="mb-6 flex items-center gap-3">
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <span
+                            aria-hidden="true"
+                            className="h-1.5 w-1.5 rounded-full bg-primary"
+                        />
 
                         <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                             Web design + local SEO
                         </p>
                     </div>
 
-                    <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[1] tracking-[-0.045em]">
+                    <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                         Your website should not work{" "}
-                        <span className="text-primary">in isolation.</span>
+                        <span className="text-primary">
+                            in isolation.
+                        </span>
                     </h2>
 
-                    <p className="mt-6 max-w-[650px] text-[16px] leading-7 text-text-secondary md:text-[17px]">
-                        Design, development and local SEO work together to help Bournemouth
-                        businesses get found and make the next step easier for potential
-                        customers.
+                    <p className="mt-7 max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
+                        Design, development and local SEO work together to help
+                        Bournemouth businesses get found and make the next step easier
+                        for potential customers.
                     </p>
                 </div>
 
                 {/* Bento */}
-                <div className="mt-10 grid gap-3 lg:grid-cols-[1.15fr_0.85fr]">
+                <div className="mt-12 grid gap-3 md:mt-14 lg:grid-cols-[1.15fr_0.85fr]">
                     {/* Web Design */}
                     <Link
                         href="/services/web-design"
-                        className="group relative min-h-[330px] cursor-pointer overflow-hidden rounded-[14px] border border-border bg-[var(--surface)] p-6 transition-[border-color,background-color] hover:border-primary/40 hover:bg-white/[0.02] md:p-7"
+                        className="group relative min-h-[330px] cursor-pointer overflow-hidden rounded-[14px] border border-border bg-surface p-6 transition-[border-color,background-color] hover:border-primary/40 md:p-7"
                     >
                         <div className="flex h-full flex-col">
                             {/* Top */}
@@ -40,9 +45,13 @@ export default function BournemouthServices() {
                                     Web design
                                 </p>
 
-                                <span className="flex shrink-0 items-center gap-2 text-[12px] font-medium text-text-secondary transition-colors group-hover:text-primary">
+                                <span className="flex shrink-0 items-center gap-2 text-[14px] font-medium text-text-secondary transition-colors group-hover:text-primary">
                                     Explore web design
-                                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+
+                                    <span
+                                        aria-hidden="true"
+                                        className="transition-transform duration-300 group-hover:translate-x-1"
+                                    >
                                         →
                                     </span>
                                 </span>
@@ -53,12 +62,15 @@ export default function BournemouthServices() {
                                 <h3 className="text-[clamp(1.8rem,3vw,2.8rem)] font-semibold leading-[1.03] tracking-[-0.04em] text-text-primary">
                                     Turn attention
                                     <br />
-                                    into <span className="text-primary">action.</span>
+                                    into{" "}
+                                    <span className="text-primary">
+                                        action.
+                                    </span>
                                 </h3>
 
-                                <p className="mt-5 max-w-[440px] text-[14px] leading-6 text-text-secondary">
-                                    Give potential customers a clear journey from arriving on
-                                    your website to calling, enquiring or booking.
+                                <p className="mt-5 max-w-[440px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                                    Give potential customers a clear journey from arriving
+                                    on your website to calling, enquiring or booking.
                                 </p>
                             </div>
 
@@ -84,23 +96,13 @@ export default function BournemouthServices() {
                         {/* Local SEO */}
                         <Link
                             href="/services/seo-bournemouth"
-                            className="group relative min-h-[195px] cursor-pointer overflow-hidden rounded-[14px] border border-border bg-background p-6 transition-[border-color,background-color] hover:border-primary/40 hover:bg-white/[0.02]"
+                            className="group relative min-h-[195px] cursor-pointer overflow-hidden rounded-[14px] border border-border bg-background p-6 transition-colors hover:border-primary/40"
                         >
-                            {/* Hover graphic */}
-                            <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                                <div className="absolute left-1/2 top-1/2 h-px w-full -translate-x-1/2 bg-border" />
-                                <div className="absolute left-1/2 top-1/2 h-full w-px -translate-y-1/2 bg-border" />
-                                <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border border-border" />
-                                <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary" />
-                            </div>
-
-                            <div className="relative flex h-full flex-col">
-                                {/* Label */}
+                            <div className="flex h-full flex-col">
                                 <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-primary">
                                     Local SEO
                                 </p>
 
-                                {/* Content */}
                                 <div className="pt-7">
                                     <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.16em] text-text-muted">
                                         Bournemouth
@@ -110,17 +112,20 @@ export default function BournemouthServices() {
                                         Get found by the right local searches.
                                     </h3>
 
-                                    <p className="mt-3 max-w-[390px] text-[13px] leading-6 text-text-secondary">
-                                        Connect your services and locations with the searches that
-                                        matter to your business.
+                                    <p className="mt-3 max-w-[390px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                                        Connect your services and locations with the searches
+                                        that matter to your business.
                                     </p>
                                 </div>
 
-                                {/* Action */}
                                 <div className="mt-auto flex justify-end pt-5">
-                                    <span className="flex items-center gap-2 text-[12px] font-medium text-text-secondary transition-colors group-hover:text-primary">
+                                    <span className="flex items-center gap-2 text-[14px] font-medium text-text-secondary transition-colors group-hover:text-primary">
                                         Explore local SEO
-                                        <span className="transition-transform duration-300 group-hover:translate-x-1">
+
+                                        <span
+                                            aria-hidden="true"
+                                            className="transition-transform duration-300 group-hover:translate-x-1"
+                                        >
                                             →
                                         </span>
                                     </span>
@@ -131,17 +136,15 @@ export default function BournemouthServices() {
                         {/* Web Development */}
                         <Link
                             href="/services/web-design"
-                            className="group relative min-h-[122px] cursor-pointer overflow-hidden rounded-[14px] border border-border bg-[var(--surface)] p-6 transition-[border-color,background-color] hover:border-primary/40 hover:bg-white/[0.02]"
+                            className="group relative min-h-[122px] cursor-pointer overflow-hidden rounded-[14px] border border-border bg-surface p-6 transition-colors hover:border-primary/40"
                         >
                             <div className="flex h-full flex-col">
-                                {/* Label */}
                                 <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-primary">
                                     Web development
                                 </p>
 
-                                {/* Content */}
                                 <div className="mt-5">
-                                    <h3 className="text-[19px] font-medium tracking-[-0.025em] text-text-primary">
+                                    <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                                         The foundation behind the experience.
                                     </h3>
 
@@ -152,11 +155,14 @@ export default function BournemouthServices() {
                                     </div>
                                 </div>
 
-                                {/* Action */}
                                 <div className="mt-auto flex justify-end pt-4">
-                                    <span className="flex items-center gap-2 text-[12px] font-medium text-text-secondary transition-colors group-hover:text-primary">
+                                    <span className="flex items-center gap-2 text-[14px] font-medium text-text-secondary transition-colors group-hover:text-primary">
                                         Explore development
-                                        <span className="transition-transform duration-300 group-hover:translate-x-1">
+
+                                        <span
+                                            aria-hidden="true"
+                                            className="transition-transform duration-300 group-hover:translate-x-1"
+                                        >
                                             →
                                         </span>
                                     </span>
@@ -180,6 +186,7 @@ function JourneyStep({
     return (
         <div className="flex shrink-0 items-center gap-2">
             <span
+                aria-hidden="true"
                 className={`h-1.5 w-1.5 rounded-full ${active ? "bg-primary" : "bg-text-muted"
                     }`}
             />
@@ -201,7 +208,10 @@ function JourneyLine() {
 function TechSignal({ label }: { label: string }) {
     return (
         <div className="flex items-center gap-2">
-            <span className="h-1 w-1 rounded-full bg-primary" />
+            <span
+                aria-hidden="true"
+                className="h-1 w-1 rounded-full bg-primary"
+            />
 
             <span className="text-[10px] uppercase tracking-[0.12em] text-text-muted">
                 {label}

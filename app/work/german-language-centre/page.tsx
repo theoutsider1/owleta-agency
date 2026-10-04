@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import GermanLanguageCaseHero from "@/components/work/german-language-centre/GermanLanguageCaseHero";
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
   title: "German Language Centre Website Case Study | Owlixir",
   description:
     "Explore a website project for a German language centre, focused on clearer content organisation and a better digital journey for Arabic-speaking learners.",
+  alternates: {
+    canonical: "/work/german-language-centre",
+  },
 };
 
 export default function GermanLanguageCentreCaseStudy() {

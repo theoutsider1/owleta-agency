@@ -10,6 +10,7 @@ const faqs = [
                     required, the functionality involved and whether you need support
                     with content, SEO or other parts of the project.
                 </p>
+
                 <p className="mt-3">
                     Once we understand what you need, we can define the scope and provide
                     a written quote before the project starts.
@@ -27,7 +28,7 @@ const faqs = [
                 the way.{" "}
                 <Link
                     href="/services/website-redesign"
-                    className="font-medium text-text-primary underline decoration-border underline-offset-4 transition-colors hover:text-primary"
+                    className="cursor-pointer font-medium text-text-primary underline decoration-border underline-offset-4 transition-colors hover:text-primary"
                 >
                     Explore website redesign
                 </Link>
@@ -45,7 +46,7 @@ const faqs = [
                 customers are looking for.{" "}
                 <Link
                     href="/services/seo-bournemouth"
-                    className="font-medium text-text-primary underline decoration-border underline-offset-4 transition-colors hover:text-primary"
+                    className="cursor-pointer font-medium text-text-primary underline decoration-border underline-offset-4 transition-colors hover:text-primary"
                 >
                     Explore SEO for Bournemouth businesses
                 </Link>
@@ -69,9 +70,9 @@ const faqs = [
         answer: (
             <p>
                 No. Owlixir works with businesses internationally. This service is
-                specifically focused on businesses operating in or serving Bournemouth
-                and the surrounding area, with website strategy shaped around their
-                customers, services and local search needs.
+                specifically focused on businesses operating in or serving Bournemouth,
+                with website strategy shaped around their customers, services and local
+                search needs.
             </p>
         ),
     },
@@ -82,46 +83,55 @@ export default function BournemouthFAQ() {
         <section className="section-space border-t border-border">
             <div className="site-container">
                 <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+                    {/* Intro */}
                     <div className="max-w-[470px]">
                         <div className="mb-6 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
+
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 Frequently asked questions
                             </p>
                         </div>
 
-                        <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[1] tracking-[-0.045em]">
+                        <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Questions before starting a{" "}
-                            <span className="text-primary">website project?</span>
+                            <span className="text-primary">
+                                website project?
+                            </span>
                         </h2>
 
-                        <p className="mt-6 max-w-[430px] text-[16px] leading-7 text-text-secondary md:text-[17px]">
+                        <p className="mt-7 max-w-[430px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
                             A few things Bournemouth businesses often want to know before
                             deciding what their website needs.
                         </p>
                     </div>
 
+                    {/* Questions */}
                     <div className="border-t border-border">
                         {faqs.map((faq) => (
                             <details
                                 key={faq.question}
                                 className="group border-b border-border"
                             >
-                                <summary className="flex cursor-pointer list-none items-center justify-between gap-8 py-6 text-left [&::-webkit-details-marker]:hidden">
-                                    <span className="text-[17px] font-medium leading-6 text-text-primary md:text-[18px]">
+                                <summary className="flex cursor-pointer list-none items-start justify-between gap-8 py-7 text-left md:py-8 [&::-webkit-details-marker]:hidden">
+                                    <span className="max-w-2xl text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                                         {faq.question}
                                     </span>
 
                                     <span
                                         aria-hidden="true"
-                                        className="relative h-4 w-4 shrink-0"
+                                        className="relative mt-1 h-5 w-5 shrink-0 text-text-muted transition-colors group-hover:text-primary group-open:text-primary"
                                     >
-                                        <span className="absolute left-0 top-1/2 h-px w-4 -translate-y-1/2 bg-text-secondary" />
-                                        <span className="absolute left-1/2 top-0 h-4 w-px -translate-x-1/2 bg-text-secondary transition-transform duration-200 group-open:rotate-90 group-open:opacity-0" />
+                                        <span className="absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 -translate-y-1/2 bg-current" />
+
+                                        <span className="absolute left-1/2 top-1/2 h-4 w-px -translate-x-1/2 -translate-y-1/2 bg-current transition-all duration-300 group-open:rotate-90 group-open:opacity-0" />
                                     </span>
                                 </summary>
 
-                                <div className="max-w-[680px] pb-7 pr-8 text-[14px] leading-6 text-text-secondary md:text-[15px] md:leading-7">
+                                <div className="max-w-[680px] pb-8 pr-8 text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                     {faq.answer}
                                 </div>
                             </details>

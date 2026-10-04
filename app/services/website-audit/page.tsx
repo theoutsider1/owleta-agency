@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import WebsiteAuditHero from "@/components/website-audit/WebsiteAuditHero";
@@ -14,7 +15,10 @@ import AuditCTA from "@/components/website-audit/AuditCTA";
 export const metadata: Metadata = {
     title: "Website Audit Services for UK Businesses | Owlixir",
     description:
-        "Detailed website audits for UK businesses covering customer journeys, SEO, technical health and conversion opportunities, with clear priorities and recommendations.",
+        "Detailed website audits for UK businesses covering customer journeys, SEO, technical health and conversion paths, with clear priorities and recommendations.",
+    alternates: {
+        canonical: "/services/website-audit",
+    },
 };
 
 type ServiceType = "check" | "audit";
@@ -32,6 +36,7 @@ export default async function WebsiteAuditPage({
     return (
         <>
             <Navigation />
+
             <main>
                 <WebsiteAuditHero />
                 <AuditWhy />
@@ -43,6 +48,7 @@ export default async function WebsiteAuditPage({
                 <WebsiteAuditFAQ />
                 <AuditCTA />
             </main>
+
             <Footer />
         </>
     );

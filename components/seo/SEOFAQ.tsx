@@ -12,12 +12,12 @@ const faqs = [
     {
         question: "Can you guarantee Google rankings?",
         answer:
-            "Search rankings are controlled by search engines and can change over time, so specific positions cannot be guaranteed. The focus is on improving the website's relevance, structure and technical foundations while measuring how organic visibility develops.",
+            "No specific search position can be guaranteed. Rankings are determined by search engines and can change over time. The focus is on improving relevance, structure and technical foundations, then measuring how search visibility and organic performance develop.",
     },
     {
         question: "What is the difference between on-page SEO and technical SEO?",
         answer:
-            "On-page SEO focuses on individual pages, including their content, headings, search intent and relevance. Technical SEO focuses on the underlying website factors that can affect crawling, indexing, performance and how search engines access and understand those pages.",
+            "On-page SEO focuses on individual pages, including their content, headings, search intent and relevance. Technical SEO focuses on underlying website factors that can affect crawling, indexing, performance and how search engines access and understand those pages.",
     },
     {
         question: "Do I need Local SEO instead?",
@@ -38,13 +38,16 @@ const faqs = [
 
 export default function SEOFAQ() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
                     {/* Intro */}
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 SEO FAQ
@@ -53,12 +56,14 @@ export default function SEOFAQ() {
 
                         <h2 className="max-w-[520px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Before you invest in{" "}
-                            <span className="text-primary">SEO.</span>
+                            <span className="text-primary">
+                                SEO.
+                            </span>
                         </h2>
 
                         <p className="mt-6 max-w-[500px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            A few useful things to understand about scope, expectations and
-                            how SEO work is approached.
+                            A few useful things to understand about scope,
+                            expectations and how SEO work is approached.
                         </p>
                     </div>
 
@@ -75,14 +80,14 @@ export default function SEOFAQ() {
                                             {String(index + 1).padStart(2, "0")}
                                         </span>
 
-                                        <h3 className="text-[17px] font-semibold leading-6 tracking-[-0.02em] text-text-primary md:text-[18px]">
+                                        <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                                             {faq.question}
                                         </h3>
                                     </div>
 
                                     <span
                                         aria-hidden="true"
-                                        className="mt-1 text-[18px] font-light text-text-muted transition-transform duration-200 group-open:rotate-45"
+                                        className="mt-1 shrink-0 text-[18px] font-light text-text-muted transition-transform duration-200 group-open:rotate-45"
                                     >
                                         +
                                     </span>

@@ -1,5 +1,3 @@
-// components/seo/SEOFoundations.tsx
-
 const foundations = [
     {
         number: "01",
@@ -9,7 +7,7 @@ const foundations = [
     },
     {
         number: "02",
-        title: "Pages & content",
+        title: "Pages and content",
         text: "Give important searches a useful destination with pages that clearly answer what people are looking for.",
         detail: "Services · structure · content",
     },
@@ -27,15 +25,26 @@ const foundations = [
     },
 ];
 
+const relationship = [
+    "Search demand",
+    "Relevant page",
+    "Clear structure",
+    "Accessible website",
+    "Organic visibility",
+];
+
 export default function SEOFoundations() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Intro */}
                 <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 What SEO involves
@@ -44,21 +53,23 @@ export default function SEOFoundations() {
 
                         <h2 className="max-w-[620px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             SEO is more than adding{" "}
-                            <span className="text-primary">keywords to pages.</span>
+                            <span className="text-primary">
+                                keywords to pages.
+                            </span>
                         </h2>
                     </div>
 
                     <div className="flex items-end">
                         <p className="max-w-[620px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            Stronger search visibility comes from connecting what people are
-                            looking for with useful pages, clear website structure and solid
-                            technical foundations.
+                            Stronger search visibility comes from connecting what people
+                            are looking for with useful pages, clear website structure
+                            and solid technical foundations.
                         </p>
                     </div>
                 </div>
 
-                {/* System */}
-                <div className="relative mt-14">
+                {/* Foundations */}
+                <div className="relative mt-14 lg:mt-16">
                     {/* Desktop connection */}
                     <div
                         aria-hidden="true"
@@ -69,11 +80,14 @@ export default function SEOFoundations() {
                         {foundations.map((item) => (
                             <div
                                 key={item.number}
-                                className="relative border-b border-border py-7 first:pt-0 lg:border-b-0 lg:border-r lg:px-7 lg:py-0 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
+                                className="relative border-b border-border py-7 first:pt-0 lg:min-w-0 lg:border-b-0 lg:border-r lg:px-7 lg:py-0 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
                             >
                                 {/* Point */}
                                 <div className="relative z-10 mb-6 flex items-center gap-3 lg:block">
-                                    <span className="block h-3 w-3 rounded-full border-[3px] border-background bg-primary" />
+                                    <span
+                                        aria-hidden="true"
+                                        className="block h-3 w-3 rounded-full border-[3px] border-background bg-primary"
+                                    />
 
                                     <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-text-muted lg:mt-5 lg:block">
                                         {item.number}
@@ -84,7 +98,7 @@ export default function SEOFoundations() {
                                     {item.title}
                                 </h3>
 
-                                <p className="mt-3 text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                                <p className="mt-3 w-full text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                     {item.text}
                                 </p>
 
@@ -97,19 +111,16 @@ export default function SEOFoundations() {
                 </div>
 
                 {/* Relationship */}
-                <div className="mt-14 border-y border-border py-7">
-                    <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-center md:gap-6">
-                        {[
-                            "Search demand",
-                            "Relevant page",
-                            "Clear structure",
-                            "Accessible website",
-                            "Organic visibility",
-                        ].map((item, index, array) => (
-                            <div key={item} className="flex items-center gap-4 md:gap-6">
+                <div className="mt-14 border-y border-border py-7 lg:mt-16">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-center md:gap-6">
+                        {relationship.map((item, index) => (
+                            <div
+                                key={item}
+                                className="flex flex-col md:flex-row md:items-center md:gap-6"
+                            >
                                 <span
                                     className={
-                                        index === array.length - 1
+                                        index === relationship.length - 1
                                             ? "text-[11px] font-semibold uppercase tracking-[0.14em] text-primary"
                                             : "text-[11px] font-medium uppercase tracking-[0.14em] text-text-muted"
                                     }
@@ -117,12 +128,13 @@ export default function SEOFoundations() {
                                     {item}
                                 </span>
 
-                                {index < array.length - 1 && (
+                                {index < relationship.length - 1 && (
                                     <span
                                         aria-hidden="true"
-                                        className="text-[14px] text-text-muted"
+                                        className="my-2 text-[14px] text-text-muted md:my-0"
                                     >
-                                        →
+                                        <span className="md:hidden">↓</span>
+                                        <span className="hidden md:inline">→</span>
                                     </span>
                                 )}
                             </div>

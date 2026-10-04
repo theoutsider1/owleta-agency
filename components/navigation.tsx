@@ -1,162 +1,287 @@
-// "use client"
+"use client";
 
-// import { useState, useEffect } from "react"
-// import { Menu, X } from "lucide-react"
-// import Image from "next/image"
-// import Link from "next/link"
-
-// export function Navigation() {
-//   const [isScrolled, setIsScrolled] = useState(false)
-//   const [isNavOpen, setIsNavOpen] = useState(false)
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setIsScrolled(window.scrollY > 20)
-//     }
-//     window.addEventListener("scroll", handleScroll)
-//     return () => window.removeEventListener("scroll", handleScroll)
-//   }, [])
-
-//   const scrollToSection = (id: string) => {
-//     const element = document.getElementById(id)
-//     if (element) {
-//       element.scrollIntoView({ behavior: "smooth" })
-//       setIsNavOpen(false)
-//     }
-//   }
-
-//   const navLinks = [
-//     { href: "#services", label: "Services" },
-//     { href: "#work", label: "Work" },
-//     { href: "#process", label: "Process" },
-//     { href: "#why-choose-us", label: "Why Owlixir" },
-//     { href: "#contact", label: "Get Started" },
-//   ]
-
-//   return (
-//     <nav
-//       className={`${
-//         isNavOpen
-//           ? "fixed inset-0 z-40 bg-background/50 backdrop-blur-lg flex flex-col items-center gap-6 p-8"
-//           : "fixed top-2 md:top-4 left-1/2 z-50 w-11/12 md:w-2/6 transform -translate-x-1/2 bg-background/30 backdrop-blur-lg border rounded-full"
-//       }`}
-//       aria-label="Main Navigation"
-//     >
-//       <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
-//         <div className="flex items-center justify-between h-12 md:h-14">
-//           {/* Logo */}
-//           <Link
-//             href={"/"}
-//             onClick={() => scrollToSection("hero")}
-//             className="flex justify-center items-center text-2xl font-bold tracking-tight hover:opacity-80 transition-opacity"
-//           >
-//             <Image
-//               src="/Owlixir-logo.png"
-//               alt="Owlixir Logo"
-//               width={30}
-//               height={40}
-//               className="ml-2 shrink-0 w-7 h-9 sm:w-7 sm:h-9 md:w-8 md:h-10 lg:w-10 lg:h-12"
-//             />
-//           </Link>
-
-//           {/* Mobile Menu Button */}
-//           <button
-//             onClick={() => setIsNavOpen(!isNavOpen)}
-//             aria-controls="mobile-menu"
-//             aria-expanded={isNavOpen}
-//             className="flex p-2 text-foreground"
-//           >
-//             {isNavOpen ? <X size={20} /> : <Menu size={20} />}
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* Mobile Menu */}
-//       <div
-//         id="mobile-menu"
-//         role="menu"
-//         className={`flex flex-col items-center gap-4 mt-8 w-full ${
-//           isNavOpen ? "block" : "hidden"
-//         }`}
-//       >
-//         {navLinks.map((link) =>
-//           link.label === "Get Started" ? (
-//             <div key={link.href} className="flex justify-center px-4 pt-2 w-full">
-//               <Link
-//                 href={link.href}
-//                 onClick={() => scrollToSection("contact")}
-//                 role="menuitem"
-//                 className=" text-center bg-primary px-6 py-2 rounded-md text-md font-medium text-background hover:text-foreground transition-colors"
-//               >
-//                 {link.label}
-//               </Link>
-//             </div>
-//           ) : (
-//             <Link
-//               key={link.href}
-//               href={link.href}
-//               role="menuitem"
-//               className="text-center px-4 py-2 text-md font-medium text-muted-foreground hover:text-foreground transition-colors"
-//               onClick={() => scrollToSection(link.href.slice(1))}
-//             >
-//               {link.label}
-//             </Link>
-//           )
-//         )}
-//       </div>
-//     </nav>
-//   )
-// }
 import Link from "next/link";
+import { useState } from "react";
+
+const services = [
+  {
+    label: "Web Design",
+    description: "Websites built around your business goals.",
+    href: "/services/web-design",
+  },
+  {
+    label: "Website Redesign",
+    description: "Improve what is holding your website back.",
+    href: "/services/website-redesign",
+  },
+  {
+    label: "SEO",
+    description: "Improve visibility and help the right people find you.",
+    href: "/services/seo",
+  },
+  {
+    label: "Website Maintenance",
+    description: "Keep your website reliable, current and supported.",
+    href: "/services/website-maintenance",
+  },
+  {
+    label: "Website Audit",
+    description: "Find what deserves attention before changing things.",
+    href: "/services/website-audit",
+  },
+];
 
 export default function Navigation() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
+  const closeMobileMenu = () => {
+    setMobileOpen(false);
+    setMobileServicesOpen(false);
+  };
+
   return (
-    <header className="relative z-50 border-b border-border">
-      <div className="site-container flex h-[82px] items-center justify-between">
-        <Link
-          href="/"
-          className="text-[22px] font-semibold tracking-[-0.04em]"
-        >
-          Owlix<span className="text-primary">i</span>r
-        </Link>
+    <header className="relative z-50">
+      <div className="px-4 pt-5 md:px-6 md:pt-6">
+        {/* Floating navbar */}
+        <div className="relative mx-auto flex h-[68px] w-full max-w-[1180px] items-center justify-between rounded-full border border-border bg-surface px-4 md:w-[75%] md:min-w-[720px] md:px-5 lg:min-w-[850px]">
+          {/* Brand */}
+          <Link
+            href="/"
+            onClick={closeMobileMenu}
+            aria-label="Owlixir home"
+            className="cursor-pointer text-[22px] font-semibold tracking-[-0.04em] text-text-primary"
+          >
+            Owlix<span className="text-primary">i</span>r
+          </Link>
 
-        <nav className="hidden items-center gap-9 text-[14px] text-text-secondary md:flex">
-          <a className="transition-colors hover:text-text-primary" href="#services">
-            Services
-          </a>
+          {/* Desktop navigation */}
+          <nav
+            aria-label="Primary navigation"
+            className="absolute left-1/2 hidden -translate-x-1/2 items-center md:flex"
+          >
+            {/* Services */}
+            <div className="group relative">
+              <button
+                type="button"
+                className="flex cursor-pointer items-center gap-1.5 rounded-full px-4 py-2.5 text-[14px] font-medium text-text-secondary transition-colors hover:bg-surface-raised hover:text-text-primary"
+              >
+                Services
 
-          <a className="transition-colors hover:text-text-primary" href="#work">
-            Work
-          </a>
+                <svg
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  aria-hidden="true"
+                  className="h-3 w-3 transition-transform duration-200 group-hover:rotate-180"
+                >
+                  <path
+                    d="M3 4.5L6 7.5L9 4.5"
+                    stroke="currentColor"
+                    strokeWidth="1.25"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
 
-          <a className="transition-colors hover:text-text-primary" href="#insights">
-            Insights
-          </a>
+              {/* Dropdown */}
+              <div className="invisible absolute left-1/2 top-full w-[390px] -translate-x-1/2 pt-4 opacity-0 transition-[opacity,visibility] duration-200 group-hover:visible group-hover:opacity-100">
+                <div className="overflow-hidden rounded-[16px] border border-border-strong bg-surface p-2 shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
+                  <div className="px-3 pb-2 pt-2">
+                    <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-text-muted">
+                      Services
+                    </p>
+                  </div>
 
-          <a className="transition-colors hover:text-text-primary" href="#about">
-            About
-          </a>
+                  {services.map((service) => (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      className="group/item flex cursor-pointer items-start justify-between gap-5 rounded-[10px] px-3 py-3 transition-colors hover:bg-surface-raised"
+                    >
+                      <div>
+                        <p className="text-[14px] font-medium text-text-primary">
+                          {service.label}
+                        </p>
 
-          <a className="transition-colors hover:text-text-primary" href="#contact">
-            Contact
-          </a>
-        </nav>
+                        <p className="mt-1 text-[12px] leading-5 text-text-muted">
+                          {service.description}
+                        </p>
+                      </div>
 
-        <a
-          href="#contact"
-          className="hidden rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover md:inline-flex"
-        >
-          Start a project
-          <span className="ml-2">→</span>
-        </a>
+                      <span
+                        aria-hidden="true"
+                        className="mt-0.5 text-[13px] text-text-muted transition-[color,transform] group-hover/item:translate-x-0.5 group-hover/item:text-primary"
+                      >
+                        →
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
 
-        <button
-          type="button"
-          aria-label="Open menu"
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-border-strong md:hidden"
-        >
-          <span className="text-xl">☰</span>
-        </button>
+            <Link
+              href="/work"
+              className="cursor-pointer rounded-full px-4 py-2.5 text-[14px] font-medium text-text-secondary transition-colors hover:bg-surface-raised hover:text-text-primary"
+            >
+              Work
+            </Link>
+
+            <Link
+              href="/about"
+              className="cursor-pointer rounded-full px-4 py-2.5 text-[14px] font-medium text-text-secondary transition-colors hover:bg-surface-raised hover:text-text-primary"
+            >
+              About
+            </Link>
+          </nav>
+
+          {/* Desktop CTA */}
+          <Link
+            href="/contact"
+            className="hidden cursor-pointer items-center rounded-full bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover md:inline-flex"
+          >
+            Start a project
+
+            <span className="ml-2" aria-hidden="true">
+              →
+            </span>
+          </Link>
+
+          {/* Mobile trigger */}
+          <button
+            type="button"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((current) => !current)}
+            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-border-strong text-text-primary transition-colors hover:bg-surface-raised md:hidden"
+          >
+            {mobileOpen ? (
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+                className="h-[18px] w-[18px]"
+              >
+                <path
+                  d="M5 5L15 15M15 5L5 15"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ) : (
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+                className="h-[18px] w-[18px]"
+              >
+                <path
+                  d="M4 6H16M4 10H16M4 14H16"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        {/* Mobile panel */}
+        {mobileOpen && (
+          <div className="mx-auto mt-2 w-full overflow-hidden rounded-[18px] border border-border bg-surface md:hidden">
+            <nav
+              aria-label="Mobile navigation"
+              className="px-4 pb-4"
+            >
+              <div className="border-b border-border">
+                <button
+                  type="button"
+                  aria-expanded={mobileServicesOpen}
+                  onClick={() =>
+                    setMobileServicesOpen(
+                      (current) => !current
+                    )
+                  }
+                  className="flex w-full cursor-pointer items-center justify-between py-4 text-left text-[15px] font-medium text-text-primary"
+                >
+                  Services
+
+                  <svg
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    aria-hidden="true"
+                    className={`h-3 w-3 text-text-muted transition-transform duration-200 ${mobileServicesOpen
+                        ? "rotate-180"
+                        : ""
+                      }`}
+                  >
+                    <path
+                      d="M3 4.5L6 7.5L9 4.5"
+                      stroke="currentColor"
+                      strokeWidth="1.25"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+
+                {mobileServicesOpen && (
+                  <div className="pb-4">
+                    {services.map((service) => (
+                      <Link
+                        key={service.href}
+                        href={service.href}
+                        onClick={closeMobileMenu}
+                        className="group flex cursor-pointer items-center justify-between gap-4 rounded-[8px] px-3 py-3 transition-colors hover:bg-surface-raised"
+                      >
+                        <span className="text-[14px] text-text-secondary transition-colors group-hover:text-text-primary">
+                          {service.label}
+                        </span>
+
+                        <span
+                          aria-hidden="true"
+                          className="text-[12px] text-text-muted transition-colors group-hover:text-primary"
+                        >
+                          →
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link
+                href="/work"
+                onClick={closeMobileMenu}
+                className="block cursor-pointer border-b border-border py-4 text-[15px] font-medium text-text-primary"
+              >
+                Work
+              </Link>
+
+              <Link
+                href="/about"
+                onClick={closeMobileMenu}
+                className="block cursor-pointer border-b border-border py-4 text-[15px] font-medium text-text-primary"
+              >
+                About
+              </Link>
+
+              <Link
+                href="/contact"
+                onClick={closeMobileMenu}
+                className="mt-4 inline-flex w-full cursor-pointer items-center justify-center rounded-full bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-primary-hover"
+              >
+                Start a project
+
+                <span className="ml-2" aria-hidden="true">
+                  →
+                </span>
+              </Link>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );

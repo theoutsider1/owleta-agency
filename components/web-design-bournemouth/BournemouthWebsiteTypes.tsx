@@ -7,27 +7,32 @@ export default function BournemouthWebsiteTypes() {
                 {/* Intro */}
                 <div className="max-w-[820px]">
                     <div className="mb-6 flex items-center gap-3">
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <span
+                            aria-hidden="true"
+                            className="h-1.5 w-1.5 rounded-full bg-primary"
+                        />
 
                         <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                             Websites we build
                         </p>
                     </div>
 
-                    <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[1] tracking-[-0.045em]">
+                    <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                         Different businesses need websites to do{" "}
-                        <span className="text-primary">different jobs.</span>
+                        <span className="text-primary">
+                            different jobs.
+                        </span>
                     </h2>
 
-                    <p className="mt-6 max-w-[680px] text-[16px] leading-7 text-text-secondary md:text-[17px]">
+                    <p className="mt-7 max-w-[680px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
                         Whether you need a new business website, a custom build or a
-                        flexible WordPress website, the right approach depends on what your
-                        business needs to achieve.
+                        flexible WordPress website, the right approach depends on what
+                        your business needs to achieve.
                     </p>
                 </div>
 
                 {/* Website options */}
-                <div className="mt-12 grid border-y border-border md:grid-cols-2">
+                <div className="mt-12 grid border-y border-border md:mt-14 md:grid-cols-2">
                     <WebsiteType
                         label="Business websites"
                         title="A stronger online presence."
@@ -57,33 +62,36 @@ export default function BournemouthWebsiteTypes() {
                 </div>
 
                 {/* Two routes */}
-                <div className="mt-8 flex flex-col justify-between gap-7 md:flex-row md:items-center">
+                <div className="mt-10 flex flex-col justify-between gap-8 md:flex-row md:items-end">
                     <div className="max-w-[520px]">
-                        <p className="text-[16px] font-medium text-text-primary">
+                        <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                             Know what you need, or still figuring it out?
-                        </p>
+                        </h3>
 
-                        <p className="mt-2 text-[14px] leading-6 text-text-secondary">
-                            Start a project if you already have something in mind, or let us
-                            look at your existing website first.
+                        <p className="mt-3 text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                            Start a project if you already have something in mind, or let
+                            us look at your existing website first.
                         </p>
                     </div>
 
                     <div className="flex flex-wrap items-center gap-5">
                         <Link
                             href="/contact"
-                            className="inline-flex items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
+                            className="inline-flex cursor-pointer items-center justify-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                         >
                             Start a project
-                            <span className="ml-3">→</span>
                         </Link>
 
                         <Link
-                            href="/website-check"
-                            className="group inline-flex items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
+                            href="/services/website-audit/?service=check#request"
+                            className="group inline-flex cursor-pointer items-center gap-2 text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                         >
                             Get a website check
-                            <span className="ml-2 transition-transform group-hover:translate-x-1">
+
+                            <span
+                                aria-hidden="true"
+                                className="transition-transform group-hover:translate-x-1"
+                            >
                                 →
                             </span>
                         </Link>
@@ -111,11 +119,11 @@ function WebsiteType({
                 {label}
             </p>
 
-            <h3 className="mt-8 max-w-[430px] text-[clamp(1.5rem,2.2vw,2.1rem)] font-medium leading-[1.1] tracking-[-0.03em] text-text-primary">
+            <h3 className="mt-6 max-w-[430px] text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                 {title}
             </h3>
 
-            <p className="mt-4 max-w-[470px] text-[14px] leading-6 text-text-secondary">
+            <p className="mt-3 max-w-[470px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                 {description}
             </p>
         </div>

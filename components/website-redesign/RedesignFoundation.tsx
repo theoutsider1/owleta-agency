@@ -2,27 +2,31 @@ export default function RedesignFoundation() {
     return (
         <section className="section-space-tight">
             <div className="site-container">
-                {/* Intro + decision */}
+                {/* Intro + technical decision */}
                 <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
                     <div className="max-w-[560px]">
                         <div className="mb-6 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
-                                Redesigning an existing website
+                                The existing foundation
                             </p>
                         </div>
 
-                        <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[1] tracking-[-0.045em] text-text-primary">
-                            Your website may not need to be{" "}
-                            <span className="text-primary">rebuilt from scratch.</span>
+                        <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
+                            A redesign can work with what you have,{" "}
+                            <span className="text-primary">
+                                when the foundation still works.
+                            </span>
                         </h2>
 
-                        <p className="mt-6 max-w-[520px] text-[16px] leading-7 text-text-secondary md:text-[17px]">
-                            A website redesign can mean improving the website you already
-                            have, or rebuilding it when the current setup limits what can be
-                            changed. We look at the design, content, functionality,
-                            performance and SEO before deciding which approach makes sense.
+                        <p className="mt-7 max-w-[520px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
+                            Before changing the underlying setup, we look at whether the
+                            current website can support the design, functionality,
+                            performance and future changes the business needs.
                         </p>
                     </div>
 
@@ -31,43 +35,49 @@ export default function RedesignFoundation() {
                         <div className="border-l border-border pl-6 md:pl-9">
                             <div>
                                 <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-primary">
-                                    Improve
+                                    Existing foundation
                                 </p>
 
-                                <h3 className="mt-4 text-[24px] font-medium leading-[1.15] tracking-[-0.03em] text-text-primary md:text-[28px]">
-                                    Improve the website you already have.
+                                <h3 className="mt-4 text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
+                                    Keep the underlying setup when it still supports the
+                                    website.
                                 </h3>
 
-                                <p className="mt-4 max-w-[610px] text-[14px] leading-6 text-text-secondary">
-                                    If your current website can support the changes you need, we
-                                    can redesign key pages, improve the customer journey,
-                                    reorganise content, strengthen calls to action and update
-                                    functionality without replacing everything underneath.
+                                <p className="mt-3 max-w-[610px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                                    If the current platform and structure can support the
+                                    changes, the redesign can focus on the pages, content,
+                                    customer journey and functionality that need improvement
+                                    without replacing everything underneath.
                                 </p>
                             </div>
 
-                            <div className="my-9 flex items-center gap-4">
-                                <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-text-muted">
+                            <div
+                                aria-hidden="true"
+                                className="my-9 flex items-center gap-4"
+                            >
+                                <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-text-muted">
                                     or
                                 </span>
+
                                 <span className="h-px flex-1 bg-border" />
                             </div>
 
                             <div>
                                 <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-primary">
-                                    Rebuild
+                                    New foundation
                                 </p>
 
-                                <h3 className="mt-4 text-[24px] font-medium leading-[1.15] tracking-[-0.03em] text-text-primary md:text-[28px]">
-                                    Rebuild when the current website is getting in the way.
+                                <h3 className="mt-4 text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
+                                    Rebuild the foundation when it limits meaningful
+                                    improvements.
                                 </h3>
 
-                                <p className="mt-4 max-w-[610px] text-[14px] leading-6 text-text-secondary">
-                                    Sometimes an outdated theme, page builder, code or website
-                                    structure makes meaningful improvements difficult. In that
-                                    case, rebuilding can give the redesigned website better
-                                    performance, cleaner functionality and more flexibility for
-                                    future changes.
+                                <p className="mt-3 max-w-[610px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                                    An outdated theme, restrictive page builder, difficult
+                                    codebase or unsuitable structure can make improvements
+                                    harder to implement and maintain. In those cases, rebuilding
+                                    the underlying setup can create a cleaner base for the
+                                    redesigned website.
                                 </p>
                             </div>
                         </div>
@@ -75,17 +85,17 @@ export default function RedesignFoundation() {
                 </div>
 
                 {/* Platform-specific redesign */}
-                <div className="mt-16 grid gap-10 md:grid-cols-2 md:gap-14">
+                <div className="mt-14 grid gap-10 md:mt-16 md:grid-cols-2 md:gap-14">
                     <div className="border-t border-border pt-6">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.17em] text-primary">
+                        <p className="text-[10px] font-medium uppercase tracking-[0.17em] text-primary">
                             WordPress website redesign
                         </p>
 
-                        <h3 className="mt-4 text-[21px] font-medium leading-[1.2] tracking-[-0.025em] text-text-primary">
+                        <h3 className="mt-4 text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                             Already have a WordPress website?
                         </h3>
 
-                        <p className="mt-4 max-w-[520px] text-[14px] leading-6 text-text-secondary">
+                        <p className="mt-3 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                             We can redesign the experience, structure and content while
                             keeping WordPress when it still suits the business. If an
                             outdated theme, page builder or plugin setup is causing problems,
@@ -95,15 +105,15 @@ export default function RedesignFoundation() {
                     </div>
 
                     <div className="border-t border-border pt-6">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.17em] text-primary">
+                        <p className="text-[10px] font-medium uppercase tracking-[0.17em] text-primary">
                             Custom website redesign
                         </p>
 
-                        <h3 className="mt-4 text-[21px] font-medium leading-[1.2] tracking-[-0.025em] text-text-primary">
+                        <h3 className="mt-4 text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                             Need something more specific?
                         </h3>
 
-                        <p className="mt-4 max-w-[520px] text-[14px] leading-6 text-text-secondary">
+                        <p className="mt-3 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                             For websites with more specific requirements, a redesign can
                             include a custom build around the functionality, performance and
                             customer journey the business actually needs.

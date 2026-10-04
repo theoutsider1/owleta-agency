@@ -5,7 +5,8 @@ export default function SelectedWork() {
     return (
         <section
             id="work"
-            className="relative overflow-hidden pt-16 pb-20 md:pt-20 md:pb-24 lg:pt-24 lg:pb-28">
+            className="relative overflow-hidden pt-16 pb-20 md:pt-20 md:pb-24 lg:pt-24 lg:pb-28"
+        >
             <div className="site-container">
                 {/* Section intro */}
                 <div className="grid gap-8 border-t border-border pt-8 lg:grid-cols-[1fr_0.72fr] lg:items-end">
@@ -18,15 +19,15 @@ export default function SelectedWork() {
                             </p>
                         </div>
 
-                        <h2 className="max-w-[650px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.05em]">
+                        <h2 className="max-w-[650px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em]">
                             Built around real
                             <br />
-                            <span className="text-white/65">business goals.</span>
+                            <span className="text-primary">business goals.</span>
                         </h2>
                     </div>
 
                     <div className="max-w-[500px] lg:justify-self-end">
-                        <p className="text-[16px] leading-7 text-text-secondary md:text-[17px]">
+                        <p className="text-[17px] leading-7 text-text-secondary md:text-[18px]">
                             Different businesses need different things from their websites.
                             Here are two projects shaped around what each business actually
                             needed to achieve.
@@ -34,7 +35,7 @@ export default function SelectedWork() {
 
                         <Link
                             href="/work"
-                            className="group mt-6 inline-flex items-center text-[13px] font-medium text-text-primary"
+                            className="group mt-6 inline-flex cursor-pointer items-center text-[14px] font-medium text-text-primary"
                         >
                             View all work
                             <span className="ml-2 transition-transform group-hover:translate-x-1">
@@ -44,11 +45,7 @@ export default function SelectedWork() {
                     </div>
                 </div>
 
-                {/* =====================================================
-            PROJECT 01
-            Text → Visual
-        ====================================================== */}
-
+                {/* Project 01 */}
                 <article className="grid gap-12 py-24 md:py-28 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-20">
                     <div className="max-w-[440px]">
                         <p className="text-[10px] font-medium uppercase tracking-[0.17em] text-primary">
@@ -61,7 +58,7 @@ export default function SelectedWork() {
                             Locksmiths
                         </h3>
 
-                        <p className="mt-7 text-[16px] leading-7 text-text-secondary">
+                        <p className="mt-7 text-[17px] leading-7 text-text-secondary md:text-[18px]">
                             A local locksmith website built around a clearer journey from
                             search to service, then from service to enquiry.
                         </p>
@@ -73,8 +70,8 @@ export default function SelectedWork() {
                         </div>
 
                         <Link
-                            href="/work/lock-key-locksmiths"
-                            className="group mt-9 inline-flex items-center text-[13px] font-medium text-text-primary"
+                            href="/work/bournemouth-locksmith"
+                            className="group mt-9 inline-flex cursor-pointer items-center text-[14px] font-medium text-text-primary"
                         >
                             View project
                             <span className="ml-2 transition-transform group-hover:translate-x-1">
@@ -93,11 +90,7 @@ export default function SelectedWork() {
                 {/* Divider */}
                 <div className="h-px bg-border" />
 
-                {/* =====================================================
-            PROJECT 02
-            Visual → Text
-        ====================================================== */}
-
+                {/* Project 02 */}
                 <article className="grid gap-12 py-24 md:py-28 lg:grid-cols-[1.18fr_0.82fr] lg:items-center lg:gap-20">
                     <ProjectPreview
                         src="/work/german-language-centre-homepage.png"
@@ -116,7 +109,7 @@ export default function SelectedWork() {
                             Language Centre
                         </h3>
 
-                        <p className="mt-7 text-[16px] leading-7 text-text-secondary">
+                        <p className="mt-7 text-[17px] leading-7 text-text-secondary md:text-[18px]">
                             An Arabic-language website designed to present the centre,
                             courses and learning opportunities clearly to prospective
                             students.
@@ -129,7 +122,7 @@ export default function SelectedWork() {
 
                         <Link
                             href="/work/german-language-centre"
-                            className="group mt-9 inline-flex items-center text-[13px] font-medium text-text-primary"
+                            className="group mt-9 inline-flex cursor-pointer items-center text-[14px] font-medium text-text-primary"
                         >
                             View project
                             <span className="ml-2 transition-transform group-hover:translate-x-1">
@@ -158,15 +151,15 @@ function ProjectPreview({
         <div className="w-full lg:max-w-[760px]">
             <div
                 className={`group overflow-hidden rounded-[16px] border shadow-[0_24px_70px_rgba(0,0,0,0.28)] ${isLight
-                    ? "border-black/10 bg-[#f1f1ef]"
-                    : "border-border-strong bg-surface"
+                        ? "border-black/10 bg-[#f1f1ef]"
+                        : "border-border-strong bg-surface"
                     }`}
             >
                 {/* Small browser chrome */}
                 <div
                     className={`flex h-10 items-center px-4 ${isLight
-                        ? "border-b border-black/[0.08] bg-[#e9e9e7]"
-                        : "border-b border-border bg-surface-raised"
+                            ? "border-b border-black/[0.08] bg-[#e9e9e7]"
+                            : "border-b border-border bg-surface-raised"
                         }`}
                 >
                     <div className="flex gap-1.5">
@@ -205,8 +198,8 @@ function ProjectPreview({
 
                     <div
                         className={`pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t ${isLight
-                            ? "from-white/20 to-transparent"
-                            : "from-black/20 to-transparent"
+                                ? "from-white/20 to-transparent"
+                                : "from-black/20 to-transparent"
                             }`}
                     />
                 </div>

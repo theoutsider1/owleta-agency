@@ -13,13 +13,16 @@ const routes = [
 
 export default function GermanLanguageCaseCTA() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:gap-20">
                     {/* Copy */}
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 Have a project in mind?
@@ -28,13 +31,15 @@ export default function GermanLanguageCaseCTA() {
 
                         <h2 className="max-w-[760px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Build a website around{" "}
-                            <span className="text-primary">the people using it.</span>
+                            <span className="text-primary">
+                                the people using it.
+                            </span>
                         </h2>
 
                         <p className="mt-6 max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            If your website needs a clearer structure, a better user journey
-                            or an experience shaped around a specific audience, tell us what
-                            you are trying to achieve.
+                            If your website needs a clearer structure, a better user
+                            journey or an experience shaped around a specific
+                            audience, tell us what you are trying to achieve.
                         </p>
                     </div>
 
@@ -47,10 +52,9 @@ export default function GermanLanguageCaseCTA() {
 
                             <Link
                                 href="/contact"
-                                className="mt-5 inline-flex items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
+                                className="mt-5 inline-flex cursor-pointer items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                             >
                                 Start a project
-                                <span className="ml-3">→</span>
                             </Link>
 
                             {/* Related services */}
@@ -64,10 +68,14 @@ export default function GermanLanguageCaseCTA() {
                                         <Link
                                             key={route.href}
                                             href={route.href}
-                                            className="group flex w-fit items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
+                                            className="group flex w-fit cursor-pointer items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                                         >
                                             {route.label}
-                                            <span className="ml-2 transition-transform group-hover:translate-x-1">
+
+                                            <span
+                                                aria-hidden="true"
+                                                className="ml-2 transition-transform group-hover:translate-x-1"
+                                            >
                                                 →
                                             </span>
                                         </Link>
@@ -77,11 +85,15 @@ export default function GermanLanguageCaseCTA() {
 
                             <Link
                                 href="/work"
-                                className="group mt-6 flex w-fit items-center text-[13px] font-medium text-text-muted transition-colors hover:text-text-primary"
+                                className="group mt-6 flex w-fit cursor-pointer items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                             >
-                                <span className="mr-2 transition-transform group-hover:-translate-x-1">
+                                <span
+                                    aria-hidden="true"
+                                    className="mr-2 transition-transform group-hover:-translate-x-1"
+                                >
                                     ←
                                 </span>
+
                                 Back to selected work
                             </Link>
                         </div>

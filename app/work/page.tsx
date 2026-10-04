@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import WorkHero from "@/components/work/WorkHero";
@@ -10,7 +11,10 @@ import WorkCTA from "@/components/work/WorkCTA";
 export const metadata: Metadata = {
   title: "Selected Web Design & Development Work | Owlixir",
   description:
-    "Explore selected Owlixir website projects, including the problems behind them, the work involved and how each website was approached.",
+    "Explore selected Owlixir website projects and how we approached their structure, user experience, search foundations and business goals.",
+  alternates: {
+    canonical: "/work",
+  },
 };
 
 export default function WorkPage() {

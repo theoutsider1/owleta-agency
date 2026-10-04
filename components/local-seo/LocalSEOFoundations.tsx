@@ -1,5 +1,3 @@
-// components/local-seo/LocalSEOFoundations.tsx
-
 const foundations = [
     {
         number: "01",
@@ -29,13 +27,16 @@ const foundations = [
 
 export default function LocalSEOFoundations() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Intro */}
                 <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 How local visibility works
@@ -52,10 +53,10 @@ export default function LocalSEOFoundations() {
 
                     <div className="flex items-end">
                         <p className="max-w-[620px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            Strong local search visibility comes from giving people and
-                            search engines clear, consistent signals about what your
-                            business does, where it operates and which pages are relevant
-                            to each search.
+                            Strong local search visibility comes from giving people
+                            and search engines clear, consistent signals about what
+                            your business does, where it operates and which pages are
+                            relevant to each search.
                         </p>
                     </div>
                 </div>
@@ -72,11 +73,14 @@ export default function LocalSEOFoundations() {
                         {foundations.map((item) => (
                             <div
                                 key={item.number}
-                                className="relative border-b border-border py-7 first:pt-0 lg:border-b-0 lg:border-r lg:px-7 lg:py-0 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
+                                className="relative min-w-0 border-b border-border py-7 first:pt-0 lg:border-b-0 lg:border-r lg:px-7 lg:py-0 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
                             >
                                 {/* Point */}
                                 <div className="relative z-10 mb-6 flex items-center gap-3 lg:block">
-                                    <span className="block h-3 w-3 rounded-full border-[3px] border-background bg-primary" />
+                                    <span
+                                        aria-hidden="true"
+                                        className="block h-3 w-3 rounded-full border-[3px] border-background bg-primary"
+                                    />
 
                                     <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-text-muted lg:mt-5 lg:block">
                                         {item.number}
@@ -101,17 +105,17 @@ export default function LocalSEOFoundations() {
 
                 {/* Relationship */}
                 <div className="mt-14 border-y border-border py-7">
-                    <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-center md:gap-6">
+                    <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-center md:gap-6">
                         {[
                             "Local search",
-                            "Relevant service",
+                            "Relevant page",
                             "Clear location",
                             "Consistent signals",
                             "Local visibility",
                         ].map((item, index, array) => (
                             <div
                                 key={item}
-                                className="flex items-center gap-4 md:gap-6"
+                                className="flex flex-col gap-3 md:flex-row md:items-center md:gap-6"
                             >
                                 <span
                                     className={
@@ -124,12 +128,21 @@ export default function LocalSEOFoundations() {
                                 </span>
 
                                 {index < array.length - 1 && (
-                                    <span
-                                        aria-hidden="true"
-                                        className="text-[14px] text-text-muted"
-                                    >
-                                        →
-                                    </span>
+                                    <>
+                                        <span
+                                            aria-hidden="true"
+                                            className="text-[14px] text-text-muted md:hidden"
+                                        >
+                                            ↓
+                                        </span>
+
+                                        <span
+                                            aria-hidden="true"
+                                            className="hidden text-[14px] text-text-muted md:inline"
+                                        >
+                                            →
+                                        </span>
+                                    </>
                                 )}
                             </div>
                         ))}

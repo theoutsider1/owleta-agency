@@ -1,5 +1,3 @@
-// components/seo/SEORoutes.tsx
-
 import Link from "next/link";
 
 const routes = [
@@ -15,7 +13,7 @@ const routes = [
         number: "02",
         label: "Local SEO",
         title: "Visibility where you do business",
-        text: "For businesses that depend on customers in specific locations and want to improve how they appear across relevant local searches.",
+        text: "For businesses that depend on customers in specific locations and want to strengthen their visibility across relevant local searches.",
         detail: "Explore local SEO",
         href: "/services/local-seo",
     },
@@ -23,7 +21,7 @@ const routes = [
         number: "03",
         label: "SEO Bournemouth",
         title: "SEO for Bournemouth businesses",
-        text: "For businesses serving Bournemouth that need a more focused approach to local search visibility and website relevance.",
+        text: "For businesses serving Bournemouth that want to apply a location-focused SEO approach to the searches that matter in that market.",
         detail: "Explore SEO Bournemouth",
         href: "/services/seo-bournemouth",
     },
@@ -31,13 +29,16 @@ const routes = [
 
 export default function SEORoutes() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Intro */}
                 <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 Find the right route
@@ -46,22 +47,24 @@ export default function SEORoutes() {
 
                         <h2 className="max-w-[620px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             The right SEO approach depends on{" "}
-                            <span className="text-primary">where visibility matters.</span>
+                            <span className="text-primary">
+                                where visibility matters.
+                            </span>
                         </h2>
                     </div>
 
                     <div className="flex items-end">
                         <p className="max-w-[620px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            Some businesses need broader organic visibility. Others depend
-                            heavily on customers searching within a particular area. The
-                            starting point should reflect how people actually find and choose
-                            your business.
+                            Some businesses need broader organic visibility. Others
+                            depend heavily on customers searching within a particular
+                            area. The starting point should reflect how people actually
+                            find and choose your business.
                         </p>
                     </div>
                 </div>
 
                 {/* Routes */}
-                <div className="mt-16 grid gap-y-10 border-y border-border py-10 lg:grid-cols-3 lg:gap-y-0 lg:py-0">
+                <div className="mt-14 grid gap-y-10 border-y border-border py-10 lg:mt-16 lg:grid-cols-3 lg:gap-y-0 lg:py-0">
                     {routes.map((route) => {
                         const content = (
                             <div className="flex h-full flex-col lg:px-10 lg:py-10 xl:px-12">
@@ -90,13 +93,20 @@ export default function SEORoutes() {
                                         <span className="inline-flex items-center text-[14px] font-medium text-text-secondary transition-colors group-hover:text-text-primary">
                                             {route.detail}
 
-                                            <span className="ml-2 transition-transform group-hover:translate-x-1">
+                                            <span
+                                                aria-hidden="true"
+                                                className="ml-2 transition-transform group-hover:translate-x-1"
+                                            >
                                                 →
                                             </span>
                                         </span>
                                     ) : (
                                         <span className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.14em] text-primary">
-                                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                                            <span
+                                                aria-hidden="true"
+                                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                                            />
+
                                             {route.detail}
                                         </span>
                                     )}
@@ -108,13 +118,15 @@ export default function SEORoutes() {
                             <Link
                                 key={route.number}
                                 href={route.href}
-                                className="group border-b border-border pb-10 transition-colors hover:bg-black/[0.015] lg:border-b-0 lg:border-r lg:pb-0">
+                                className="group cursor-pointer border-b border-border pb-10 transition-colors hover:bg-black/[0.015] lg:border-b-0 lg:border-r lg:pb-0 lg:last:border-r-0"
+                            >
                                 {content}
                             </Link>
                         ) : (
                             <div
                                 key={route.number}
-                                className="border-b border-border pb-10 lg:border-b-0 lg:border-r lg:pb-0">
+                                className="border-b border-border pb-10 lg:border-b-0 lg:border-r lg:pb-0 lg:last:border-r-0"
+                            >
                                 {content}
                             </div>
                         );
@@ -122,14 +134,38 @@ export default function SEORoutes() {
                 </div>
 
                 {/* Clarification */}
-                <div className="mt-8 grid lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
-                    <div aria-hidden="true" />
+                <div className="mt-10 grid lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+                    <div
+                        aria-hidden="true"
+                        className="hidden lg:block"
+                    />
 
-                    <div className="flex gap-4 border-l-2 border-primary pl-5">
+                    <div className="relative py-8 pl-7 pr-7 md:pl-8 md:pr-8">
+                        <span
+                            aria-hidden="true"
+                            className="absolute left-0 top-0 h-8 w-px bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute left-0 top-0 h-px w-8 bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute bottom-0 right-0 h-8 w-px bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute bottom-0 right-0 h-px w-8 bg-primary"
+                        />
+
+                        <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.14em] text-text-muted">
+                            How local SEO fits
+                        </p>
+
                         <p className="max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            Local SEO is not a separate version of your website. It focuses the
-                            wider SEO strategy on the locations and local searches that matter
-                            to your business.
+                            Local SEO is not a separate version of your website. It
+                            focuses the wider SEO strategy on the locations and local
+                            searches that matter to your business.
                         </p>
                     </div>
                 </div>

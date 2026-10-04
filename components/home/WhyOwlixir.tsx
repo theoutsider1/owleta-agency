@@ -1,26 +1,5 @@
 import Link from "next/link";
 
-const principles = [
-    {
-        number: "01",
-        title: "Business first. Website second.",
-        description:
-            "We start with what your website needs to achieve, then make design and technical decisions around that goal.",
-    },
-    {
-        number: "02",
-        title: "Fix what needs fixing.",
-        description:
-            "A new website is not always the answer. If the existing foundation is useful, we focus on improving what is getting in the way.",
-    },
-    {
-        number: "03",
-        title: "Measure instead of guessing.",
-        description:
-            "Search visibility, enquiries and customer actions give us something real to learn from and improve over time.",
-    },
-];
-
 export default function WhyOwlixir() {
     return (
         <section
@@ -39,15 +18,15 @@ export default function WhyOwlixir() {
                             </p>
                         </div>
 
-                        <h2 className="max-w-[610px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.05em]">
+                        <h2 className="max-w-[610px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em]">
                             Build what you need.
                             <br />
-                            <span className="text-white/65">
+                            <span className="text-primary">
                                 Improve what you already have.
                             </span>
                         </h2>
 
-                        <p className="mt-8 max-w-[540px] text-[16px] leading-7 text-text-secondary md:text-[17px]">
+                        <p className="mt-8 max-w-[540px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
                             Owlixir is an independent web studio. Your project is handled
                             directly by the person doing the work, from understanding the
                             problem to building and improving the solution.
@@ -55,7 +34,7 @@ export default function WhyOwlixir() {
 
                         <Link
                             href="/about"
-                            className="group mt-7 inline-flex items-center text-[14px] font-medium text-text-primary"
+                            className="group mt-7 inline-flex cursor-pointer items-center text-[14px] font-medium text-text-primary"
                         >
                             Meet the person behind Owlixir
                             <span className="ml-2 transition-transform group-hover:translate-x-1">
@@ -64,7 +43,6 @@ export default function WhyOwlixir() {
                         </Link>
                     </div>
 
-                    {/* Principles */}
                     {/* Principles */}
                     <div className="lg:pt-10">
                         <div className="max-w-[540px] lg:ml-auto">
@@ -122,11 +100,11 @@ function Principle({
         <div className="relative pl-6">
             <span className="absolute left-0 top-2 h-2 w-2 rounded-full bg-primary" />
 
-            <h3 className="text-[22px] font-medium leading-tight tracking-[-0.025em] text-text-primary md:text-[25px]">
+            <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                 {title}
             </h3>
 
-            <p className="mt-4 text-[16px] leading-7 text-text-secondary">
+            <p className="mt-3 text-[15px] leading-6 text-text-secondary md:text-[16px]">
                 {description}
             </p>
         </div>

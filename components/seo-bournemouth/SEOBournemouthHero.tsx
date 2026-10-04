@@ -9,7 +9,10 @@ export default function SEOBournemouthHero() {
                     {/* Copy */}
                     <div>
                         <div className="mb-6 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 SEO Bournemouth
@@ -18,30 +21,35 @@ export default function SEOBournemouthHero() {
 
                         <h1 className="max-w-[760px] text-[clamp(3rem,5.5vw,5.8rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-text-primary">
                             Get found by more customers{" "}
-                            <span className="text-primary">in Bournemouth.</span>
+                            <span className="text-primary">
+                                in Bournemouth.
+                            </span>
                         </h1>
 
                         <p className="mt-7 max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            SEO services for Bournemouth businesses that want stronger
-                            visibility when potential customers search for the services they
-                            offer.
+                            SEO services for businesses serving Bournemouth that
+                            want stronger visibility when potential customers search
+                            for the services they offer.
                         </p>
 
                         <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
+                                className="inline-flex cursor-pointer items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                             >
                                 Discuss SEO
-                                <span className="ml-3">→</span>
                             </Link>
 
                             <Link
                                 href="/services/local-seo"
-                                className="group inline-flex items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
+                                className="group inline-flex cursor-pointer items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                             >
                                 Explore Local SEO
-                                <span className="ml-2 transition-transform group-hover:translate-x-1">
+
+                                <span
+                                    aria-hidden="true"
+                                    className="ml-2 transition-transform group-hover:translate-x-1"
+                                >
                                     →
                                 </span>
                             </Link>

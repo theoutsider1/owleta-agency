@@ -1,6 +1,5 @@
-// app/services/seo/page.tsx
-
 import type { Metadata } from "next";
+
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import SEOHero from "@/components/seo/SEOHero";
@@ -17,6 +16,9 @@ export const metadata: Metadata = {
     title: "SEO Services for UK Businesses | Owlixir",
     description:
         "SEO services for UK businesses focused on improving search visibility, strengthening website foundations and helping the right customers find the right pages.",
+    alternates: {
+        canonical: "/services/seo",
+    },
 };
 
 export default function SEOPage() {

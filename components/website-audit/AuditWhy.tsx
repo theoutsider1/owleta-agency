@@ -1,4 +1,3 @@
-
 const signals = [
     {
         number: "01",
@@ -24,13 +23,16 @@ const signals = [
 
 export default function AuditWhy() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
                     {/* Intro */}
                     <div className="max-w-[560px]">
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 Why audit your website?
@@ -42,10 +44,11 @@ export default function AuditWhy() {
                             <span className="text-primary">the problem.</span>
                         </h2>
 
-                        <p className="mt-6 max-w-[520px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            When a website underperforms, changing things at random can waste
-                            time and money. An audit looks beneath the obvious symptoms to
-                            understand what is actually happening.
+                        <p className="mt-7 max-w-[520px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
+                            When something on a website is not working as expected,
+                            changing things without understanding the cause can waste
+                            time and money. An audit investigates what is happening
+                            before deciding what deserves attention.
                         </p>
                     </div>
 
@@ -56,7 +59,7 @@ export default function AuditWhy() {
                                 key={signal.number}
                                 className="grid gap-4 border-b border-border py-6 sm:grid-cols-[52px_1fr]"
                             >
-                                <span className="pt-1 text-[11px] font-medium text-text-muted">
+                                <span className="pt-1 text-[10px] font-medium tracking-[0.15em] text-text-muted">
                                     {signal.number}
                                 </span>
 
@@ -75,14 +78,38 @@ export default function AuditWhy() {
                 </div>
 
                 {/* Resolution */}
-                <div className="mt-12 grid lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
-                    <div />
+                <div className="mt-10 grid lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+                    <div
+                        aria-hidden="true"
+                        className="hidden lg:block"
+                    />
 
-                    <div className="border-l-2 border-primary pl-5">
+                    <div className="relative py-8 pl-7 pr-7 md:pl-8 md:pr-8">
+                        <span
+                            aria-hidden="true"
+                            className="absolute left-0 top-0 h-8 w-px bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute left-0 top-0 h-px w-8 bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute bottom-0 right-0 h-8 w-px bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute bottom-0 right-0 h-px w-8 bg-primary"
+                        />
+
+                        <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.14em] text-text-muted">
+                            The purpose of the audit
+                        </p>
+
                         <p className="max-w-[680px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            The goal is not to find problems for the sake of finding them. It
-                            is to separate what is working from what needs attention, then
-                            show you what is worth doing next.
+                            The goal is not to find problems for the sake of finding
+                            them. It is to separate what is working from what needs
+                            attention, then show you what is worth doing next.
                         </p>
                     </div>
                 </div>

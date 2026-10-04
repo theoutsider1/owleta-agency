@@ -19,29 +19,32 @@ const faqs = [
     {
         question: "How long does SEO take to improve visibility?",
         answer:
-            "The timeframe varies depending on your current website, competition, existing search presence and the work required. SEO is usually an ongoing process of improving relevant pages and foundations, then learning from how search visibility develops.",
+            "The timeframe varies depending on your current website, competition, existing search presence and the work required. SEO is usually a longer-term process of improving relevant pages and foundations, then learning from how search visibility develops.",
     },
     {
         question: "Can you help if I serve Bournemouth and other areas?",
         answer:
-            "Yes. The website structure can reflect multiple genuine service areas without treating every location the same. For businesses targeting several towns or cities, a broader Local SEO approach may be more appropriate.",
+            "Yes. The website structure can reflect multiple genuine service areas without treating every location the same. If several towns, cities or service areas matter to your business, a broader Local SEO approach may be more useful.",
     },
     {
         question: "What is the difference between Bournemouth SEO and Local SEO?",
         answer:
-            "This service focuses specifically on businesses wanting stronger search visibility in Bournemouth. Local SEO is the broader service for businesses whose search strategy needs to cover multiple towns, cities or service areas.",
+            "This page focuses specifically on improving relevance and visibility for searches connected with Bournemouth. Local SEO is the broader service for businesses that want to strengthen how their services and genuine locations or service areas are represented in local search.",
     },
 ];
 
 export default function BournemouthSEOFAQ() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
                     {/* Intro */}
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 Bournemouth SEO FAQ
@@ -50,25 +53,32 @@ export default function BournemouthSEOFAQ() {
 
                         <h2 className="max-w-[520px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Questions before investing in{" "}
-                            <span className="text-primary">Bournemouth SEO.</span>
+                            <span className="text-primary">
+                                Bournemouth SEO.
+                            </span>
                         </h2>
 
                         <p className="mt-6 max-w-[500px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            Useful answers about targeting Bournemouth searches, local
-                            relevance and deciding which SEO approach fits your business.
+                            Useful answers about targeting Bournemouth searches,
+                            local relevance and deciding which SEO approach fits
+                            your business.
                         </p>
 
                         <div className="mt-8 border-t border-border pt-5">
-                            <p className="text-[13px] leading-5 text-text-muted">
+                            <p className="text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                 Need visibility across several locations?
                             </p>
 
                             <Link
                                 href="/services/local-seo"
-                                className="group mt-3 inline-flex items-center text-[14px] font-medium text-text-primary"
+                                className="group mt-3 inline-flex cursor-pointer items-center text-[14px] font-medium text-text-primary transition-colors hover:text-primary"
                             >
                                 Explore Local SEO
-                                <span className="ml-2 transition-transform group-hover:translate-x-1">
+
+                                <span
+                                    aria-hidden="true"
+                                    className="ml-2 transition-transform group-hover:translate-x-1"
+                                >
                                     →
                                 </span>
                             </Link>
@@ -83,19 +93,19 @@ export default function BournemouthSEOFAQ() {
                                 className="group border-b border-border"
                             >
                                 <summary className="flex cursor-pointer list-none items-start justify-between gap-8 py-6 [&::-webkit-details-marker]:hidden">
-                                    <div className="flex gap-5">
-                                        <span className="mt-1 text-[10px] font-medium text-text-muted">
+                                    <div className="flex min-w-0 gap-5">
+                                        <span className="mt-1 shrink-0 text-[10px] font-medium text-text-muted">
                                             {String(index + 1).padStart(2, "0")}
                                         </span>
 
-                                        <h3 className="text-[17px] font-semibold leading-6 tracking-[-0.02em] text-text-primary md:text-[18px]">
+                                        <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                                             {faq.question}
                                         </h3>
                                     </div>
 
                                     <span
                                         aria-hidden="true"
-                                        className="mt-1 text-[18px] font-light text-text-muted transition-transform duration-200 group-open:rotate-45"
+                                        className="mt-1 shrink-0 text-[18px] font-light text-text-muted transition-transform duration-200 group-open:rotate-45"
                                     >
                                         +
                                     </span>

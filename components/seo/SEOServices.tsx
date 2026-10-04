@@ -1,5 +1,3 @@
-// components/seo/SEOServices.tsx
-
 const services = [
     {
         number: "01",
@@ -25,7 +23,7 @@ const services = [
     },
     {
         number: "03",
-        title: "Search & content structure",
+        title: "Search and content structure",
         text: "Organise important topics and services around the searches that are genuinely relevant to the business.",
         items: [
             "Keyword and intent research",
@@ -36,7 +34,7 @@ const services = [
     },
     {
         number: "04",
-        title: "Measurement & improvement",
+        title: "Measurement and improvement",
         text: "Use search and website data to understand what is gaining visibility, where opportunities exist and what deserves attention next.",
         items: [
             "Search Console insights",
@@ -49,13 +47,16 @@ const services = [
 
 export default function SEOServices() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Intro */}
                 <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 SEO services
@@ -64,21 +65,24 @@ export default function SEOServices() {
 
                         <h2 className="max-w-[620px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Work on what actually influences{" "}
-                            <span className="text-primary">search visibility.</span>
+                            <span className="text-primary">
+                                search visibility.
+                            </span>
                         </h2>
                     </div>
 
                     <div className="flex items-end">
                         <p className="max-w-[620px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            SEO work depends on where the opportunity or limitation exists.
-                            That can mean improving individual pages, strengthening technical
-                            foundations or making the wider website easier to understand.
+                            SEO work depends on where the opportunity or limitation
+                            exists. That can mean improving individual pages,
+                            strengthening technical foundations or making the wider
+                            website easier to understand.
                         </p>
                     </div>
                 </div>
 
                 {/* Services */}
-                <div className="mt-14 border-t border-border">
+                <div className="mt-14 border-t border-border lg:mt-16">
                     {services.map((service) => (
                         <div
                             key={service.number}
@@ -104,9 +108,12 @@ export default function SEOServices() {
                                         key={item}
                                         className="flex items-center gap-3 border-b border-border py-3.5"
                                     >
-                                        <span className="h-1 w-1 shrink-0 rounded-full bg-primary" />
+                                        <span
+                                            aria-hidden="true"
+                                            className="h-1 w-1 shrink-0 rounded-full bg-primary"
+                                        />
 
-                                        <span className="text-[14px] font-medium text-text-secondary">
+                                        <span className="text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                             {item}
                                         </span>
                                     </div>
@@ -118,13 +125,37 @@ export default function SEOServices() {
 
                 {/* Scope */}
                 <div className="mt-10 grid lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
-                    <div />
+                    <div
+                        aria-hidden="true"
+                        className="hidden lg:block"
+                    />
 
-                    <div className="border-l-2 border-primary pl-5">
+                    <div className="relative py-8 pl-7 pr-7 md:pl-8 md:pr-8">
+                        <span
+                            aria-hidden="true"
+                            className="absolute left-0 top-0 h-8 w-px bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute left-0 top-0 h-px w-8 bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute bottom-0 right-0 h-8 w-px bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute bottom-0 right-0 h-px w-8 bg-primary"
+                        />
+
+                        <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.14em] text-text-muted">
+                            The right scope
+                        </p>
+
                         <p className="max-w-[680px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            Not every website needs every type of SEO work. The priority is
-                            identifying where improvements can make the most sense for your
-                            website and business.
+                            Not every website needs every type of SEO work. The priority
+                            is identifying which improvements make sense for your
+                            website, your search opportunities and your business.
                         </p>
                     </div>
                 </div>

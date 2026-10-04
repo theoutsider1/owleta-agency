@@ -24,7 +24,7 @@ export default function HeroSection() {
                         </p>
                     </div>
 
-                    <h1 className="max-w-[650px] text-[clamp(3.25rem,5.7vw,5.8rem)] font-semibold leading-[0.96] tracking-[-0.055em]">
+                    <h1 className="max-w-[650px] text-[clamp(3.25rem,5.7vw,5.8rem)] font-semibold leading-[0.94] tracking-[-0.055em]]">
                         Your website should bring you{" "}
                         <span className="text-primary">business.</span>
                         <br />
@@ -38,16 +38,16 @@ export default function HeroSection() {
 
                     <div className="mt-9 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
                         <a
-                            href="#contact"
-                            className="inline-flex items-center rounded-[9px] bg-primary px-6 py-3.5 text-[15px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
+                            href="/contact"
+                            className="inline-flex cursor-pointer items-center rounded-[9px] bg-primary px-6 py-3.5 text-[15px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                         >
                             Start a project
                             <span className="ml-3">→</span>
                         </a>
 
                         <a
-                            href="#website-check"
-                            className="group inline-flex items-center text-[15px] font-medium text-text-secondary transition-colors hover:text-text-primary"
+                            href="/services/website-audit/?service=check#request"
+                            className="group inline-flex cursor-pointer items-center text-[15px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                         >
                             Get a website check
 

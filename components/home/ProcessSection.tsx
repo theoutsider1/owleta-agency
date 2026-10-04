@@ -25,7 +25,8 @@ export default function ProcessSection() {
     return (
         <section className="relative overflow-hidden py-20 md:py-24 lg:py-28">
             <div className="site-container">
-                <div className="grid gap-16 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-24">            {/* Content */}
+                <div className="grid gap-16 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-24">
+                    {/* Content */}
                     <div>
                         <div className="mb-6 flex items-center gap-3">
                             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
@@ -35,79 +36,80 @@ export default function ProcessSection() {
                             </p>
                         </div>
 
-                        <h2 className="max-w-[590px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.05em]">
+                        <h2 className="max-w-[590px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em]">
                             Understand first.
                             <br />
-                            <span className="text-white/65">Build second.</span>
+                            <span className="text-primary">Build second.</span>
                         </h2>
 
-                        <p className="mt-8 max-w-[520px] text-[16px] leading-7 text-text-secondary md:text-[17px]">
+                        <p className="mt-8 max-w-[520px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
                             We start by understanding what the business and its customers
                             actually need. From there, we identify what matters, improve it
                             and use real signals to guide what comes next.
                         </p>
 
-                        <p className="mt-6 max-w-[500px] text-[15px] leading-7 text-text-muted md:text-[16px]">
+                        <p className="mt-6 max-w-[500px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                             The same approach works whether we are building something new,
                             improving an existing website or supporting it over time.
                         </p>
                     </div>
 
                     {/* Desktop process loop */}
-                    <div className="mx-auto hidden w-full max-w-[650px] md:block lg:-mt-5">                        <div className="relative aspect-[1.3/1]">
-                        {/* Loop */}
-                        <div className="absolute inset-[15%] rounded-[50%] border border-white/15" />
+                    <div className="mx-auto hidden w-full max-w-[650px] md:block lg:-mt-5">
+                        <div className="relative aspect-[1.3/1]">
+                            {/* Loop */}
+                            <div className="absolute inset-[15%] rounded-[50%] border border-border" />
 
-                        {/* Direction markers */}
-                        <DirectionMarker className="left-[72%] top-[18%] rotate-[42deg]" />
-                        <DirectionMarker className="bottom-[24%] right-[17%] rotate-[132deg]" />
-                        <DirectionMarker className="bottom-[17%] left-[25%] rotate-[222deg]" />
-                        <DirectionMarker className="left-[17%] top-[27%] rotate-[312deg]" />
+                            {/* Direction markers */}
+                            <DirectionMarker className="left-[72%] top-[18%] rotate-[42deg]" />
+                            <DirectionMarker className="bottom-[24%] right-[17%] rotate-[132deg]" />
+                            <DirectionMarker className="bottom-[17%] left-[25%] rotate-[222deg]" />
+                            <DirectionMarker className="left-[17%] top-[27%] rotate-[312deg]" />
 
-                        {/* Understand */}
-                        <ProcessPoint
-                            className="left-1/2 top-[4%] -translate-x-1/2"
-                            {...process[0]}
-                        />
+                            {/* Understand */}
+                            <ProcessPoint
+                                className="left-1/2 top-[4%] -translate-x-1/2"
+                                {...process[0]}
+                            />
 
-                        {/* Identify */}
-                        <ProcessPoint
-                            className="right-0 top-1/2 -translate-y-1/2"
-                            {...process[1]}
-                        />
+                            {/* Identify */}
+                            <ProcessPoint
+                                className="right-0 top-1/2 -translate-y-1/2"
+                                {...process[1]}
+                            />
 
-                        {/* Improve */}
-                        <ProcessPoint
-                            className="bottom-[2%] left-1/2 -translate-x-1/2"
-                            {...process[2]}
-                        />
+                            {/* Improve */}
+                            <ProcessPoint
+                                className="bottom-[2%] left-1/2 -translate-x-1/2"
+                                {...process[2]}
+                            />
 
-                        {/* Measure */}
-                        <ProcessPoint
-                            className="left-0 top-1/2 -translate-y-1/2"
-                            {...process[3]}
-                        />
+                            {/* Measure */}
+                            <ProcessPoint
+                                className="left-0 top-1/2 -translate-y-1/2"
+                                {...process[3]}
+                            />
 
-                        {/* Centre */}
-                        <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--primary-border)] bg-[var(--primary-soft)] md:h-28 md:w-28">
-                            <div className="text-center">
-                                <span className="mx-auto block h-1.5 w-1.5 rounded-full bg-primary" />
+                            {/* Centre */}
+                            <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--primary-border)] bg-[var(--primary-soft)] md:h-28 md:w-28">
+                                <div className="text-center">
+                                    <span className="mx-auto block h-1.5 w-1.5 rounded-full bg-primary" />
 
-                                <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.14em] text-text-secondary">
-                                    Keep
-                                    <br />
-                                    improving
-                                </p>
+                                    <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.14em] text-text-secondary">
+                                        Keep
+                                        <br />
+                                        improving
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </div>
 
                     {/* Mobile process */}
                     <div className="mx-auto w-full max-w-[420px] md:hidden">
                         <div className="relative">
                             {/* Continuous line */}
-                            <div className="absolute bottom-0 left-[15px] top-0 w-px bg-white/15" />
+                            <div className="absolute bottom-0 left-[15px] top-0 w-px bg-border" />
 
                             <div className="space-y-10">
                                 {process.map((item) => (
@@ -122,11 +124,11 @@ export default function ProcessSection() {
                                         </div>
 
                                         <div className="-mt-1">
-                                            <h3 className="text-[18px] font-medium tracking-[-0.02em] text-text-primary">
+                                            <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                                                 {item.label}
                                             </h3>
 
-                                            <p className="mt-2 text-[15px] leading-6 text-text-secondary">
+                                            <p className="mt-2 text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                                 {item.description}
                                             </p>
                                         </div>
@@ -170,7 +172,7 @@ function ProcessPoint({
             <div className="mb-2 flex items-center justify-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-primary" />
 
-                <h3 className="text-[18px] font-medium tracking-[-0.02em] text-text-primary">
+                <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                     {label}
                 </h3>
             </div>

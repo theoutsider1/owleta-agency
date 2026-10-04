@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ProblemSection() {
     const problems = [
         {
@@ -30,7 +32,7 @@ export default function ProblemSection() {
         <section className="relative pt-16 pb-8 md:pt-20 md:pb-10 lg:pt-24 lg:pb-12">
             <div className="site-container">
                 <div className="grid gap-16 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
-                    {/* Left — sticky statement */}
+                    {/* Left: sticky statement */}
                     <div>
                         <div className="lg:sticky lg:top-28">
                             <div className="mb-6 flex items-center gap-3">
@@ -41,23 +43,25 @@ export default function ProblemSection() {
                                 </p>
                             </div>
 
-                            <h2 className="max-w-[560px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.05em]">
+                            <h2 className="max-w-[560px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em]">
                                 Your website can
                                 <br />
                                 look fine and still
                                 <br />
-                                <span className="text-white/65">lose you business.</span>
+                                <span className="text-primary">
+                                    lose you business.
+                                </span>
                             </h2>
 
-                            <p className="mt-8 max-w-[500px] text-[16px] leading-7 text-text-secondary md:text-[17px]">
-                                A website doesn’t need to be completely broken to underperform.
-                                Small problems can make it harder for people to find you, trust
-                                you or get in touch.
+                            <p className="mt-8 max-w-[500px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
+                                A website doesn’t need to be completely broken to
+                                underperform. Small problems can make it harder for people
+                                to find you, trust you or get in touch.
                             </p>
                         </div>
                     </div>
 
-                    {/* Right — diagnostic sequence */}
+                    {/* Right: diagnostic sequence */}
                     <div className="border-t border-border">
                         {problems.map((problem) => (
                             <div
@@ -69,11 +73,11 @@ export default function ProblemSection() {
                                 </span>
 
                                 <div>
-                                    <h3 className="text-[21px] font-medium tracking-[-0.025em] text-text-primary md:text-[24px]">
+                                    <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                                         {problem.title}
                                     </h3>
 
-                                    <p className="mt-3 max-w-[580px] text-[15px] leading-6 text-text-muted md:text-[16px] md:leading-7">
+                                    <p className="mt-3 max-w-[580px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                         {problem.description}
                                     </p>
                                 </div>
@@ -101,13 +105,13 @@ export default function ProblemSection() {
                             {/* Signal line */}
                             <div className="relative h-[88px]">
                                 {/* Base line */}
-                                <div className="absolute left-0 right-0 top-[10px] h-px bg-white/15" />
+                                <div className="absolute left-0 right-0 top-[10px] h-px bg-border" />
 
                                 {/* Left signal */}
-                                <div className="absolute left-0 top-[8px] h-[5px] w-[5px] rounded-full bg-white/35" />
+                                <div className="absolute left-0 top-[8px] h-[5px] w-[5px] rounded-full bg-text-muted" />
 
                                 {/* Right signal */}
-                                <div className="absolute right-0 top-[8px] h-[5px] w-[5px] rounded-full bg-white/35" />
+                                <div className="absolute right-0 top-[8px] h-[5px] w-[5px] rounded-full bg-text-muted" />
 
                                 {/* Friction point */}
                                 <div className="absolute left-1/2 top-[3px] -translate-x-1/2">
@@ -134,22 +138,25 @@ export default function ProblemSection() {
                             <p className="text-[clamp(2rem,3.4vw,3.4rem)] font-medium leading-[1.08] tracking-[-0.04em]">
                                 Sometimes the answer is a new website.
                                 <br className="hidden sm:block" />{" "}
-                                <span className="text-white/55">Sometimes it isn&apos;t.</span>
+                                <span className="text-primary">
+                                    Sometimes it isn&apos;t.
+                                </span>
                             </p>
 
-                            <p className="mx-auto mt-6 max-w-[500px] text-[15px] leading-6 text-text-secondary md:text-[16px] md:leading-7">
-                                The first step is finding out what&apos;s actually getting in the way.
+                            <p className="mx-auto mt-6 max-w-[500px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                                The first step is finding out what&apos;s actually getting
+                                in the way.
                             </p>
 
-                            <a
-                                href="#website-check"
-                                className="group mt-7 inline-flex items-center text-[15px] font-semibold text-primary transition-colors hover:text-primary-hover"
+                            <Link
+                                href="/services/website-audit/?service=check#request"
+                                className="group mt-7 inline-flex cursor-pointer items-center text-[15px] font-semibold text-primary transition-colors hover:text-primary-hover"
                             >
                                 Get a website check
                                 <span className="ml-2 transition-transform group-hover:translate-x-1">
                                     →
                                 </span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

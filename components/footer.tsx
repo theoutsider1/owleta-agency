@@ -1,30 +1,29 @@
 import Link from "next/link";
 
 const serviceLinks = [
-  { label: "Web Design", href: "/web-design" },
-  { label: "Website Redesign", href: "/website-redesign" },
-  { label: "Website Maintenance", href: "/website-maintenance" },
-  { label: "Website Audit", href: "/website-audit" },
-  { label: "SEO", href: "/seo" },
-  { label: "Local SEO", href: "/local-seo" },
+  { label: "Web Design", href: "/services/web-design" },
+  { label: "Website Redesign", href: "/services/website-redesign" },
+  { label: "Website Maintenance", href: "/services/website-maintenance" },
+  { label: "Website Audit", href: "/services/website-audit" },
+  { label: "SEO", href: "/services/seo" },
+  { label: "Local SEO", href: "/services/local-seo" },
 ];
 
 const locationLinks = [
-  { label: "Web Design Bournemouth", href: "/web-design-bournemouth" },
-  { label: "SEO Bournemouth", href: "/seo-bournemouth" },
+  {
+    label: "Web Design Bournemouth",
+    href: "/services/web-design-bournemouth",
+  },
+  {
+    label: "SEO Bournemouth",
+    href: "/services/seo-bournemouth",
+  },
 ];
 
 const owlixirLinks = [
   { label: "Selected Work", href: "/work" },
   { label: "About", href: "/about" },
-  { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
-];
-
-const legalLinks = [
-  { label: "Privacy", href: "/privacy" },
-  { label: "Cookies", href: "/cookies" },
-  { label: "Terms", href: "/terms" },
 ];
 
 export default function Footer() {
@@ -37,40 +36,49 @@ export default function Footer() {
           <div>
             <Link
               href="/"
-              className="inline-flex items-center text-[20px] font-semibold tracking-[-0.03em] text-text-primary"
+              aria-label="Owlixir home"
+              className="inline-flex cursor-pointer text-[22px] font-semibold tracking-[-0.04em] text-text-primary"
             >
-              Owlixir
-              <span className="ml-1 text-primary">.</span>
+              Owlix<span className="text-primary">i</span>r
             </Link>
 
-            <p className="mt-5 max-w-[360px] text-[16px] leading-7 text-text-secondary">
+            <p className="mt-5 max-w-[360px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
               Websites built to help businesses get found, earn trust and
               generate enquiries.
             </p>
 
-            <p className="mt-7 max-w-[360px] text-[14px] leading-6 text-text-muted">
+            <p className="mt-7 max-w-[360px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
               Independent web studio working with businesses in the UK and
               beyond.
             </p>
           </div>
 
           {/* Navigation */}
-          <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-4">
-            <FooterColumn title="Services" links={serviceLinks} />
+          <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3">
+            <FooterColumn
+              title="Services"
+              links={serviceLinks}
+            />
 
-            <FooterColumn title="Locations" links={locationLinks} />
+            <FooterColumn
+              title="Locations"
+              links={locationLinks}
+            />
 
-            <FooterColumn title="Owlixir" links={owlixirLinks} />
-
-            <FooterColumn title="Legal" links={legalLinks} />
+            <FooterColumn
+              title="Owlixir"
+              links={owlixirLinks}
+            />
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col gap-4 border-t border-border py-6 text-[13px] text-text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 border-t border-border py-6 text-[13px] leading-5 text-text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Owlixir. All rights reserved.</p>
 
-          <p>Based in Morocco. Working with businesses internationally.</p>
+          <p>
+            Based in Morocco. Working with businesses internationally.
+          </p>
         </div>
       </div>
     </footer>
@@ -98,7 +106,7 @@ function FooterColumn({
           <li key={link.href}>
             <Link
               href={link.href}
-              className="text-[14px] leading-6 text-text-secondary transition-colors hover:text-text-primary"
+              className="cursor-pointer text-[14px] leading-6 text-text-secondary transition-colors hover:text-text-primary"
             >
               {link.label}
             </Link>

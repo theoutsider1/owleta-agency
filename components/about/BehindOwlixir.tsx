@@ -21,13 +21,16 @@ const details = [
 
 export default function BehindOwlixir() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Introduction */}
                 <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 Behind Owlixir
@@ -36,16 +39,19 @@ export default function BehindOwlixir() {
 
                         <h2 className="max-w-[620px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Hi, I&apos;m Hatim, the web developer{" "}
-                            <span className="text-primary">behind Owlixir.</span>
+                            <span className="text-primary">
+                                behind Owlixir.
+                            </span>
                         </h2>
                     </div>
 
                     <div>
                         <p className="max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            I started Owlixir as an independent web studio built around a
-                            simple idea: a business website should have a purpose beyond
-                            looking good. It should help people understand the business,
-                            find what they need and take the next step.
+                            I started Owlixir as an independent web studio built
+                            around a simple idea: a business website should have a
+                            purpose beyond looking good. It should help people
+                            understand the business, find what they need and take the
+                            next step.
                         </p>
                     </div>
                 </div>
@@ -60,7 +66,7 @@ export default function BehindOwlixir() {
                             </p>
 
                             <p className="mt-2 text-[15px] leading-6 text-text-secondary md:text-[16px]">
-                                Web developer & founder of Owlixir
+                                Web developer behind Owlixir
                             </p>
                         </div>
 
@@ -74,7 +80,7 @@ export default function BehindOwlixir() {
                                         {detail.label}
                                     </span>
 
-                                    <span className="text-[14px] font-medium text-text-primary">
+                                    <span className="text-[14px] font-medium text-text-secondary">
                                         {detail.value}
                                     </span>
                                 </div>
@@ -86,26 +92,31 @@ export default function BehindOwlixir() {
                     <div>
                         <div className="max-w-[650px] space-y-5 text-[15px] leading-6 text-text-secondary md:text-[16px]">
                             <p>
-                                My work sits between design, development and search. That means
-                                I&apos;m not only thinking about how a page looks, but how it
-                                is structured, how someone moves through it and whether the
-                                foundations support what the business wants to achieve.
+                                My work sits between design, development and search.
+                                That means I&apos;m not only thinking about how a page
+                                looks, but how it is structured, how someone moves
+                                through it and whether the foundations support what
+                                the business wants to achieve.
                             </p>
 
                             <p>
-                                Through Owlixir, we bring that thinking into website projects,
-                                improvements and ongoing work, keeping the process focused on
-                                useful decisions rather than adding complexity for its own
-                                sake.
+                                Through Owlixir, we bring that thinking into website
+                                projects, improvements and ongoing work, keeping the
+                                process focused on useful decisions rather than adding
+                                complexity for its own sake.
                             </p>
                         </div>
 
                         <Link
                             href="/work"
-                            className="group mt-7 inline-flex items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
+                            className="group mt-7 inline-flex w-fit cursor-pointer items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                         >
                             Explore selected work
-                            <span className="ml-2 transition-transform group-hover:translate-x-1">
+
+                            <span
+                                aria-hidden="true"
+                                className="ml-2 transition-transform group-hover:translate-x-1"
+                            >
                                 →
                             </span>
                         </Link>

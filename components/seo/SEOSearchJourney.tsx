@@ -1,5 +1,3 @@
-// components/seo/SEOSearchJourney.tsx
-
 export default function SEOSearchJourney() {
     return (
         <div className="relative mx-auto w-full max-w-[520px] lg:mx-0 lg:ml-auto">
@@ -7,7 +5,10 @@ export default function SEOSearchJourney() {
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-border px-5 py-4">
                     <div className="flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-primary" />
+                        <span
+                            aria-hidden="true"
+                            className="h-2 w-2 rounded-full bg-primary"
+                        />
 
                         <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-text-muted">
                             Organic search
@@ -28,8 +29,8 @@ export default function SEOSearchJourney() {
                     <div className="mt-3 flex items-center gap-3 rounded-[9px] border border-border px-4 py-3">
                         <SearchIcon />
 
-                        <span className="text-[14px] text-text-secondary">
-                            service they actually need
+                        <span className="text-[15px] leading-6 text-text-secondary">
+                            service for my business
                         </span>
                     </div>
                 </div>
@@ -62,7 +63,7 @@ export default function SEOSearchJourney() {
 
                     <JourneyStep
                         number="04"
-                        label="Accessible foundation"
+                        label="Technical access"
                         text="Make sure technical issues are not getting in the way."
                     />
 
@@ -78,14 +79,22 @@ export default function SEOSearchJourney() {
                             </p>
                         </div>
 
-                        <span className="text-[20px] text-primary">→</span>
+                        <span
+                            aria-hidden="true"
+                            className="text-[20px] text-primary"
+                        >
+                            →
+                        </span>
                     </div>
                 </div>
 
                 {/* Footer */}
                 <div className="border-t border-border px-5 py-4 md:px-6">
                     <div className="flex items-center gap-2">
-                        <span className="h-1 w-1 rounded-full bg-primary" />
+                        <span
+                            aria-hidden="true"
+                            className="h-1 w-1 rounded-full bg-primary"
+                        />
 
                         <span className="text-[9px] font-medium uppercase tracking-[0.12em] text-text-muted">
                             Search → relevance → visibility
@@ -113,9 +122,13 @@ function JourneyStep({
             </span>
 
             <div>
-                <p className="text-[14px] font-semibold text-text-primary">{label}</p>
+                <p className="text-[14px] font-semibold text-text-primary">
+                    {label}
+                </p>
 
-                <p className="mt-1 text-[12px] leading-5 text-text-muted">{text}</p>
+                <p className="mt-1 text-[13px] leading-5 text-text-secondary">
+                    {text}
+                </p>
             </div>
         </div>
     );
@@ -123,7 +136,10 @@ function JourneyStep({
 
 function Connector() {
     return (
-        <div className="ml-[5px] h-5 border-l border-border" aria-hidden="true" />
+        <div
+            aria-hidden="true"
+            className="ml-[5px] h-5 border-l border-border"
+        />
     );
 }
 
@@ -144,6 +160,7 @@ function SearchIcon() {
                 stroke="currentColor"
                 strokeWidth="1.7"
             />
+
             <path
                 d="M16.5 16.5L21 21"
                 stroke="currentColor"

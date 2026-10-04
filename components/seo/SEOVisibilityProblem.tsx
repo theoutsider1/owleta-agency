@@ -1,8 +1,6 @@
-// components/seo/SEOVisibilityProblem.tsx
-
 const barriers = [
     {
-        label: "Wrong searches",
+        label: "Search mismatch",
         text: "Pages may exist without clearly matching what potential customers are actually searching for.",
     },
     {
@@ -21,13 +19,16 @@ const barriers = [
 
 export default function SEOVisibilityProblem() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
                     {/* Narrative */}
                     <div className="max-w-[590px]">
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 The visibility problem
@@ -36,19 +37,21 @@ export default function SEOVisibilityProblem() {
 
                         <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Being online does not mean{" "}
-                            <span className="text-primary">being found.</span>
+                            <span className="text-primary">
+                                being found.
+                            </span>
                         </h2>
 
                         <p className="mt-6 max-w-[540px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            Your website can be live, useful and professionally built while
-                            still struggling to appear for the searches that matter to your
-                            business.
+                            Your website can be live, useful and professionally built
+                            while still struggling to appear for the searches that
+                            matter to your business.
                         </p>
 
                         <p className="mt-5 max-w-[540px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
-                            SEO connects what people are searching for with the right pages
-                            on your website, while making those pages easier for search
-                            engines to discover and understand.
+                            SEO connects what people are searching for with the right
+                            pages on your website, while making those pages easier for
+                            search engines to discover and understand.
                         </p>
                     </div>
 
@@ -84,10 +87,32 @@ export default function SEOVisibilityProblem() {
                         ))}
 
                         {/* Resolution */}
-                        <div className="mt-8 flex gap-4 border-l-2 border-primary pl-5">
+                        <div className="relative mt-10 py-8 pl-7 pr-7 md:mt-12 md:pl-8 md:pr-8">
+                            <span
+                                aria-hidden="true"
+                                className="absolute left-0 top-0 h-8 w-px bg-primary"
+                            />
+                            <span
+                                aria-hidden="true"
+                                className="absolute left-0 top-0 h-px w-8 bg-primary"
+                            />
+                            <span
+                                aria-hidden="true"
+                                className="absolute bottom-0 right-0 h-8 w-px bg-primary"
+                            />
+                            <span
+                                aria-hidden="true"
+                                className="absolute bottom-0 right-0 h-px w-8 bg-primary"
+                            />
+
+                            <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.14em] text-text-muted">
+                                The goal
+                            </p>
+
                             <p className="max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                                The goal is not visibility for every search. It is stronger
-                                visibility where your business is genuinely relevant.
+                                The goal is not visibility for every search. It is
+                                stronger visibility where your business is genuinely
+                                relevant.
                             </p>
                         </div>
                     </div>

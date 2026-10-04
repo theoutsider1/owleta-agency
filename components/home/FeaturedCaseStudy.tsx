@@ -16,7 +16,7 @@ const measurements = [
 
 export default function FeaturedCaseStudy() {
     return (
-        <section className="relative py-20 md:py-24 lg:py-28">
+        <section className="relative pt-8 pb-20 md:pt-10 md:pb-24 lg:pt-12 lg:pb-28">
             <div className="site-container">
                 {/* Intro */}
                 <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-20">
@@ -29,18 +29,18 @@ export default function FeaturedCaseStudy() {
                             </p>
                         </div>
 
-                        <h2 className="max-w-[680px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.05em]">
+                        <h2 className="max-w-[680px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em]">
                             Turning a local locksmith
                             <br />
                             website into a{" "}
-                            <span className="text-white/65">
+                            <span className="text-primary">
                                 measurable customer journey.
                             </span>
                         </h2>
                     </div>
 
                     <div className="max-w-[500px] lg:justify-self-end">
-                        <p className="text-[16px] leading-7 text-text-secondary md:text-[17px]">
+                        <p className="text-[17px] leading-7 text-text-secondary md:text-[18px]">
                             For a locksmith serving Bournemouth, Poole and Christchurch,
                             the website needed to do more than explain the services. It
                             needed to help local customers find the right page, take action
@@ -48,8 +48,8 @@ export default function FeaturedCaseStudy() {
                         </p>
 
                         <Link
-                            href="/work/lock-key-locksmiths"
-                            className="group mt-6 inline-flex items-center text-[14px] font-medium text-text-primary"
+                            href="/work/bournemouth-locksmith"
+                            className="group mt-6 inline-flex cursor-pointer items-center text-[14px] font-medium text-text-primary"
                         >
                             View full case study
                             <span className="ml-2 transition-transform group-hover:translate-x-1">
@@ -118,7 +118,6 @@ export default function FeaturedCaseStudy() {
                                 </span>
                             </div>
 
-                            {/* Journey */}
                             <div className="mt-9">
                                 <JourneyStep
                                     number="01"
@@ -197,8 +196,8 @@ function JourneyStep({
         <div className="grid grid-cols-[34px_1fr] gap-4 md:grid-cols-[42px_0.6fr_1fr] md:items-center md:gap-6">
             <div
                 className={`flex h-8 w-8 items-center justify-center rounded-full border font-mono text-[9px] ${active
-                    ? "border-[var(--primary-border)] bg-[var(--primary-soft)] text-primary"
-                    : "border-border-strong text-text-muted"
+                        ? "border-[var(--primary-border)] bg-[var(--primary-soft)] text-primary"
+                        : "border-border-strong text-text-muted"
                     }`}
             >
                 {number}
@@ -211,7 +210,7 @@ function JourneyStep({
                 {title}
             </p>
 
-            <p className="col-start-2 text-[13px] leading-5 text-text-muted md:col-start-auto">
+            <p className="col-start-2 text-[13px] leading-5 text-text-secondary md:col-start-auto">
                 {description}
             </p>
         </div>
@@ -223,8 +222,8 @@ function JourneyConnector({ active = false }: { active?: boolean }) {
         <div className="ml-[15px] h-6 md:ml-[15px]">
             <div
                 className={`h-full w-px ${active
-                    ? "bg-gradient-to-b from-border-strong to-primary/60"
-                    : "bg-border-strong"
+                        ? "bg-gradient-to-b from-border-strong to-primary/60"
+                        : "bg-border-strong"
                     }`}
             />
         </div>

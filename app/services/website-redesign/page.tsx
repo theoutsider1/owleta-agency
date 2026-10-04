@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import Navigation from "@/components/navigation";
 import WebsiteRedesignHero from "@/components/website-redesign/WebsiteRedesignHero";
 import Footer from "@/components/footer";
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
   title: "Website Redesign Services for UK Businesses | Owlixir",
   description:
     "Website redesign services for UK businesses focused on improving customer journeys, performance, search foundations and conversion paths.",
+  alternates: {
+    canonical: "/services/website-redesign",
+  },
 };
 
 export default function WebsiteRedesignPage() {

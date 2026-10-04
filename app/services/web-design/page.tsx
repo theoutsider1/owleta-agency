@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import Navigation from "@/components/navigation";
 import WebDesignHero from "@/components/web-design/WebDesignHero";
 import Footer from "@/components/footer";
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
     title: "Web Design Services for UK Businesses | Owlixir",
     description:
         "Web design services for UK businesses focused on clear customer journeys, search visibility and turning more website visitors into enquiries.",
+    alternates: {
+        canonical: "/services/web-design",
+    },
 };
 
 export default function WebDesignPage() {

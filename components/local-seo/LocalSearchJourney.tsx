@@ -43,8 +43,8 @@ export default function LocalSearchJourney() {
                             className="h-2 w-2 shrink-0 rounded-full border border-text-muted"
                         />
 
-                        <p className="text-[14px] text-text-primary md:text-[15px]">
-                            service + location
+                        <p className="text-[14px] text-text-secondary md:text-[15px]">
+                            service in my area
                         </p>
                     </div>
                 </div>
@@ -64,7 +64,7 @@ export default function LocalSearchJourney() {
                                 {signal.label}
                             </span>
 
-                            <span className="text-[14px] font-medium text-text-primary">
+                            <span className="text-[14px] font-medium text-text-secondary">
                                 {signal.value}
                             </span>
                         </div>
@@ -82,7 +82,12 @@ export default function LocalSearchJourney() {
                             Stronger local visibility
                         </p>
 
-                        <span className="text-primary">↗</span>
+                        <span
+                            aria-hidden="true"
+                            className="shrink-0 text-primary"
+                        >
+                            ↗
+                        </span>
                     </div>
                 </div>
 

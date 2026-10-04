@@ -45,52 +45,66 @@ export default function WebDesignFAQ() {
         <section className="section-space">
             <div className="site-container">
                 <div className="grid gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
+                    {/* Intro */}
                     <div>
-                        <p className="text-xs font-medium uppercase tracking-[0.18em] text-[#ff5a1f]">
-                            Web design FAQ
-                        </p>
+                        <div className="flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
-                        <h2 className="mt-5 max-w-lg text-[clamp(2.5rem,4vw,4.2rem)] font-medium leading-[0.98] tracking-[-0.045em] text-white">
-                            Questions before starting a website project.
+                            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
+                                Web design FAQ
+                            </p>
+                        </div>
+
+                        <h2 className="mt-5 max-w-lg text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
+                            Questions before starting{" "}
+                            <span className="text-primary">
+                                a website project.
+                            </span>
                         </h2>
 
-                        <p className="mt-7 max-w-md text-base leading-7 text-white/60">
+                        <p className="mt-7 max-w-md text-[17px] leading-7 text-text-secondary md:text-[18px]">
                             If your question is specific to your business, tell us what
                             you&apos;re planning and we can talk through it.
                         </p>
                     </div>
 
-                    <div className="border-t border-white/[0.1]">
+                    {/* Questions */}
+                    <div className="border-t border-border">
                         {faqs.map((faq) => (
                             <details
                                 key={faq.question}
-                                className="group border-b border-white/[0.1]"
+                                className="group border-b border-border"
                             >
                                 <summary className="flex cursor-pointer list-none items-start justify-between gap-8 py-7 text-left md:py-8 [&::-webkit-details-marker]:hidden">
-                                    <span className="max-w-2xl text-lg font-medium leading-6 text-white md:text-xl">
+                                    <span className="max-w-2xl text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                                         {faq.question}
                                     </span>
 
                                     <span
                                         aria-hidden="true"
-                                        className="relative mt-1 h-5 w-5 shrink-0 text-white/40 transition-colors group-hover:text-[#ff5a1f] group-open:text-[#ff5a1f]"
+                                        className="relative mt-1 h-5 w-5 shrink-0 text-text-muted transition-colors group-hover:text-primary group-open:text-primary"
                                     >
                                         <span className="absolute left-1/2 top-1/2 h-px w-4 -translate-x-1/2 -translate-y-1/2 bg-current" />
-                                        <span className="absolute left-1/2 top-1/2 h-4 w-px -translate-x-1/2 -translate-y-1/2 bg-current transition-transform duration-300 group-open:rotate-90 group-open:opacity-0" />
+
+                                        <span className="absolute left-1/2 top-1/2 h-4 w-px -translate-x-1/2 -translate-y-1/2 bg-current transition-all duration-300 group-open:rotate-90 group-open:opacity-0" />
                                     </span>
                                 </summary>
 
                                 <div className="max-w-2xl pb-8">
-                                    <p className="text-base leading-7 text-white/55">
+                                    <p className="text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                         {faq.answer}
                                     </p>
 
                                     {faq.link && (
                                         <Link
                                             href={faq.link.href}
-                                            className="group/link mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#ff5a1f]"
+                                            className="group/link mt-5 inline-flex cursor-pointer items-center gap-2 text-[14px] font-medium text-primary"
                                         >
                                             {faq.link.label}
+
                                             <span
                                                 aria-hidden="true"
                                                 className="transition-transform group-hover/link:translate-x-1"

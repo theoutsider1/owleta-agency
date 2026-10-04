@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function BournemouthLocalBusiness() {
     return (
         <section className="section-space border-t border-border">
@@ -6,7 +8,10 @@ export default function BournemouthLocalBusiness() {
                 <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
                     <div>
                         <div className="flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 When the website gets in the way
@@ -15,13 +20,15 @@ export default function BournemouthLocalBusiness() {
                     </div>
 
                     <div className="max-w-[820px]">
-                        <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[1] tracking-[-0.045em]">
+                        <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Bournemouth customers are searching.
                             <br />
-                            <span className="text-primary">Are they reaching you?</span>
+                            <span className="text-primary">
+                                Are they reaching you?
+                            </span>
                         </h2>
 
-                        <p className="mt-7 max-w-[650px] text-[16px] leading-7 text-text-secondary md:text-[17px]">
+                        <p className="mt-7 max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
                             Your website can be online and still make it difficult for local
                             customers to find you, trust you or take the next step.
                         </p>
@@ -29,7 +36,7 @@ export default function BournemouthLocalBusiness() {
                 </div>
 
                 {/* Problems */}
-                <div className="mt-16 grid border-y border-border md:grid-cols-3">
+                <div className="mt-14 grid border-y border-border md:mt-16 md:grid-cols-3">
                     <Problem
                         number="01"
                         title="Not being found"
@@ -53,34 +60,37 @@ export default function BournemouthLocalBusiness() {
                 {/* Action */}
                 <div className="mt-10 flex flex-col justify-between gap-8 md:flex-row md:items-end">
                     <div className="max-w-[570px]">
-                        <p className="text-[19px] font-medium leading-7 text-text-primary">
+                        <h3 className="text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                             Not sure where the problem is?
-                        </p>
+                        </h3>
 
-                        <p className="mt-2 text-[14px] leading-6 text-text-secondary">
+                        <p className="mt-3 text-[15px] leading-6 text-text-secondary md:text-[16px]">
                             We can take a focused look at your website and identify what may
                             be getting in the way.
                         </p>
                     </div>
 
                     <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                        <a
-                            href="/website-check"
-                            className="inline-flex items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
+                        <Link
+                            href="/services/website-audit/?service=check#request"
+                            className="inline-flex cursor-pointer items-center justify-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                         >
                             Get a website check
-                            <span className="ml-3">→</span>
-                        </a>
+                        </Link>
 
-                        <a
+                        <Link
                             href="/contact"
-                            className="group inline-flex items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
+                            className="group inline-flex cursor-pointer items-center gap-2 text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                         >
                             Starting from scratch?
-                            <span className="ml-2 transition-transform group-hover:translate-x-1">
+
+                            <span
+                                aria-hidden="true"
+                                className="transition-transform group-hover:translate-x-1"
+                            >
                                 →
                             </span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -106,13 +116,15 @@ function Problem({
                     : "border-b border-border md:border-b-0 md:border-r"
                 }`}
         >
-            <span className="text-[10px] font-medium text-primary">{number}</span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-primary">
+                {number}
+            </span>
 
-            <h3 className="mt-5 text-[17px] font-medium text-text-primary">
+            <h3 className="mt-5 text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
                 {title}
             </h3>
 
-            <p className="mt-3 max-w-[330px] text-[14px] leading-6 text-text-secondary">
+            <p className="mt-3 max-w-[330px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                 {description}
             </p>
         </div>

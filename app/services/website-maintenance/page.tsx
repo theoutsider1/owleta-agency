@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import WebsiteMaintenanceHero from "@/components/website-maintenance/WebsiteMaintenanceHero";
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
     title: "Website Maintenance Services for UK Businesses | Owlixir",
     description:
         "Website maintenance services for UK businesses, including website updates, technical support, fixes, WordPress maintenance and ongoing improvements.",
+    alternates: {
+        canonical: "/services/website-maintenance",
+    },
 };
 
 export default function WebsiteMaintenancePage() {

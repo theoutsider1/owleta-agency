@@ -1,5 +1,3 @@
-// components/seo/SEOProcess.tsx
-
 const steps = [
     {
         number: "01",
@@ -25,13 +23,16 @@ const steps = [
 
 export default function SEOProcess() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Intro */}
                 <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 How we approach SEO
@@ -40,37 +41,42 @@ export default function SEOProcess() {
 
                         <h2 className="max-w-[620px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Improve with a reason,{" "}
-                            <span className="text-primary">not at random.</span>
+                            <span className="text-primary">
+                                not at random.
+                            </span>
                         </h2>
                     </div>
 
                     <div className="flex items-end">
                         <p className="max-w-[620px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            SEO should not begin with changing pages simply because something
-                            might help. We start by understanding what matters, then use
-                            research and performance data to decide where effort is better
-                            spent.
+                            SEO should not begin with changing pages simply because
+                            something might help. We start by understanding what
+                            matters, then use research and performance data to decide
+                            where the effort should go.
                         </p>
                     </div>
                 </div>
 
                 {/* Process */}
-                <div className="relative mt-16">
+                <div className="relative mt-14 lg:mt-16">
                     {/* Connecting line */}
                     <div
-                        className="absolute left-0 right-0 top-[5px] hidden h-px bg-border lg:block"
                         aria-hidden="true"
+                        className="absolute left-0 right-0 top-[5px] hidden h-px bg-border lg:block"
                     />
 
                     <div className="grid gap-10 lg:grid-cols-4 lg:gap-0">
                         {steps.map((step, index) => (
                             <div
                                 key={step.number}
-                                className="relative border-b border-border pb-10 last:border-b-0 last:pb-0 lg:border-b-0 lg:border-r lg:px-8 lg:pb-0 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
+                                className="relative border-b border-border pb-10 last:border-b-0 last:pb-0 lg:min-w-0 lg:border-b-0 lg:border-r lg:px-8 lg:pb-0 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
                             >
                                 {/* Marker */}
                                 <div className="relative z-10 flex items-center gap-4 lg:block">
-                                    <span className="block h-[11px] w-[11px] rounded-full border-[3px] border-background bg-primary" />
+                                    <span
+                                        aria-hidden="true"
+                                        className="block h-[11px] w-[11px] rounded-full border-[3px] border-background bg-primary"
+                                    />
 
                                     <span className="text-[10px] font-medium text-text-muted lg:mt-5 lg:block">
                                         {step.number}
@@ -82,7 +88,7 @@ export default function SEOProcess() {
                                         {step.title}
                                     </h3>
 
-                                    <p className="mt-3 text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                                    <p className="mt-3 w-full text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                         {step.text}
                                     </p>
                                 </div>
@@ -104,9 +110,9 @@ export default function SEOProcess() {
                 {/* Closing principle */}
                 <div className="mt-14 border-t border-border pt-7">
                     <p className="max-w-[760px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                        SEO is an ongoing process of understanding what people search for,
-                        improving how the website responds to that demand and learning from
-                        what happens next.
+                        SEO is an ongoing process of understanding what people search
+                        for, improving how the website responds to that demand and
+                        learning from what happens next.
                     </p>
                 </div>
             </div>

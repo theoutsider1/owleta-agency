@@ -24,13 +24,16 @@ const principles = [
 
 export default function GermanLanguageExperience() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Introduction */}
                 <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 Arabic experience
@@ -39,16 +42,18 @@ export default function GermanLanguageExperience() {
 
                         <h2 className="max-w-[620px] text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                             Arabic was part of the{" "}
-                            <span className="text-primary">design from the start.</span>
+                            <span className="text-primary">
+                                design from the start.
+                            </span>
                         </h2>
                     </div>
 
                     <div>
                         <p className="max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
                             Supporting an Arabic-speaking audience involves more than
-                            translating text. Reading direction, hierarchy, spacing and
-                            navigation all influence whether the website feels natural to
-                            use.
+                            translating text. Reading direction, hierarchy, spacing
+                            and navigation all influence whether the website feels
+                            natural to use.
                         </p>
                     </div>
                 </div>
@@ -61,7 +66,9 @@ export default function GermanLanguageExperience() {
                             className={`py-8 lg:px-8 ${index > 0
                                     ? "border-t border-border lg:border-l lg:border-t-0"
                                     : ""
-                                } ${index === 0 ? "lg:pl-0" : ""} ${index === principles.length - 1 ? "lg:pr-0" : ""
+                                } ${index === 0 ? "lg:pl-0" : ""} ${index === principles.length - 1
+                                    ? "lg:pr-0"
+                                    : ""
                                 }`}
                         >
                             <div className="flex items-center justify-between gap-4">
@@ -88,9 +95,23 @@ export default function GermanLanguageExperience() {
                 {/* Relationship */}
                 <div className="mt-8 flex flex-col gap-3 text-[11px] font-medium uppercase tracking-[0.14em] text-text-muted sm:flex-row sm:items-center sm:justify-center sm:gap-5">
                     <span>Arabic content</span>
-                    <span className="hidden sm:inline">→</span>
-                    <span>Natural interface</span>
-                    <span className="hidden sm:inline">→</span>
+
+                    <span
+                        aria-hidden="true"
+                        className="hidden sm:inline"
+                    >
+                        →
+                    </span>
+
+                    <span>RTL experience</span>
+
+                    <span
+                        aria-hidden="true"
+                        className="hidden sm:inline"
+                    >
+                        →
+                    </span>
+
                     <span className="font-semibold text-primary">
                         Clearer learner journey
                     </span>

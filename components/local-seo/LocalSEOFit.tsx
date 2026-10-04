@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const businesses = [
     {
         number: "01",
@@ -14,20 +16,23 @@ const businesses = [
     {
         number: "03",
         title: "Multi-area businesses",
-        text: "Businesses serving several genuine locations that need a clearer search structure for different service areas.",
+        text: "Businesses serving several genuine locations that need a clearer search structure across different service areas.",
         detail: "multiple areas · service coverage",
     },
 ];
 
 export default function LocalSEOFit() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Intro */}
                 <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 Who Local SEO is for
@@ -44,9 +49,9 @@ export default function LocalSEOFit() {
 
                     <div className="flex items-end">
                         <p className="max-w-[620px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            Local SEO is most relevant when customers care about where a
-                            business is based, where it operates or whether its services are
-                            available in their area.
+                            Local SEO is most relevant when customers care about
+                            where a business is based, where it operates or whether
+                            its services are available in their area.
                         </p>
                     </div>
                 </div>
@@ -80,15 +85,53 @@ export default function LocalSEOFit() {
                 </div>
 
                 {/* Qualification */}
-                <div className="mt-8 grid lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
-                    <div aria-hidden="true" />
+                <div className="mt-10 grid lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+                    <div
+                        aria-hidden="true"
+                        className="hidden lg:block"
+                    />
 
-                    <div className="flex gap-4 border-l-2 border-primary pl-5">
-                        <p className="max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            If customers can use your service regardless of where they are,
-                            broader SEO may be more relevant than building a strategy around
-                            specific locations.
+                    <div className="relative py-8 pl-7 pr-7 md:pl-8 md:pr-8">
+                        <span
+                            aria-hidden="true"
+                            className="absolute left-0 top-0 h-8 w-px bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute left-0 top-0 h-px w-8 bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute bottom-0 right-0 h-8 w-px bg-primary"
+                        />
+                        <span
+                            aria-hidden="true"
+                            className="absolute bottom-0 right-0 h-px w-8 bg-primary"
+                        />
+
+                        <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.14em] text-text-muted">
+                            When broader SEO may fit better
                         </p>
+
+                        <p className="max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
+                            If customers can use your service regardless of where
+                            they are, broader SEO may be more relevant than building
+                            a strategy around specific locations.
+                        </p>
+
+                        <Link
+                            href="/services/seo"
+                            className="group mt-5 inline-flex cursor-pointer items-center text-[14px] font-medium text-text-primary transition-colors hover:text-primary"
+                        >
+                            Explore SEO services
+
+                            <span
+                                aria-hidden="true"
+                                className="ml-2 transition-transform group-hover:translate-x-1"
+                            >
+                                →
+                            </span>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ const challenges = [
         number: "02",
         title: "Design around an Arabic-speaking audience",
         description:
-            "The experience needed to support Arabic content naturally, with the layout and content hierarchy working for the audience rather than simply adapting an existing structure.",
+            "The experience needed to support Arabic content naturally, with the layout, reading direction and content hierarchy designed around the audience.",
     },
     {
         number: "03",
@@ -23,13 +23,16 @@ const challenges = [
 
 export default function GermanLanguageChallenge() {
     return (
-        <section className="section-space border-t border-border">
+        <section className="section-space">
             <div className="site-container">
                 {/* Introduction */}
                 <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-20">
                     <div>
-                        <div className="mb-5 flex items-center gap-3">
-                            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        <div className="mb-6 flex items-center gap-3">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-primary"
+                            />
 
                             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-text-muted">
                                 The challenge
@@ -46,10 +49,11 @@ export default function GermanLanguageChallenge() {
 
                     <div>
                         <p className="max-w-[650px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            A language centre can have a lot to communicate, but learners
-                            should not have to work through a complicated website to find
-                            what matters to them. The challenge was to create a clearer
-                            experience around the centre&apos;s content and audience.
+                            A language centre can have a lot to communicate, but
+                            learners should not have to work through a complicated
+                            website to find what matters to them. The challenge was
+                            to create a clearer experience around the centre&apos;s
+                            content and audience.
                         </p>
                     </div>
                 </div>
@@ -70,7 +74,7 @@ export default function GermanLanguageChallenge() {
 
                         <Image
                             src="/work/german-language-centre.webp"
-                            alt="German Language Centre Arabic website"
+                            alt="Arabic website created for a German language centre"
                             width={1600}
                             height={900}
                             sizes="(min-width: 1024px) 50vw, 100vw"
@@ -94,7 +98,7 @@ export default function GermanLanguageChallenge() {
                                         {challenge.title}
                                     </h3>
 
-                                    <p className="mt-2 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
+                                    <p className="mt-3 max-w-[520px] text-[15px] leading-6 text-text-secondary md:text-[16px]">
                                         {challenge.description}
                                     </p>
                                 </div>

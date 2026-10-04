@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import SEOBournemouthHero from "@/components/seo-bournemouth/SEOBournemouthHero";
@@ -12,7 +13,10 @@ import BournemouthSEOCTA from "@/components/seo-bournemouth/BournemouthSEOCTA";
 export const metadata: Metadata = {
   title: "SEO Bournemouth | SEO Services for Bournemouth Businesses | Owlixir",
   description:
-    "SEO services for Bournemouth businesses that want to improve search visibility, reach more relevant local customers and strengthen their presence in organic search.",
+    "SEO services for businesses serving Bournemouth, focused on stronger local search relevance, useful website pages and better organic search visibility.",
+  alternates: {
+    canonical: "/services/seo-bournemouth",
+  },
 };
 
 export default function SEOBournemouthPage() {
