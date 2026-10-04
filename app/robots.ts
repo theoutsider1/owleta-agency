@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: ["/api/"],
         },
-        sitemap: "https://www.owlixir.com/sitemap.xml",
-        host: "https://www.owlixir.com",
+        sitemap: "https://owlixir.com/sitemap.xml",
+        host: "https://owlixir.com",
     };
 }

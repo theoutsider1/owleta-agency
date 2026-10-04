@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.owlixir.com"),
+  metadataBase: new URL("https://owlixir.com"),
 
   title: {
     default: "Owlixir | Web Design, SEO & Website Support",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Owlixir | Web Design, SEO & Website Support",
     description:
       "Independent web studio helping UK and international businesses build, improve and optimise websites for better visibility, trust and enquiries.",
-    url: "https://www.owlixir.com",
+    url: "https://owlixir.com",
     images: [
       {
         url: "/og-image.png",

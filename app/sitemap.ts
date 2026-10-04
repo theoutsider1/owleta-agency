@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://www.owlixir.com";
+const baseUrl = "https://owlixir.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     return [

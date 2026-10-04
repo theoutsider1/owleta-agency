@@ -3,21 +3,21 @@ const structuredData = {
     "@graph": [
         {
             "@type": "WebSite",
-            "@id": "https://www.owlixir.com/#website",
-            url: "https://www.owlixir.com/",
+            "@id": "https://owlixir.com/#website",
+            url: "https://owlixir.com/",
             name: "Owlixir",
             description:
                 "Independent web studio helping UK and international businesses build, improve and optimise websites.",
             inLanguage: "en-GB",
             publisher: {
-                "@id": "https://www.owlixir.com/#organization",
+                "@id": "https://owlixir.com/#organization",
             },
         },
         {
             "@type": "Organization",
-            "@id": "https://www.owlixir.com/#organization",
+            "@id": "https://owlixir.com/#organization",
             name: "Owlixir",
-            url: "https://www.owlixir.com/",
+            url: "https://owlixir.com/",
             description:
                 "Independent web studio providing web design, website improvement, SEO and website support services.",
             founder: {
