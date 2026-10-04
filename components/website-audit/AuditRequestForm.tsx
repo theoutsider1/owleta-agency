@@ -1,7 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useRef, useState } from "react";
-import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import {
+    Turnstile,
+    type TurnstileInstance,
+} from "@marsidev/react-turnstile";
 
 type ServiceType = "check" | "audit";
 
@@ -139,9 +143,9 @@ export default function AuditRequestForm({
                         </h2>
 
                         <p className="mt-7 text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                            Share your website and what you would like us to look at.
-                            Choose a free Website Check for a focused first look, or a
-                            Website Audit for a deeper investigation.
+                            Share your website and what you would like us to look
+                            at. Choose a free Website Check for a focused first
+                            look, or a Website Audit for a deeper investigation.
                         </p>
 
                         {/* Commitment reassurance */}
@@ -168,9 +172,9 @@ export default function AuditRequestForm({
                             </p>
 
                             <p className="text-[17px] leading-7 text-text-secondary md:text-[18px]">
-                                Choosing an audit here does not commit you to payment.
-                                We review your request and confirm the scope and quote
-                                before you decide to proceed.
+                                Choosing an audit here does not commit you to
+                                payment. We review your request and confirm the
+                                scope and quote before you decide to proceed.
                             </p>
                         </div>
                     </div>
@@ -286,7 +290,8 @@ export default function AuditRequestForm({
                             <Turnstile
                                 ref={turnstileRef}
                                 siteKey={
-                                    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ""
+                                    process.env
+                                        .NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ""
                                 }
                                 onSuccess={(token) =>
                                     setTurnstileToken(token)
@@ -310,8 +315,8 @@ export default function AuditRequestForm({
                                         : "polite"
                                 }
                                 className={`mt-5 text-[15px] leading-6 ${status.type === "success"
-                                    ? "text-text-secondary"
-                                    : "text-red-600"
+                                        ? "text-text-secondary"
+                                        : "text-red-600"
                                     }`}
                             >
                                 {status.message}
@@ -319,20 +324,34 @@ export default function AuditRequestForm({
                         )}
 
                         {/* Submit */}
-                        <div className="mt-7 flex flex-wrap items-center gap-5">
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="inline-flex cursor-pointer items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color,opacity] hover:-translate-y-0.5 hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
-                            >
-                                {isSubmitting
-                                    ? "Sending..."
-                                    : "Send request"}
-                            </button>
+                        <div className="mt-7">
+                            <div className="flex flex-wrap items-center gap-5">
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="inline-flex cursor-pointer items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color,opacity] hover:-translate-y-0.5 hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                                >
+                                    {isSubmitting
+                                        ? "Sending..."
+                                        : "Send request"}
+                                </button>
 
-                            <p className="max-w-[360px] text-[15px] leading-6 text-text-secondary">
-                                We&apos;ll review your request before confirming the
-                                next step.
+                                <p className="max-w-[360px] text-[15px] leading-6 text-text-secondary">
+                                    We&apos;ll review your request before
+                                    confirming the next step.
+                                </p>
+                            </div>
+
+                            <p className="mt-4 max-w-[620px] text-[13px] leading-5 text-text-secondary">
+                                Information submitted through this form is
+                                handled according to our{" "}
+                                <Link
+                                    href="/privacy"
+                                    className="cursor-pointer text-text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-primary"
+                                >
+                                    Privacy Policy
+                                </Link>
+                                .
                             </p>
                         </div>
                     </form>
@@ -360,8 +379,8 @@ function ServiceOption({
     return (
         <label
             className={`relative cursor-pointer rounded-[10px] border p-5 transition-colors ${selected
-                ? "border-primary bg-primary/[0.03]"
-                : "border-border hover:border-text-muted"
+                    ? "border-primary bg-primary/[0.03]"
+                    : "border-border hover:border-text-muted"
                 }`}
         >
             <input

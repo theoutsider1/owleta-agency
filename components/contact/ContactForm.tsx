@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, useRef, useState } from "react";
 import {
     Turnstile,
@@ -169,8 +170,8 @@ export default function ContactForm() {
                                     message: "",
                                 });
                             }
-                        }}>
-
+                        }}
+                    >
                         {/* Name + email */}
                         <div className="grid gap-5 md:grid-cols-2">
                             <div>
@@ -262,7 +263,9 @@ export default function ContactForm() {
                                             onClick={() => {
                                                 setProjectType(type);
 
-                                                if (status.type === "success") {
+                                                if (
+                                                    status.type === "success"
+                                                ) {
                                                     setStatus({
                                                         type: null,
                                                         message: "",
@@ -271,8 +274,8 @@ export default function ContactForm() {
                                             }}
                                             aria-pressed={active}
                                             className={`cursor-pointer rounded-[9px] border px-4 py-2.5 text-[13px] font-medium transition-colors ${active
-                                                ? "border-primary bg-primary text-white"
-                                                : "border-border bg-background text-text-secondary hover:border-text-muted hover:text-text-primary"
+                                                    ? "border-primary bg-primary text-white"
+                                                    : "border-border bg-background text-text-secondary hover:border-text-muted hover:text-text-primary"
                                                 }`}
                                         >
                                             {type}
@@ -375,16 +378,21 @@ export default function ContactForm() {
                                 {isSubmitting
                                     ? "Sending..."
                                     : "Send enquiry"}
-
-                                {!isSubmitting && (
-                                    <span className="ml-3">→</span>
-                                )}
                             </button>
 
-                            <p className="mt-4 max-w-[520px] text-[13px] leading-5 text-text-muted">
+                            <p className="mt-4 max-w-[560px] text-[13px] leading-5 text-text-secondary">
                                 Sending an enquiry does not commit you to a
                                 project. We will review the details first and
-                                discuss the appropriate next step.
+                                discuss the appropriate next step. Information
+                                submitted through this form is handled according
+                                to our{" "}
+                                <Link
+                                    href="/privacy"
+                                    className="cursor-pointer text-text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-primary"
+                                >
+                                    Privacy Policy
+                                </Link>
+                                .
                             </p>
 
                             {status.type && (
@@ -396,8 +404,8 @@ export default function ContactForm() {
                                     }
                                     aria-live="polite"
                                     className={`mt-5 border-l-2 pl-4 text-[14px] leading-6 ${status.type === "success"
-                                        ? "border-primary text-text-primary"
-                                        : "border-border text-text-secondary"
+                                            ? "border-primary text-text-primary"
+                                            : "border-border text-text-secondary"
                                         }`}
                                 >
                                     {status.message}

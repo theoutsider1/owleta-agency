@@ -26,6 +26,11 @@ const owlixirLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+const legalLinks = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-background">
@@ -55,30 +60,38 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3">
-            <FooterColumn
-              title="Services"
-              links={serviceLinks}
-            />
-
-            <FooterColumn
-              title="Locations"
-              links={locationLinks}
-            />
-
-            <FooterColumn
-              title="Owlixir"
-              links={owlixirLinks}
-            />
+            <FooterColumn title="Services" links={serviceLinks} />
+            <FooterColumn title="Locations" links={locationLinks} />
+            <FooterColumn title="Owlixir" links={owlixirLinks} />
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col gap-3 border-t border-border py-6 text-[13px] leading-5 text-text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Owlixir. All rights reserved.</p>
+        <div className="border-t border-border py-6">
+          <div className="flex flex-col gap-4 text-[13px] leading-5 text-text-muted lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              <p>© 2026 Owlixir. All rights reserved.</p>
 
-          <p>
-            Based in Morocco. Working with businesses internationally.
-          </p>
+              <nav
+                aria-label="Legal"
+                className="flex items-center gap-5"
+              >
+                {legalLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="cursor-pointer transition-colors hover:text-text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            <p>
+              Based in Morocco. Working with businesses internationally.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
