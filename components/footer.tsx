@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const serviceLinks = [
@@ -9,7 +10,17 @@ const serviceLinks = [
   { label: "Local SEO", href: "/services/local-seo" },
 ];
 
-const locationLinks = [
+const owlixirLinks = [
+  { label: "Selected Work", href: "/work" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+
+const featuredLinks = [
+  {
+    label: "Bournemouth Locksmith",
+    href: "/work/bournemouth-locksmith",
+  },
   {
     label: "Web Design Bournemouth",
     href: "/services/web-design-bournemouth",
@@ -18,12 +29,6 @@ const locationLinks = [
     label: "SEO Bournemouth",
     href: "/services/seo-bournemouth",
   },
-];
-
-const owlixirLinks = [
-  { label: "Selected Work", href: "/work" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ];
 
 const legalLinks = [
@@ -42,9 +47,19 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="Owlixir home"
-              className="inline-flex cursor-pointer text-[22px] font-semibold tracking-[-0.04em] text-text-primary"
+              className="inline-flex cursor-pointer items-center gap-2.5"
             >
-              Owlix<span className="text-primary">i</span>r
+              <Image
+                src="/Owlixir-logo.png"
+                alt=""
+                width={32}
+                height={32}
+                className="h-8 w-8 shrink-0 object-contain"
+              />
+
+              <span className="text-[20px] font-semibold tracking-[-0.04em] text-text-primary">
+                Owlixir
+              </span>
             </Link>
 
             <p className="mt-5 max-w-[360px] text-[17px] leading-7 text-text-secondary md:text-[18px]">
@@ -61,8 +76,8 @@ export default function Footer() {
           {/* Navigation */}
           <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3">
             <FooterColumn title="Services" links={serviceLinks} />
-            <FooterColumn title="Locations" links={locationLinks} />
             <FooterColumn title="Owlixir" links={owlixirLinks} />
+            <FooterColumn title="Featured" links={featuredLinks} />
           </div>
         </div>
 
@@ -72,10 +87,7 @@ export default function Footer() {
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
               <p>© 2026 Owlixir. All rights reserved.</p>
 
-              <nav
-                aria-label="Legal"
-                className="flex items-center gap-5"
-              >
+              <nav aria-label="Legal" className="flex items-center gap-5">
                 {legalLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -88,9 +100,7 @@ export default function Footer() {
               </nav>
             </div>
 
-            <p>
-              Based in Morocco. Working with businesses internationally.
-            </p>
+            <p>Based in Morocco. Working with businesses internationally.</p>
           </div>
         </div>
       </div>

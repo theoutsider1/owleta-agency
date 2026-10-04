@@ -81,7 +81,7 @@ export default function SelectedWork() {
                     </div>
 
                     <ProjectPreview
-                        src="/work/locksmith-homepage.png"
+                        src="/work/bournemouth-locksmith.webp"
                         alt="Lock Key Locksmiths website homepage"
                         theme="dark"
                     />
@@ -93,7 +93,7 @@ export default function SelectedWork() {
                 {/* Project 02 */}
                 <article className="grid gap-12 py-24 md:py-28 lg:grid-cols-[1.18fr_0.82fr] lg:items-center lg:gap-20">
                     <ProjectPreview
-                        src="/work/german-language-centre-homepage.png"
+                        src="/work/german-language-centre.webp"
                         alt="German Language Centre Arabic website homepage"
                         theme="light"
                     />
@@ -151,15 +151,15 @@ function ProjectPreview({
         <div className="w-full lg:max-w-[760px]">
             <div
                 className={`group overflow-hidden rounded-[16px] border shadow-[0_24px_70px_rgba(0,0,0,0.28)] ${isLight
-                        ? "border-black/10 bg-[#f1f1ef]"
-                        : "border-border-strong bg-surface"
+                    ? "border-black/10 bg-[#f1f1ef]"
+                    : "border-border-strong bg-surface"
                     }`}
             >
                 {/* Small browser chrome */}
                 <div
                     className={`flex h-10 items-center px-4 ${isLight
-                            ? "border-b border-black/[0.08] bg-[#e9e9e7]"
-                            : "border-b border-border bg-surface-raised"
+                        ? "border-b border-black/[0.08] bg-[#e9e9e7]"
+                        : "border-b border-border bg-surface-raised"
                         }`}
                 >
                     <div className="flex gap-1.5">
@@ -185,15 +185,16 @@ function ProjectPreview({
 
                 {/* Controlled preview height */}
                 <div
-                    className={`relative aspect-[16/10] overflow-hidden ${isLight ? "bg-white" : "bg-[#05080d]"
+                    className={`relative overflow-hidden ${isLight ? "bg-white" : "bg-[#05080d]"
                         }`}
                 >
                     <Image
                         src={src}
                         alt={alt}
-                        fill
+                        width={1600}
+                        height={1000}
                         sizes="(max-width: 1024px) 100vw, 60vw"
-                        className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.012]"
+                        className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.012]"
                     />
 
                     <div

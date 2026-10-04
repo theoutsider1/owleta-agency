@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const services = [
@@ -50,9 +51,20 @@ export default function Navigation() {
             href="/"
             onClick={closeMobileMenu}
             aria-label="Owlixir home"
-            className="cursor-pointer text-[22px] font-semibold tracking-[-0.04em] text-text-primary"
+            className="flex cursor-pointer items-center gap-2.5"
           >
-            Owlix<span className="text-primary">i</span>r
+            <Image
+              src="/Owlixir-logo.png"
+              alt=""
+              width={32}
+              height={32}
+              priority
+              className="h-8 w-8 shrink-0 object-contain"
+            />
+
+            <span className="text-[20px] font-semibold tracking-[-0.04em] text-text-primary">
+              Owlixir
+            </span>
           </Link>
 
           {/* Desktop navigation */}
@@ -213,8 +225,8 @@ export default function Navigation() {
                     fill="none"
                     aria-hidden="true"
                     className={`h-3 w-3 text-text-muted transition-transform duration-200 ${mobileServicesOpen
-                        ? "rotate-180"
-                        : ""
+                      ? "rotate-180"
+                      : ""
                       }`}
                   >
                     <path
