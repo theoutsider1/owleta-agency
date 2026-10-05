@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { OPEN_COOKIE_PREFERENCES_EVENT } from "@/components/analytics/CookieConsent";
 
 const serviceLinks = [
   { label: "Web Design", href: "/services/web-design" },
@@ -37,6 +41,10 @@ const legalLinks = [
 ];
 
 export default function Footer() {
+  function openCookiePreferences() {
+    window.dispatchEvent(new Event(OPEN_COOKIE_PREFERENCES_EVENT));
+  }
+
   return (
     <footer className="border-t border-border bg-background">
       <div className="site-container">
@@ -87,7 +95,10 @@ export default function Footer() {
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
               <p>© 2026 Owlixir. All rights reserved.</p>
 
-              <nav aria-label="Legal" className="flex items-center gap-5">
+              <nav
+                aria-label="Legal and privacy"
+                className="flex flex-wrap items-center gap-x-5 gap-y-2"
+              >
                 {legalLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -97,6 +108,14 @@ export default function Footer() {
                     {link.label}
                   </Link>
                 ))}
+
+                <button
+                  type="button"
+                  onClick={openCookiePreferences}
+                  className="cursor-pointer text-left transition-colors hover:text-text-primary"
+                >
+                  Cookie preferences
+                </button>
               </nav>
             </div>
 

@@ -10,8 +10,8 @@ export const contactSchema = z.object({
     email: z
         .string()
         .trim()
-        .email("Please enter a valid email address.")
-        .max(254, "Email address is too long."),
+        .max(254, "Email address is too long.")
+        .pipe(z.email("Please enter a valid email address.")),
 
     business: z
         .string()

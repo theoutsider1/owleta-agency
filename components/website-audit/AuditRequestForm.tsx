@@ -6,6 +6,7 @@ import {
     Turnstile,
     type TurnstileInstance,
 } from "@marsidev/react-turnstile";
+import { trackAnalyticsEvent } from "@/components/analytics/GoogleAnalytics";
 
 type ServiceType = "check" | "audit";
 
@@ -26,6 +27,9 @@ export default function AuditRequestForm({
         type: null,
         message: "",
     });
+    const [fieldErrors, setFieldErrors] = useState<
+        Partial<Record<"name" | "email" | "website", string>>
+    >({});
 
     const turnstileRef = useRef<TurnstileInstance>(null);
 
@@ -38,10 +42,77 @@ export default function AuditRequestForm({
         }
     }
 
+    function clearFieldError(field: keyof typeof fieldErrors) {
+        setFieldErrors((current) => {
+            if (!current[field]) return current;
+
+            const next = { ...current };
+            delete next[field];
+
+            return next;
+        });
+    }
+
+    function handleInvalid(
+        field: keyof typeof fieldErrors,
+        message: string,
+    ) {
+        return (event: React.FormEvent<HTMLInputElement>) => {
+            event.preventDefault();
+
+            setFieldErrors((current) => ({
+                ...current,
+                [field]: message,
+            }));
+        };
+    }
+
+    function isValidWebsite(value: string) {
+        const trimmed = value.trim();
+
+        if (!trimmed) return false;
+
+        const normalized = /^https?:\/\//i.test(trimmed)
+            ? trimmed
+            : `https://${trimmed}`;
+
+        try {
+            const url = new URL(normalized);
+
+            return (
+                (url.protocol === "http:" || url.protocol === "https:") &&
+                url.hostname.includes(".")
+            );
+        } catch {
+            return false;
+        }
+    }
+
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
         if (isSubmitting) return;
+
+        setStatus({
+            type: null,
+            message: "",
+        });
+
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+        const website = String(formData.get("website") ?? "");
+
+        if (!isValidWebsite(website)) {
+            setFieldErrors((current) => ({
+                ...current,
+                website: website.trim()
+                    ? "Please enter a valid website address."
+                    : "Please enter your website address.",
+            }));
+
+            document.getElementById("audit-website")?.focus();
+            return;
+        }
 
         if (!turnstileToken) {
             setStatus({
@@ -51,24 +122,17 @@ export default function AuditRequestForm({
             return;
         }
 
-        const form = event.currentTarget;
-        const formData = new FormData(form);
-
         const payload = {
             service,
             name: String(formData.get("name") ?? ""),
             email: String(formData.get("email") ?? ""),
-            website: String(formData.get("website") ?? ""),
+            website,
             business: String(formData.get("business") ?? ""),
             message: String(formData.get("message") ?? ""),
             turnstileToken,
         };
 
         setIsSubmitting(true);
-        setStatus({
-            type: null,
-            message: "",
-        });
 
         try {
             const response = await fetch("/api/audit-request", {
@@ -94,6 +158,12 @@ export default function AuditRequestForm({
 
                 return;
             }
+
+            trackAnalyticsEvent(
+                service === "check"
+                    ? "website_check_submit"
+                    : "website_audit_submit",
+            );
 
             form.reset();
 
@@ -232,6 +302,12 @@ export default function AuditRequestForm({
                                 minLength={2}
                                 maxLength={100}
                                 autoComplete="name"
+                                error={fieldErrors.name}
+                                onInvalid={handleInvalid(
+                                    "name",
+                                    "Please enter your name.",
+                                )}
+                                onChange={() => clearFieldError("name")}
                             />
 
                             <FormField
@@ -241,6 +317,12 @@ export default function AuditRequestForm({
                                 required
                                 maxLength={254}
                                 autoComplete="email"
+                                error={fieldErrors.email}
+                                onInvalid={handleInvalid(
+                                    "email",
+                                    "Please enter a valid email address.",
+                                )}
+                                onChange={() => clearFieldError("email")}
                             />
 
                             <FormField
@@ -252,6 +334,12 @@ export default function AuditRequestForm({
                                 placeholder="yourwebsite.com"
                                 required
                                 maxLength={500}
+                                error={fieldErrors.website}
+                                onInvalid={handleInvalid(
+                                    "website",
+                                    "Please enter your website address.",
+                                )}
+                                onChange={() => clearFieldError("website")}
                             />
 
                             <FormField
@@ -297,7 +385,15 @@ export default function AuditRequestForm({
                                     setTurnstileToken(token)
                                 }
                                 onExpire={() => setTurnstileToken("")}
-                                onError={() => setTurnstileToken("")}
+                                onError={() => {
+                                    setTurnstileToken("");
+
+                                    setStatus({
+                                        type: "error",
+                                        message:
+                                            "The security check could not load. Please refresh and try again.",
+                                    });
+                                }}
                             />
                         </div>
 
@@ -315,8 +411,8 @@ export default function AuditRequestForm({
                                         : "polite"
                                 }
                                 className={`mt-5 text-[15px] leading-6 ${status.type === "success"
-                                        ? "text-text-secondary"
-                                        : "text-red-600"
+                                    ? "text-text-secondary"
+                                    : "text-red-600"
                                     }`}
                             >
                                 {status.message}
@@ -379,8 +475,8 @@ function ServiceOption({
     return (
         <label
             className={`relative cursor-pointer rounded-[10px] border p-5 transition-colors ${selected
-                    ? "border-primary bg-primary/[0.03]"
-                    : "border-border hover:border-text-muted"
+                ? "border-primary bg-primary/[0.03]"
+                : "border-border hover:border-text-muted"
                 }`}
         >
             <input
@@ -432,6 +528,9 @@ function FormField({
     maxLength,
     inputMode,
     autoComplete,
+    error,
+    onInvalid,
+    onChange,
 }: {
     label: string;
     name: string;
@@ -442,8 +541,12 @@ function FormField({
     maxLength?: number;
     inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
     autoComplete?: string;
+    error?: string;
+    onInvalid?: React.FormEventHandler<HTMLInputElement>;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
 }) {
     const id = `audit-${name}`;
+    const errorId = `${id}-error`;
 
     return (
         <div>
@@ -471,8 +574,25 @@ function FormField({
                 required={required}
                 minLength={minLength}
                 maxLength={maxLength}
-                className="mt-2 w-full rounded-[9px] border border-border bg-background px-4 py-3 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary"
+                aria-invalid={Boolean(error)}
+                aria-describedby={error ? errorId : undefined}
+                onInvalid={onInvalid}
+                onChange={onChange}
+                className={`mt-2 w-full rounded-[9px] border bg-background px-4 py-3 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary ${error
+                    ? "border-red-500"
+                    : "border-border"
+                    }`}
             />
+
+            {error && (
+                <p
+                    id={errorId}
+                    role="alert"
+                    className="mt-2 text-[13px] leading-5 text-red-600"
+                >
+                    {error}
+                </p>
+            )}
         </div>
     );
 }

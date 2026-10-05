@@ -3,7 +3,6 @@ import { contactSchema } from "@/lib/validation/contact";
 import { verifyTurnstile } from "@/lib/security/turnstile";
 import { checkRateLimit } from "@/lib/security/rate-limit";
 import { Resend } from "resend";
-import z from "zod";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -34,8 +33,9 @@ export async function POST(request: NextRequest) {
             return NextResponse.json(
                 {
                     success: false,
-                    message: "Please check the form and try again.",
-                    errors: z.treeifyError(parsed.error),
+                    message:
+                        parsed.error.issues[0]?.message ??
+                        "Please check the form and try again.",
                 },
                 { status: 400 },
             );

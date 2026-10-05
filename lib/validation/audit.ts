@@ -9,11 +9,11 @@ export const auditRequestSchema = z.object({
         .min(2, "Please enter your name.")
         .max(100, "Name is too long."),
 
-    email: z
+        email: z
         .string()
         .trim()
-        .email("Please enter a valid email address.")
-        .max(254, "Email address is too long."),
+        .max(254, "Email address is too long.")
+        .pipe(z.email("Please enter a valid email address.")),
 
     website: z
         .string()

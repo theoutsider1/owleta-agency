@@ -127,28 +127,19 @@ const sections = [
         content: (
             <>
                 <p>
-                    Owlixir provides forms that can be used to contact us,
-                    discuss a project, request a website check or request a
-                    website audit.
+                    Owlixir provides forms that can be used to contact us, discuss a
+                    project, request a website check or request a website audit.
                 </p>
 
                 <p>
-                    Form submissions are processed through our website
-                    infrastructure and may use third-party services that help us
-                    deliver messages and protect the forms from abuse.
+                    Form submissions are processed through our website infrastructure and
+                    selected third-party services that help us deliver enquiries, protect
+                    forms from spam and automated activity, and prevent abuse.
                 </p>
 
                 <p>
-                    Cloudflare Turnstile is used to help distinguish legitimate
-                    visitors from automated or abusive activity. Upstash is used
-                    as part of our rate-limiting system to reduce repeated or
-                    abusive submissions. Resend is used to deliver form
-                    enquiries by email.
-                </p>
-
-                <p>
-                    These services may process limited technical information as
-                    necessary to provide their respective functions.
+                    These services may process limited personal or technical information
+                    where necessary to provide their respective functions.
                 </p>
             </>
         ),
@@ -159,27 +150,22 @@ const sections = [
         content: (
             <>
                 <p>
-                    We use selected service providers to operate and protect the
-                    website. These may include:
+                    We use selected third-party service providers to operate, host,
+                    protect and support the Owlixir website and its forms. These providers
+                    may process limited personal or technical information where necessary
+                    to provide their services.
                 </p>
 
-                <ul>
-                    <li>
-                        Vercel for website hosting and application
-                        infrastructure
-                    </li>
-                    <li>
-                        Cloudflare Turnstile for form security and bot
-                        protection
-                    </li>
-                    <li>Upstash for rate limiting and abuse prevention</li>
-                    <li>Resend for transactional email delivery</li>
-                </ul>
+                <p>
+                    We also use Google Analytics for optional website usage analytics when
+                    you consent to analytics. More information about this is provided in
+                    the Analytics and cookies section below.
+                </p>
 
                 <p>
-                    These providers process information according to their
-                    respective roles and services. We do not sell your personal
-                    information to third parties.
+                    Service providers process information according to their respective
+                    roles and services. We do not sell your personal information to third
+                    parties.
                 </p>
             </>
         ),
@@ -190,23 +176,58 @@ const sections = [
         content: (
             <>
                 <p>
-                    Owlixir does not currently use advertising or marketing
-                    tracking technologies on this website.
+                    Owlixir uses Google Analytics 4 to understand how visitors use the
+                    website and to help us improve its content, performance and user
+                    experience. We do not currently use advertising or marketing tracking
+                    technologies on this website.
                 </p>
 
                 <p>
-                    We may introduce privacy-conscious website analytics in the
-                    future, including Google Analytics, to understand how the
-                    website is used and improve its performance and content.
-                    Where consent is required for analytics or similar
-                    technologies, they will be subject to appropriate consent
-                    controls before being activated.
+                    Google Analytics is optional on Owlixir. Analytics is not activated
+                    unless you choose to accept analytics through our privacy controls. If
+                    you reject analytics or do not make a choice, Google Analytics remains
+                    blocked.
                 </p>
 
                 <p>
-                    If our use of analytics, cookies or similar technologies
-                    changes, this privacy policy and any relevant consent
-                    controls will be updated accordingly.
+                    When analytics is enabled, Google Analytics may collect information
+                    about how you interact with the website, such as pages viewed, general
+                    device and browser information, language, approximate location derived
+                    from technical information, and information about how you arrived at
+                    and navigated the website. Google Analytics may also place analytics
+                    cookies, including cookies used to distinguish visits and sessions.
+                </p>
+
+                <p>
+                    We use this information to understand website traffic, identify which
+                    pages and content are useful, evaluate how visitors move through the
+                    website and improve Owlixir. We do not intentionally send names, email
+                    addresses, form messages or other information entered into our forms
+                    to Google Analytics.
+                </p>
+
+                <p>
+                    If you accept analytics, your preference is stored so that we can
+                    remember your choice. If you reject analytics, that choice is also
+                    remembered and Google Analytics remains blocked. If you do not make a
+                    choice, analytics remains disabled.
+                </p>
+
+                <p>
+                    You can change your choice at any time using{" "}
+                    <strong className="font-medium text-text-primary">
+                        Cookie preferences
+                    </strong>{" "}
+                    in the website footer. If you withdraw previously given consent,
+                    analytics is disabled and Owlixir removes the Google Analytics cookies
+                    accessible to this website.
+                </p>
+
+                <p>
+                    Google provides the Google Analytics service and may process analytics
+                    information through infrastructure in different countries. Google's
+                    own privacy and data processing terms also apply to its handling of
+                    information within the service.
                 </p>
             </>
         ),

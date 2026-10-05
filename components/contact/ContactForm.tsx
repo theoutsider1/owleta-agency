@@ -6,6 +6,7 @@ import {
     Turnstile,
     type TurnstileInstance,
 } from "@marsidev/react-turnstile";
+import { trackAnalyticsEvent } from "@/components/analytics/GoogleAnalytics";
 
 const projectTypes = [
     "New website",
@@ -29,7 +30,57 @@ export default function ContactForm() {
         message: "",
     });
 
+    const [fieldErrors, setFieldErrors] = useState<
+        Partial<Record<"name" | "email" | "website" | "message", string>>
+    >({});
+
     const turnstileRef = useRef<TurnstileInstance>(null);
+
+    function clearFieldError(field: keyof typeof fieldErrors) {
+        setFieldErrors((current) => {
+            if (!current[field]) return current;
+
+            const next = { ...current };
+            delete next[field];
+
+            return next;
+        });
+    }
+
+    function handleInvalid(
+        field: keyof typeof fieldErrors,
+        message: string,
+    ) {
+        return (event: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+            event.preventDefault();
+
+            setFieldErrors((current) => ({
+                ...current,
+                [field]: message,
+            }));
+        };
+    }
+
+    function isValidWebsite(value: string) {
+        const trimmed = value.trim();
+
+        if (!trimmed) return true;
+
+        const normalized = /^https?:\/\//i.test(trimmed)
+            ? trimmed
+            : `https://${trimmed}`;
+
+        try {
+            const url = new URL(normalized);
+
+            return (
+                (url.protocol === "http:" || url.protocol === "https:") &&
+                url.hostname.includes(".")
+            );
+        } catch {
+            return false;
+        }
+    }
 
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -41,11 +92,25 @@ export default function ContactForm() {
             message: "",
         });
 
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+        const website = String(formData.get("website") ?? "");
+
         if (!projectType) {
             setStatus({
                 type: "error",
                 message: "Please select what you need help with.",
             });
+            return;
+        }
+
+        if (!isValidWebsite(website)) {
+            setFieldErrors((current) => ({
+                ...current,
+                website: "Please enter a valid website address.",
+            }));
+
+            document.getElementById("website")?.focus();
             return;
         }
 
@@ -57,15 +122,12 @@ export default function ContactForm() {
             return;
         }
 
-        const form = event.currentTarget;
-        const formData = new FormData(form);
-
         const payload = {
             name: String(formData.get("name") ?? ""),
             email: String(formData.get("email") ?? ""),
             business: String(formData.get("business") ?? ""),
             projectType,
-            website: String(formData.get("website") ?? ""),
+            website,
             message: String(formData.get("message") ?? ""),
             turnstileToken,
         };
@@ -87,11 +149,26 @@ export default function ContactForm() {
             };
 
             if (!response.ok || !data.success) {
+                if (data.message === "Please enter a valid website address.") {
+                    setFieldErrors((current) => ({
+                        ...current,
+                        website: data.message,
+                    }));
+
+                    document
+                        .getElementById("website")
+                        ?.focus();
+
+                    return;
+                }
+
                 throw new Error(
                     data.message ||
                     "Something went wrong. Please try again.",
                 );
             }
+
+            trackAnalyticsEvent("contact_form_submit");
 
             form.reset();
             setProjectType("");
@@ -194,8 +271,30 @@ export default function ContactForm() {
                                     minLength={2}
                                     maxLength={100}
                                     placeholder="Your name"
-                                    className="mt-3 w-full rounded-[9px] border border-border bg-background px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px]"
+                                    aria-invalid={Boolean(fieldErrors.name)}
+                                    aria-describedby={
+                                        fieldErrors.name ? "name-error" : undefined
+                                    }
+                                    onInvalid={handleInvalid(
+                                        "name",
+                                        "Please enter your name.",
+                                    )}
+                                    onChange={() => clearFieldError("name")}
+                                    className={`mt-3 w-full rounded-[9px] border bg-background px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.name
+                                        ? "border-red-500"
+                                        : "border-border"
+                                        }`}
                                 />
+
+                                {fieldErrors.name && (
+                                    <p
+                                        id="name-error"
+                                        role="alert"
+                                        className="mt-2 text-[13px] leading-5 text-red-600"
+                                    >
+                                        {fieldErrors.name}
+                                    </p>
+                                )}
                             </div>
 
                             <div>
@@ -215,9 +314,32 @@ export default function ContactForm() {
                                     type="email"
                                     autoComplete="email"
                                     required
+                                    maxLength={254}
                                     placeholder="you@business.com"
-                                    className="mt-3 w-full rounded-[9px] border border-border bg-background px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px]"
+                                    aria-invalid={Boolean(fieldErrors.email)}
+                                    aria-describedby={
+                                        fieldErrors.email ? "email-error" : undefined
+                                    }
+                                    onInvalid={handleInvalid(
+                                        "email",
+                                        "Please enter a valid email address.",
+                                    )}
+                                    onChange={() => clearFieldError("email")}
+                                    className={`mt-3 w-full rounded-[9px] border bg-background px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.email
+                                        ? "border-red-500"
+                                        : "border-border"
+                                        }`}
                                 />
+
+                                {fieldErrors.email && (
+                                    <p
+                                        id="email-error"
+                                        role="alert"
+                                        className="mt-2 text-[13px] leading-5 text-red-600"
+                                    >
+                                        {fieldErrors.email}
+                                    </p>
+                                )}
                             </div>
                         </div>
 
@@ -274,8 +396,8 @@ export default function ContactForm() {
                                             }}
                                             aria-pressed={active}
                                             className={`cursor-pointer rounded-[9px] border px-4 py-2.5 text-[13px] font-medium transition-colors ${active
-                                                    ? "border-primary bg-primary text-white"
-                                                    : "border-border bg-background text-text-secondary hover:border-text-muted hover:text-text-primary"
+                                                ? "border-primary bg-primary text-white"
+                                                : "border-border bg-background text-text-secondary hover:border-text-muted hover:text-text-primary"
                                                 }`}
                                         >
                                             {type}
@@ -310,8 +432,25 @@ export default function ContactForm() {
                                 inputMode="url"
                                 autoComplete="url"
                                 placeholder="yourwebsite.com"
-                                className="mt-3 w-full rounded-[9px] border border-border bg-background px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px]"
+                                aria-invalid={Boolean(fieldErrors.website)}
+                                aria-describedby={
+                                    fieldErrors.website ? "website-error" : undefined
+                                }
+                                onChange={() => clearFieldError("website")}
+                                className={`mt-3 w-full rounded-[9px] border bg-background px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.website
+                                    ? "border-red-500"
+                                    : "border-border"
+                                    }`}
                             />
+                            {fieldErrors.website && (
+                                <p
+                                    id="website-error"
+                                    role="alert"
+                                    className="mt-2 text-[13px] leading-5 text-red-600"
+                                >
+                                    {fieldErrors.website}
+                                </p>
+                            )}
                         </div>
 
                         {/* Message */}
@@ -334,8 +473,30 @@ export default function ContactForm() {
                                 maxLength={5000}
                                 rows={7}
                                 placeholder="Tell us a little about your project..."
-                                className="mt-3 w-full resize-none rounded-[9px] border border-border bg-background px-4 py-3.5 text-[15px] leading-7 text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px]"
+                                aria-invalid={Boolean(fieldErrors.message)}
+                                aria-describedby={
+                                    fieldErrors.message ? "message-error" : undefined
+                                }
+                                onInvalid={handleInvalid(
+                                    "message",
+                                    "Please tell us a little more about the project.",
+                                )}
+                                onChange={() => clearFieldError("message")}
+                                className={`mt-3 w-full resize-none rounded-[9px] border bg-background px-4 py-3.5 text-[15px] leading-7 text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.message
+                                    ? "border-red-500"
+                                    : "border-border"
+                                    }`}
                             />
+
+                            {fieldErrors.message && (
+                                <p
+                                    id="message-error"
+                                    role="alert"
+                                    className="mt-2 text-[13px] leading-5 text-red-600"
+                                >
+                                    {fieldErrors.message}
+                                </p>
+                            )}
                         </div>
 
                         {/* Security check */}
@@ -404,8 +565,8 @@ export default function ContactForm() {
                                     }
                                     aria-live="polite"
                                     className={`mt-5 border-l-2 pl-4 text-[14px] leading-6 ${status.type === "success"
-                                            ? "border-primary text-text-primary"
-                                            : "border-border text-text-secondary"
+                                        ? "border-primary text-text-primary"
+                                        : "border-border text-text-secondary"
                                         }`}
                                 >
                                     {status.message}
