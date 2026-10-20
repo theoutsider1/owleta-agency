@@ -32,14 +32,14 @@ export default function WebsiteAuditHero() {
 
                         <div className="mt-8 flex flex-wrap items-center gap-5">
                             <Link
-                                href="/services/website-audit/?service=audit#request"
+                                href="/services/website-audit?service=audit#request"
                                 className="inline-flex cursor-pointer items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                             >
                                 Request a website audit
                             </Link>
 
                             <Link
-                                href="/services/website-audit/?service=check#request"
+                                href="/services/website-audit?service=check#request"
                                 className="group inline-flex cursor-pointer items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                             >
                                 Get a free website check

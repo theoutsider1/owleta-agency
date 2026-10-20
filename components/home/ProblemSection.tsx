@@ -149,7 +149,7 @@ export default function ProblemSection() {
                             </p>
 
                             <Link
-                                href="/services/website-audit/?service=check#request"
+                                href="/services/website-audit?service=check#request"
                                 className="group mt-7 inline-flex cursor-pointer items-center text-[15px] font-semibold text-primary transition-colors hover:text-primary-hover"
                             >
                                 Get a website check

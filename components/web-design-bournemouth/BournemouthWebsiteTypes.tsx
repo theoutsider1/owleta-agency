@@ -83,7 +83,7 @@ export default function BournemouthWebsiteTypes() {
                         </Link>
 
                         <Link
-                            href="/services/website-audit/?service=check#request"
+                            href="/services/website-audit?service=check#request"
                             className="group inline-flex cursor-pointer items-center gap-2 text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                         >
                             Get a website check

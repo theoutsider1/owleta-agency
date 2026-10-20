@@ -46,7 +46,7 @@ export default function HeroSection() {
                         </a>
 
                         <a
-                            href="/services/website-audit/?service=check#request"
+                            href="/services/website-audit?service=check#request"
                             className="group inline-flex cursor-pointer items-center text-[15px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                         >
                             Get a website check

@@ -105,7 +105,7 @@ export default function RedesignApproach() {
 
                     <div className="flex flex-wrap items-center gap-5">
                         <Link
-                            href="/services/website-audit/?service=check#request"
+                            href="/services/website-audit?service=check#request"
                             className="inline-flex cursor-pointer items-center justify-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                         >
                             Get a website check

@@ -72,7 +72,7 @@ export default function BournemouthLocalBusiness() {
 
                     <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                         <Link
-                            href="/services/website-audit/?service=check#request"
+                            href="/services/website-audit?service=check#request"
                             className="inline-flex cursor-pointer items-center justify-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                         >
                             Get a website check

@@ -44,7 +44,7 @@ export default function LocalSEOMidCTA() {
                             </Link>
 
                             <Link
-                                href="/services/website-audit/?service=check#request"
+                                href="/services/website-audit?service=check#request"
                                 className="group inline-flex cursor-pointer items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                             >
                                 Not sure? Get a website check
