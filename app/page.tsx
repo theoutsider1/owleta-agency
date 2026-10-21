@@ -31,7 +31,7 @@ export default function Home() {
         <ProblemSection />
         <SolutionsSection />
         <SelectedWork />
-        <FeaturedCaseStudy />
+        {/* <FeaturedCaseStudy /> */}
         <WebsiteCheck />
         <WhyOwlixir />
         <ProcessSection />
