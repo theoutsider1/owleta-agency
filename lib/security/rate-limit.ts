@@ -23,17 +23,44 @@ const auditLimiter = redis
     })
     : null;
 
-export type RateLimitType = "contact" | "audit";
+const websiteCheckerLimiter = redis
+    ? new Ratelimit({
+        redis,
+        limiter: Ratelimit.slidingWindow(3, "1 h"),
+        prefix: "owlixir:website-checker",
+    })
+    : null;
+
+export type RateLimitType =
+    | "contact"
+    | "audit"
+    | "website-checker";
 
 export async function checkRateLimit(
     type: RateLimitType,
     identifier: string,
 ) {
-    const limiter = type === "contact" ? contactLimiter : auditLimiter;
+    if (
+        process.env.NODE_ENV === "development" &&
+        type === "website-checker"
+    ) {
+        return {
+            success: true,
+            limit: 0,
+            remaining: 0,
+            reset: 0,
+        };
+    }
+    const limiter =
+        type === "contact"
+            ? contactLimiter
+            : type === "audit"
+                ? auditLimiter
+                : websiteCheckerLimiter;
 
-    /*
-     * Fail closed in production if rate limiting has not been configured.
-     * Local development can continue while we build the integration.
+    /**
+     * Fail closed in production if rate limiting is not configured.
+     * Allow local development without Upstash.
      */
     if (!limiter) {
         if (process.env.NODE_ENV === "production") {

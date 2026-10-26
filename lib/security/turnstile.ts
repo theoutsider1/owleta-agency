@@ -30,6 +30,8 @@ export async function verifyTurnstile(
                 method: "POST",
                 body,
                 cache: "no-store",
+                signal: AbortSignal.timeout(5000),
+                redirect: "error",
             },
         );
 

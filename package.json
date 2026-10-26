@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:checker": "node --require ./test/register.cjs --test test/*.test.cjs"
   },
   "dependencies": {
     "@marsidev/react-turnstile": "^1.6.1",

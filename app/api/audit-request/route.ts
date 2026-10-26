@@ -5,18 +5,10 @@ import { z } from "zod";
 import { checkRateLimit } from "@/lib/security/rate-limit";
 import { verifyTurnstile } from "@/lib/security/turnstile";
 import { auditRequestSchema } from "@/lib/validation/audit";
+import { checkerClientIp } from "@/lib/security/checker-client-ip";
+
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-function getClientIp(request: NextRequest) {
-    const forwardedFor = request.headers.get("x-forwarded-for");
-
-    if (forwardedFor) {
-        return forwardedFor.split(",")[0]?.trim() || "unknown";
-    }
-
-    return request.headers.get("x-real-ip") ?? "unknown";
-}
 
 export async function POST(request: NextRequest) {
     try {
@@ -44,7 +36,18 @@ export async function POST(request: NextRequest) {
             turnstileToken,
         } = parsed.data;
 
-        const ip = getClientIp(request);
+        const ip = checkerClientIp(request.headers);
+
+        if (!ip) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    message:
+                        "The request form is temporarily unavailable. Please try again later.",
+                },
+                { status: 503 },
+            );
+        }
         const rateLimit = await checkRateLimit("audit", ip);
 
         if (!rateLimit.success) {
@@ -75,7 +78,7 @@ export async function POST(request: NextRequest) {
 
         const turnstileValid = await verifyTurnstile(
             turnstileToken,
-            ip === "unknown" ? undefined : ip,
+            ip,
         );
 
         if (!turnstileValid) {
