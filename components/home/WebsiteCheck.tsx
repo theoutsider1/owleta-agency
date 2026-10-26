@@ -157,7 +157,7 @@ export default function WebsiteCheck() {
 
                     <div className="mt-7 flex flex-col items-center justify-center gap-5 sm:flex-row">
                         <Link
-                            href="/services/website-audit?service=check#request"
+                            href="/tools/website-checker#free-website-report"
                             className="inline-flex cursor-pointer items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                         >
                             Get a website check

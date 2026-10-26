@@ -133,7 +133,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "seo",
         title: "Page title needs attention",
         explanation:
-            "Lighthouse detected a problem with the page title, which helps people and search engines understand the page.",
+            "The check detected a problem with the page title, which helps people and search engines understand the page.",
         recommendation:
             "Use a clear, descriptive page title that reflects the content and the business.",
     },
@@ -142,7 +142,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "seo",
         title: "Meta description needs attention",
         explanation:
-            "Lighthouse detected a missing or inadequate meta description.",
+            "The check detected a missing or inadequate meta description.",
         recommendation:
             "Write a useful description that explains what the page offers.",
     },
@@ -151,7 +151,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "seo",
         title: "Mobile viewport needs attention",
         explanation:
-            "Lighthouse detected a problem with the page's mobile viewport configuration.",
+            "The check detected a problem with the page's mobile viewport configuration.",
         recommendation:
             "Check the viewport meta tag and ensure the layout adapts to mobile screens.",
     },
@@ -160,7 +160,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "accessibility",
         title: "Some images need alternative text",
         explanation:
-            "Lighthouse found images without appropriate accessible text.",
+            "The check found images without appropriate accessible text.",
         recommendation:
             "Add meaningful alternative text to informative images and treat decorative images appropriately.",
     },
@@ -169,7 +169,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "accessibility",
         title: "Some links lack accessible names",
         explanation:
-            "Lighthouse found links that may be difficult for screen-reader users to understand.",
+            "The check found links that may be difficult for screen-reader users to understand.",
         recommendation:
             "Give links clear, descriptive accessible names.",
     },
@@ -178,7 +178,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "accessibility",
         title: "Some buttons lack accessible names",
         explanation:
-            "Lighthouse found buttons without appropriate accessible names.",
+            "The check found buttons without appropriate accessible names.",
         recommendation:
             "Add visible labels or appropriate accessible names to buttons.",
     },
@@ -187,7 +187,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "accessibility",
         title: "Text contrast needs improvement",
         explanation:
-            "Lighthouse found text that does not meet its tested contrast requirements.",
+            "The check found text that does not meet its tested contrast requirements.",
         recommendation:
             "Improve contrast between text and its background.",
     },
@@ -196,7 +196,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "performance",
         title: "Main content appears slowly",
         explanation:
-            "Lighthouse measured a slow Largest Contentful Paint, which describes when the main visible content appears.",
+            "The check measured a slow Largest Contentful Paint, which describes when the main visible content appears.",
         recommendation:
             "Review large images, render-blocking resources and server response times.",
     },
@@ -205,7 +205,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "performance",
         title: "The page may be slow to respond",
         explanation:
-            "Lighthouse measured significant main-thread blocking during page load.",
+            "The check measured significant main-thread blocking during page load.",
         recommendation:
             "Reduce unnecessary JavaScript and expensive main-thread work.",
     },
@@ -214,7 +214,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "performance",
         title: "Resources may delay page rendering",
         explanation:
-            "Lighthouse identified resources that may delay the initial display of the page.",
+            "The check identified resources that may delay the initial display of the page.",
         recommendation:
             "Review blocking stylesheets and scripts, and prioritise critical resources.",
     },
@@ -224,7 +224,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "seo",
         title: "Page indexing may be restricted",
         explanation:
-            "Lighthouse detected a restriction that may prevent search engines from indexing this page.",
+            "The check detected a restriction that may prevent search engines from indexing this page.",
         recommendation:
             "Check whether the page is intentionally excluded from search results. Review robots directives and indexing settings.",
     },
@@ -233,7 +233,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "seo",
         title: "Page response status needs attention",
         explanation:
-            "Lighthouse detected a response status that may affect search-engine access to this page.",
+            "The check detected a response status that may affect search-engine access to this page.",
         recommendation:
             "Check that the page returns an appropriate HTTP response, normally 200 for a public page.",
     },
@@ -242,7 +242,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "seo",
         title: "Some link text is not descriptive",
         explanation:
-            "Lighthouse detected links whose visible text may not clearly describe their destination.",
+            "The check detected links whose visible text may not clearly describe their destination.",
         recommendation:
             "Use meaningful link text that tells visitors what they will find after clicking.",
     },
@@ -251,7 +251,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "seo",
         title: "Some links may not be crawlable",
         explanation:
-            "Lighthouse detected links that search engines may have difficulty following.",
+            "The check detected links that search engines may have difficulty following.",
         recommendation:
             "Use valid href destinations for important navigation and content links.",
     },
@@ -260,7 +260,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "seo",
         title: "robots.txt needs attention",
         explanation:
-            "Lighthouse detected a problem with the site's robots.txt file during this analysis.",
+            "The check detected a problem with the site's robots.txt file during this analysis.",
         recommendation:
             "Review the robots.txt file for invalid directives or responses that prevent search engines from reading it correctly.",
     },
@@ -269,7 +269,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "seo",
         title: "Language targeting needs attention",
         explanation:
-            "Lighthouse detected a problem with the page's hreflang annotations.",
+            "The check detected a problem with the page's hreflang annotations.",
         recommendation:
             "Check that language and regional alternate URLs are valid and correctly reference each other.",
     },
@@ -278,7 +278,7 @@ const auditDefinitions: AuditDefinition[] = [
         category: "seo",
         title: "Canonical URL needs attention",
         explanation:
-            "Lighthouse detected a problem with the page's canonical URL declaration.",
+            "The check detected a problem with the page's canonical URL declaration.",
         recommendation:
             "Check that the canonical URL points to the preferred, indexable version of the page.",
     },

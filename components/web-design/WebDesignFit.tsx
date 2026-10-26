@@ -193,7 +193,7 @@ export default function WebDesignFit() {
                     </p>
 
                     <Link
-                        href="/services/website-audit?service=check#request"
+                                href="/tools/website-checker#free-website-report"
                         className="group inline-flex shrink-0 cursor-pointer items-center gap-2 text-[15px] font-semibold text-[#ff5a1f]"
                     >
                         Get a website check

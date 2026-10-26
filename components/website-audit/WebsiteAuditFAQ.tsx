@@ -11,9 +11,9 @@ const faqs = [
     },
     {
         question:
-            "What is the difference between a free Website Check and a Website Audit?",
+            "What is the difference between the free website checker and a Website Audit?",
         answer:
-            "The free Website Check is a focused first look for any obvious issue or opportunity that may deserve further attention. A Website Audit is a deeper structured investigation with documented findings, evidence, priorities, recommended actions and a detailed PDF report.",
+            "The free website checker is a quick homepage check for performance, accessibility and basic SEO. A Website Audit is a deeper structured investigation with documented findings, evidence, priorities, recommended actions and a detailed PDF report.",
     },
     {
         question: "Do you need access to my website?",

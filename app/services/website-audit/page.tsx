@@ -21,18 +21,7 @@ export const metadata: Metadata = {
     },
 };
 
-type ServiceType = "check" | "audit";
-
-export default async function WebsiteAuditPage({
-    searchParams,
-}: {
-    searchParams: Promise<{ service?: string }>;
-}) {
-    const params = await searchParams;
-
-    const initialService: ServiceType =
-        params.service === "check" ? "check" : "audit";
-
+export default function WebsiteAuditPage() {
     return (
         <>
             <Navigation />
@@ -44,7 +33,7 @@ export default async function WebsiteAuditPage({
                 <AuditDeliverable />
                 <AuditProcess />
                 <AuditOptions />
-                <AuditRequestForm initialService={initialService} />
+                <AuditRequestForm />
                 <WebsiteAuditFAQ />
                 <AuditCTA />
             </main>

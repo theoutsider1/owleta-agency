@@ -234,10 +234,10 @@
   --text-secondary: #52525b;
   --text-muted: #52525b;
   --text-subtle: #52525b;
-  --primary: #c2410c;
-  --primary-hover: #9a3412;
-  --primary-soft: #fff7ed;
-  --primary-border: #fdba74;
+  --primary: #ff5a1f;
+  --primary-hover: #ff6b35;
+  --primary-soft: rgba(255, 90, 31, 0.1);
+  --primary-border: rgba(255, 90, 31, 0.35);
   --border: #e4e4e7;
   --border-strong: #a1a1aa;
 

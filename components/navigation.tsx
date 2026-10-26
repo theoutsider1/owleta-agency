@@ -146,6 +146,13 @@ export default function Navigation() {
             >
               About
             </Link>
+
+            <Link
+              href="/tools/website-checker"
+              className="cursor-pointer rounded-full px-4 py-2.5 text-[14px] font-medium text-text-secondary transition-colors hover:bg-surface-raised hover:text-text-primary"
+            >
+              Free checker
+            </Link>
           </nav>
 
           {/* Desktop CTA */}
@@ -278,6 +285,14 @@ export default function Navigation() {
                 className="block cursor-pointer border-b border-border py-4 text-[15px] font-medium text-text-primary"
               >
                 About
+              </Link>
+
+              <Link
+                href="/tools/website-checker"
+                onClick={closeMobileMenu}
+                className="block cursor-pointer border-b border-border py-4 text-[15px] font-medium text-text-primary"
+              >
+                Free checker
               </Link>
 
               <Link

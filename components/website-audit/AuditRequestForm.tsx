@@ -8,19 +8,12 @@ import {
 } from "@marsidev/react-turnstile";
 import { trackAnalyticsEvent } from "@/components/analytics/GoogleAnalytics";
 
-type ServiceType = "check" | "audit";
-
 type FormStatus = {
     type: "success" | "error" | null;
     message: string;
 };
 
-export default function AuditRequestForm({
-    initialService = "audit",
-}: {
-    initialService?: ServiceType;
-}) {
-    const [service, setService] = useState<ServiceType>(initialService);
+export default function AuditRequestForm() {
     const [turnstileToken, setTurnstileToken] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [status, setStatus] = useState<FormStatus>({
@@ -123,7 +116,7 @@ export default function AuditRequestForm({
         }
 
         const payload = {
-            service,
+            service: "audit",
             name: String(formData.get("name") ?? ""),
             email: String(formData.get("email") ?? ""),
             website,
@@ -159,11 +152,7 @@ export default function AuditRequestForm({
                 return;
             }
 
-            trackAnalyticsEvent(
-                service === "check"
-                    ? "website_check_submit"
-                    : "website_audit_submit",
-            );
+            trackAnalyticsEvent("website_audit_submit");
 
             form.reset();
 
@@ -214,8 +203,8 @@ export default function AuditRequestForm({
 
                         <p className="mt-7 text-[17px] leading-7 text-text-secondary md:text-[18px]">
                             Share your website and what you would like us to look
-                            at. Choose a free Website Check for a focused first
-                            look, or a Website Audit for a deeper investigation.
+                            at. We&apos;ll review your request and confirm the
+                            scope of a detailed website audit before work begins.
                         </p>
 
                         {/* Commitment reassurance */}
@@ -254,47 +243,8 @@ export default function AuditRequestForm({
                         onSubmit={handleSubmit}
                         onChange={clearSuccessStatus}
                     >
-                        {/* Service choice */}
-                        <fieldset>
-                            <legend className="text-[13px] font-medium text-text-primary">
-                                What are you interested in?
-                                <span
-                                    className="ml-1 text-primary"
-                                    aria-hidden="true"
-                                >
-                                    *
-                                </span>
-                            </legend>
-
-                            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                                <ServiceOption
-                                    value="check"
-                                    selected={service === "check"}
-                                    onSelect={() => {
-                                        setService("check");
-                                        clearSuccessStatus();
-                                    }}
-                                    title="Free Website Check"
-                                    description="A focused first look for any obvious issue or opportunity that may deserve further attention."
-                                    meta="Free"
-                                />
-
-                                <ServiceOption
-                                    value="audit"
-                                    selected={service === "audit"}
-                                    onSelect={() => {
-                                        setService("audit");
-                                        clearSuccessStatus();
-                                    }}
-                                    title="Website Audit"
-                                    description="A deeper structured investigation with evidence, priorities and a detailed PDF report."
-                                    meta="Quoted first"
-                                />
-                            </div>
-                        </fieldset>
-
                         {/* Details */}
-                        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+                        <div className="grid gap-6 sm:grid-cols-2">
                             <FormField
                                 label="Name"
                                 name="name"
@@ -369,7 +319,7 @@ export default function AuditRequestForm({
                                 rows={6}
                                 maxLength={5000}
                                 placeholder="Anything specific you would like us to check?"
-                                className="mt-2 w-full resize-y rounded-[9px] border border-border bg-background px-4 py-3 text-[15px] leading-6 text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary"
+                                className="mt-2 w-full resize-y rounded-[9px] border border-border bg-surface-raised px-4 py-3 text-[15px] leading-6 text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary"
                             />
                         </div>
 
@@ -457,67 +407,6 @@ export default function AuditRequestForm({
     );
 }
 
-function ServiceOption({
-    value,
-    selected,
-    onSelect,
-    title,
-    description,
-    meta,
-}: {
-    value: ServiceType;
-    selected: boolean;
-    onSelect: () => void;
-    title: string;
-    description: string;
-    meta: string;
-}) {
-    return (
-        <label
-            className={`relative cursor-pointer rounded-[10px] border p-5 transition-colors ${selected
-                ? "border-primary bg-primary/[0.03]"
-                : "border-border hover:border-text-muted"
-                }`}
-        >
-            <input
-                type="radio"
-                name="service-choice"
-                value={value}
-                checked={selected}
-                onChange={onSelect}
-                className="sr-only"
-            />
-
-            <div className="flex items-start justify-between gap-4">
-                <div
-                    aria-hidden="true"
-                    className={`mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border ${selected ? "border-primary" : "border-border"
-                        }`}
-                >
-                    {selected && (
-                        <span className="h-2 w-2 rounded-full bg-primary" />
-                    )}
-                </div>
-
-                <span
-                    className={`text-[9px] font-medium uppercase tracking-[0.12em] ${selected ? "text-primary" : "text-text-muted"
-                        }`}
-                >
-                    {meta}
-                </span>
-            </div>
-
-            <h3 className="mt-5 text-[20px] font-semibold leading-7 tracking-[-0.025em] text-text-primary">
-                {title}
-            </h3>
-
-            <p className="mt-2 text-[15px] leading-6 text-text-secondary md:text-[16px]">
-                {description}
-            </p>
-        </label>
-    );
-}
-
 function FormField({
     label,
     name,
@@ -578,7 +467,7 @@ function FormField({
                 aria-describedby={error ? errorId : undefined}
                 onInvalid={onInvalid}
                 onChange={onChange}
-                className={`mt-2 w-full rounded-[9px] border bg-background px-4 py-3 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary ${error
+                className={`mt-2 w-full rounded-[9px] border bg-surface-raised px-4 py-3 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary ${error
                     ? "border-red-500"
                     : "border-border"
                     }`}

@@ -69,7 +69,7 @@ export default function FinalCTA() {
 
                     {/* Existing website */}
                     <Link
-                        href="/services/website-audit?service=check#request"
+                        href="/tools/website-checker#free-website-report"
                         className="group relative cursor-pointer border-t border-border px-6 py-10 transition-colors hover:bg-white/[0.025] md:border-l md:border-t-0 md:px-10 md:py-12 lg:px-12"
                     >
                         <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-text-muted">

@@ -29,7 +29,7 @@ function report(data: CachedPageSpeed, cached: boolean, complete = true): Websit
         // Compatibility field for the existing UI; no inspection is requested.
         enquiries: { status: "security_unavailable", performed: false },
         limitations: [
-            "This automated check analyses your homepage on mobile using Google PageSpeed Insights.",
+            "This automated check analyses your homepage on mobile.",
             "It does not review every page, test enquiry journeys, submit forms or perform bookings.",
             "Automated accessibility and SEO checks are not a complete accessibility assessment or a guarantee of search rankings.",
         ],

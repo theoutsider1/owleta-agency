@@ -361,7 +361,7 @@ export default function WebsiteChecker({
 
                     <h2 className="text-[clamp(2.5rem,4vw,4.2rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-text-primary">
                         Enter your{" "}
-                        <span className="text-primary">website address.</span>
+                        <span className="text-primary">website URL.</span>
                     </h2>
 
                     <p className="mt-7 text-[17px] leading-7 text-text-secondary md:text-[18px]">

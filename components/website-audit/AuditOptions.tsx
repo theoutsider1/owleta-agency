@@ -96,7 +96,7 @@ export default function AuditOptions() {
                         </p>
 
                         <Link
-                            href="?service=check#request"
+                            href="/tools/website-checker#free-website-report"
                             className="group mt-7 inline-flex cursor-pointer items-center text-[14px] font-medium text-text-primary transition-colors hover:text-primary"
                         >
                             Request a free website check
@@ -156,7 +156,7 @@ export default function AuditOptions() {
                         </p>
 
                         <Link
-                            href="?service=audit#request"
+                            href="#request"
                             className="mt-7 inline-flex cursor-pointer items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                         >
                             Request a website audit

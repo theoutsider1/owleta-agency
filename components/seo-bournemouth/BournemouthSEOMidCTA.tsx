@@ -43,7 +43,7 @@ export default function BournemouthSEOMidCTA() {
                             </Link>
 
                             <Link
-                                href="/services/website-audit?service=check#request"
+                                href="/tools/website-checker#free-website-report"
                                 className="group inline-flex cursor-pointer items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                             >
                                 Not sure? Get a website check

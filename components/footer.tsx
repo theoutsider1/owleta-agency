@@ -17,6 +17,7 @@ const serviceLinks = [
 const owlixirLinks = [
   { label: "Selected Work", href: "/work" },
   { label: "About", href: "/about" },
+  { label: "Free Website Checker", href: "/tools/website-checker" },
   { label: "Contact", href: "/contact" },
 ];
 

@@ -47,7 +47,7 @@ export default function WorkCTA() {
                             </Link>
 
                             <Link
-                                href="/services/website-audit?service=check#request"
+                            href="/tools/website-checker#free-website-report"
                                 className="group mt-5 flex w-fit cursor-pointer items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                             >
                                 Not ready for a project? Get a website check

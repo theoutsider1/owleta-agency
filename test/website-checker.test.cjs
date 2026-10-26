@@ -299,7 +299,7 @@ test('UI retains cache timestamps and technical failures without browser notices
   assert.doesNotMatch(html, /enquiry|browser/i);
   result.technical = { status: 'pagespeed_failed', performed: false };
   const failed = renderToStaticMarkup(React.createElement(CheckAvailability, { result }));
-  assert.match(failed, /PageSpeed analysis could not be completed/);
+  assert.match(failed, /website analysis could not be completed/);
 });
 
 // Trusted ingress identity.

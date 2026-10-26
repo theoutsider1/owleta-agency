@@ -45,7 +45,7 @@ export default function ContactAlternative() {
                         </p>
 
                         <Link
-                            href="/services/website-audit?service=check#request"
+                            href="/tools/website-checker#free-website-report"
                             className="mt-6 inline-flex cursor-pointer items-center rounded-[9px] bg-primary px-5 py-3 text-[14px] font-semibold text-white transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-primary-hover"
                         >
                             Get a website check

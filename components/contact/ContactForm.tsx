@@ -280,7 +280,7 @@ export default function ContactForm() {
                                         "Please enter your name.",
                                     )}
                                     onChange={() => clearFieldError("name")}
-                                    className={`mt-3 w-full rounded-[9px] border bg-background px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.name
+                                    className={`mt-3 w-full rounded-[9px] border bg-surface-raised px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.name
                                         ? "border-red-500"
                                         : "border-border"
                                         }`}
@@ -325,7 +325,7 @@ export default function ContactForm() {
                                         "Please enter a valid email address.",
                                     )}
                                     onChange={() => clearFieldError("email")}
-                                    className={`mt-3 w-full rounded-[9px] border bg-background px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.email
+                                    className={`mt-3 w-full rounded-[9px] border bg-surface-raised px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.email
                                         ? "border-red-500"
                                         : "border-border"
                                         }`}
@@ -361,7 +361,7 @@ export default function ContactForm() {
                                 type="text"
                                 autoComplete="organization"
                                 placeholder="Business name"
-                                className="mt-3 w-full rounded-[9px] border border-border bg-background px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px]"
+                                className="mt-3 w-full rounded-[9px] border border-border bg-surface-raised px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px]"
                             />
                         </div>
 
@@ -397,7 +397,7 @@ export default function ContactForm() {
                                             aria-pressed={active}
                                             className={`cursor-pointer rounded-[9px] border px-4 py-2.5 text-[13px] font-medium transition-colors ${active
                                                 ? "border-primary bg-primary text-white"
-                                                : "border-border bg-background text-text-secondary hover:border-text-muted hover:text-text-primary"
+                                            : "border-border bg-surface-raised text-text-secondary hover:border-text-muted hover:text-text-primary"
                                                 }`}
                                         >
                                             {type}
@@ -437,7 +437,7 @@ export default function ContactForm() {
                                     fieldErrors.website ? "website-error" : undefined
                                 }
                                 onChange={() => clearFieldError("website")}
-                                className={`mt-3 w-full rounded-[9px] border bg-background px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.website
+                                className={`mt-3 w-full rounded-[9px] border bg-surface-raised px-4 py-3.5 text-[15px] text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.website
                                     ? "border-red-500"
                                     : "border-border"
                                     }`}
@@ -482,7 +482,7 @@ export default function ContactForm() {
                                     "Please tell us a little more about the project.",
                                 )}
                                 onChange={() => clearFieldError("message")}
-                                className={`mt-3 w-full resize-none rounded-[9px] border bg-background px-4 py-3.5 text-[15px] leading-7 text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.message
+                                className={`mt-3 w-full resize-none rounded-[9px] border bg-surface-raised px-4 py-3.5 text-[15px] leading-7 text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-primary md:text-[16px] ${fieldErrors.message
                                     ? "border-red-500"
                                     : "border-border"
                                     }`}

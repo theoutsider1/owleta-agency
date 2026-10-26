@@ -49,7 +49,7 @@ export default function AboutCTA() {
 
                             <div className="mt-6">
                                 <Link
-                                    href="/services/website-audit?service=check#request"
+                                    href="/tools/website-checker#free-website-report"
                                     className="group inline-flex w-fit cursor-pointer items-center text-[14px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                                 >
                                     Not ready for a project? Get a website check

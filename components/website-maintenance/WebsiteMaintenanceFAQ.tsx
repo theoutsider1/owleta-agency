@@ -113,7 +113,7 @@ const faqs = [
                 <p className="mt-3">
                     If you&apos;re not sure what your website needs yet, start with a{" "}
                     <Link
-                        href="/services/website-audit?service=check#request"
+                        href="/tools/website-checker#free-website-report"
                         className={linkClasses}
                     >
                         free website check
