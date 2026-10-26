@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
         destination: "/services/website-audit#request",
         permanent: true,
       },
+      {
+        source: "/work/german-language-centre",
+        destination: "/work",
+        permanent: true,
+      },
     ];
   },
   turbopack: {

@@ -4,7 +4,6 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import WorkHero from "@/components/work/WorkHero";
 import FeaturedLocksmithProject from "@/components/work/FeaturedLocksmithProject";
-import GermanLanguageCentreProject from "@/components/work/GermanLanguageCentreProject";
 import WorkApproach from "@/components/work/WorkApproach";
 import WorkCTA from "@/components/work/WorkCTA";
 
@@ -25,7 +24,6 @@ export default function WorkPage() {
       <main>
         <WorkHero />
         <FeaturedLocksmithProject />
-        <GermanLanguageCentreProject />
         <WorkApproach />
         <WorkCTA />
       </main>

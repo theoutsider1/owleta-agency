@@ -10,15 +10,6 @@ const projects = [
         focus: "Structure · Local relevance · Measurement",
         href: "/work/bournemouth-locksmith",
     },
-    {
-        number: "02",
-        type: "Language education",
-        title: "German Language Centre",
-        description:
-            "An Arabic-first website focused on clearer content organisation, right-to-left usability and a simpler journey for learners.",
-        focus: "Content · RTL experience · User journey",
-        href: "/work/german-language-centre",
-    },
 ];
 
 export default function ApproachInPractice() {

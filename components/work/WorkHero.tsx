@@ -65,14 +65,6 @@ export default function WorkHero() {
                             Bournemouth locksmith
                         </Link>
 
-                        <span aria-hidden="true">·</span>
-
-                        <Link
-                            href="/work/german-language-centre"
-                            className="cursor-pointer text-text-secondary transition-colors hover:text-primary"
-                        >
-                            German Language Centre
-                        </Link>
                     </div>
                 </div>
             </div>

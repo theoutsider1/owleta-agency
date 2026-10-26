@@ -13,18 +13,6 @@ const projects = [
         image: "/work/bournemouth-locksmith.webp",
         alt: "Lock Key Locksmiths website homepage",
     },
-    {
-        name: "German Language Centre",
-        context: "Education · Arabic-language website",
-        heading:
-            "Designed around the information prospective students need.",
-        description:
-            "The site organises the centre and its course information for an Arabic-speaking audience, with the structure and interface shaped around the content rather than forcing it into a generic template.",
-        services: ["Web Design", "Development"],
-        href: "/work/german-language-centre",
-        image: "/work/german-language-centre.webp",
-        alt: "German Language Centre Arabic website homepage",
-    },
 ];
 
 export default function WebDesignWork() {
